@@ -17,62 +17,103 @@ get_header(); ?>
 
 <div id="main" class="container clearfix">
 	<div id="container">
-		<div id="primary" class="no-margin-left">
-			<div id="content">
-			
-			<section id="post-2" class="post-2 page type-page status-publish hentry">
-				<article>
-					
-					<div class="entry-content clearfix">
-						<header class="entry-header">							
-							<div class="hc_heading_title">		 
-								<h3>Bệnh Trĩ</h3>		
-							</div>
-
-						</header><!-- .entry-header -->
-						<?php
-							$myarray = array('9', '11', '13');
-							$args = array(
-							   'post_type' => 'post',
-							   'post__in'      => $myarray
-							);
-							// The Query
-							$the_query = new WP_Query( $args );
-							if ( $the_query->have_posts() ) {
-								while ( $the_query->have_posts() ) {
-									$the_query->the_post();								
-						?>
-						<div class="col-3">
-							<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
-								<div class="circular" style="background: url(http://localhost:8080/Wordpress/thuocnamthuocbac/wp-content/uploads/2015/09/tri1.jpg) center no-repeat;">
-									<img width="160" align="center" src="http://localhost:8080/Wordpress/thuocnamthuocbac/wp-content/uploads/2015/09/tri1.jpg" border="0" title="<?php echo the_title( '', '', false ); ?>">
-								</div>
-							</a>
-							<h2>
-								<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
-									<?php echo get_the_title()?>
-								</a>
-							</h2>
+		<div class="ta-row">
+			<div class="ta-row-inner clearfix">						
+				<div class="col-3-full">
+					<div class="featured_block-1">							
+						<div class="featured_block_text">							
 							<p>
-								<?php echo excerpt(24); ?>
+								<a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/" title="Trĩ Hỗn Hợp">
+									Trĩ Hỗn Hợp								</a>
 							</p>
-							<p><a href="<?php echo get_permalink(); ?>">Chi tiết</a></p>
+							<p>
+								Bệnh trĩ hỗn hợp là một trong những bệnh lý ở vùng hậu môn, có thể xuất hiện ở cả nam và nữ....							</p>
+							<a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/">Chi tiết</a>
 						</div>
-						<?php			
-								}
-							} else {
-								// no posts found
-							}
-						?>						
-						
-					</div><!-- .entry-content -->
+					</div>
+				</div>
+				<div class="col-3-full">
+					<div class="featured_block-2">							
+						<div class="featured_block_text">							
+							<p>
+								<a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/" title="Trĩ Hỗn Hợp">
+									Trĩ Hỗn Hợp								</a>
+							</p>
+							<p>
+								Bệnh trĩ hỗn hợp là một trong những bệnh lý ở vùng hậu môn, có thể xuất hiện ở cả nam và nữ....							</p>
+							<a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/">Chi tiết</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-3-full last">
+					<div class="featured_block-3">							
+						<div class="featured_block_text">							
+							<p>
+								<a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/" title="Trĩ Hỗn Hợp">
+									Trĩ Hỗn Hợp								</a>
+							</p>
+							<p>
+								Bệnh trĩ hỗn hợp là một trong những bệnh lý ở vùng hậu môn, có thể xuất hiện ở cả nam và nữ....							</p>
+							<a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/">Chi tiết</a>
+						</div>
+					</div>
+				</div>						
+			</div><!-- .entry-content -->
+		</div>
 
-				</article><!-- #article-## -->
-			</section>
+		<div class="ta-row">
+			<header class="entry-header">							
+				<div class="heading_title">		 
+					<h3>Bệnh Trĩ</h3>		
+				</div>
+			</header><!-- .entry-header -->
+			<?php
+				$myarray = array('9', '11', '13');
+				$args = array(
+				   'post_type' => 'post',
+				   'post__in'      => $myarray
+				);
+				// The Query
+				$the_query = new WP_Query( $args );
+				if ( $the_query->have_posts() ) {
+					while ( $the_query->have_posts() ) {
+						$the_query->the_post();								
+			?>
+			<div class="col-3">
+				<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
+					<div class="circular" style="background: url(http://localhost:8080/Wordpress/thuocnamthuocbac/wp-content/uploads/2015/09/tri1.jpg) center no-repeat;">
+						<img width="160" align="center" src="http://localhost:8080/Wordpress/thuocnamthuocbac/wp-content/uploads/2015/09/tri1.jpg" border="0" title="<?php echo the_title( '', '', false ); ?>">
+					</div>
+				</a>
+				<h2>
+					<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
+						<?php echo get_the_title()?>
+					</a>
+				</h2>
+				<p>
+					<?php echo excerpt(24); ?>
+				</p>
+				<p><a href="<?php echo get_permalink(); ?>">Chi tiết</a></p>
+			</div>
+			<?php			
+					}
+				} else {
+					// no posts found
+				}
+			?>	
+		</div>
 
-			</div><!-- #content -->
-		</div><!-- #primary -->
-		<?php get_sidebar( 'content' ); ?>
+		<div class="ta-row">
+			<div class="featured_block">
+				<div class="featured_block_inner">
+					<div class="featured_block_text">
+						<p><span style="font-family: Satisfy; font-size: 32px; color: #fff774;">Have a Question?</span></p>
+						<p><span style="font-family: lato; font-size: 52px; line-height: 36px; font-weight: 900; color: #ffffff;">Chat with Us!</span></p>
+						<p><a style="font-family: lato; font-size: 20px; font-weight: 300; color: #ffffff;" href="http://medicine-plus.cmsmasters.net/contacts/">connect with our support manager</a></p>
+					</div>
+				</div>
+			</div>
+		</div>		
 	</div><!-- #container -->
 </div><!-- #main-content -->
 

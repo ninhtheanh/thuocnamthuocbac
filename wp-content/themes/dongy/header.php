@@ -18,6 +18,8 @@
 	<!--[if lt IE 9]>
 	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
 	<![endif]-->
+	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/x-icon" />
+	<script type='text/javascript' src='https://cdn1.colorlib.com/travelify/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
 	<?php wp_head(); ?>
 
 </head>
@@ -30,17 +32,18 @@
 					<section class="hgroup-right">							
 						<div class="social-icons clearfix">
 							<ul>
-								<li class="facebook"><a href="https://www.facebook.com/Colorlib" title="Travelify on Facebook" target="_blank"></a></li>
-								<li class="twitter"><a href="https://twitter.com/Colorlib" title="Travelify on Twitter" target="_blank"></a></li>
-								<li class="google-plus"><a href="https://plus.google.com/+Colorlib/" title="Travelify on Google-Plus" target="_blank"></a></li>				
+							   <li class="social-profiles-widget"> 
+								   <a href="http://twitter.com/" target="_blank"><img title="Twitter" alt="Twitter" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/twitter.png"></a>
+								   <a href="http://facebook.com/" target="_blank"><img title="Facebook" alt="Facebook" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/facebook.png"></a>
+								   <a href="https://plus.google.com/" target="_blank"><img title="Google Plus" alt="Google Plus" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/gplus.png"></a>
+								   <a href="http://www.linkedin.com/" target="_blank"><img title="LinkedIn" alt="LinkedIn" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/linkedin.png"></a>								   
+								   <a href="mailto:your@email.com" target="_blank"><img title="Email" alt="Email" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/email.png"></a>
+							   </li>
 							</ul>
 						</div><!-- .social-icons -->					
 					</section><!-- .hgroup-right -->
 						<hgroup id="site-logo" class="clearfix">
-							<h1 id="site-title">
-								<a href="/" title="Travelify" rel="home">Travelify</a>
-							</h1>
-							<h2 id="site-description">Responsive WordPress Travel Theme Demo</h2>							
+							<img title="Twitter" alt="Twitter" src="<?php echo get_template_directory_uri(); ?>/images/logo2.jpg">
 						</hgroup><!-- #site-logo -->
 				</div><!-- .hgroup-wrap -->
 			</div><!-- .container -->
@@ -72,20 +75,20 @@
 			if( is_home() || is_front_page() ) {
 			?>
 				<section class="featured-slider">
-				   <div class="slider-cycle" style="width: 100%; height: 460px;">
+				   <div class="slider-cycle" style="width: 100%; height: 263px;">
 				      <div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
 				         <figure>
 				         	<a href="https://colorlib.com/travelify/layout-test/" title="Content Layout Preview">
-					         	<img width="1018" src="https://cdn.colorlib.com/travelify/wp-content/uploads/sites/4/2013/05/spain6-1018x460.jpg" 
+					         	<img width="960" src="http://localhost:8080/Wordpress/thuocnamthuocbac/wp-content/uploads/2015/09/banner_scr.jpg" 
 					         	class="pngfix wp-post-image" alt="Content Layout Preview" title="Content Layout Preview">				         	
 					        </a>
 				     	</figure>
 			         	<article class="featured-text">
 				            <div class="featured-title">
-				            	<a href="https://colorlib.com/travelify/layout-test/" title="Content Layout Preview">Content Layout Preview</a>
+				            	<a href="https://colorlib.com/travelify/layout-test/" title="Content Layout Preview">Thuốc Việt Nam</a>
 				            </div>
 				            <!-- .featured-title -->
-				            <div class="featured-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed odio nibh, tincidunt adipiscing, pretium nec, tincidunt id, enim. Fusce scelerisque nunc vitae nisl. Quisque quis urna in velit dictum pellentesque. </div>
+				            <div class="featured-content">Chung Tay Chăm Sóc Sức Khỏe Cộng Đồng </div>
 				            <!-- .featured-content -->
 				        </article>
 				         <!-- .featured-text -->

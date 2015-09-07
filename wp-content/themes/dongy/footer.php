@@ -21,7 +21,7 @@
 		</div><!-- .site-info -->
 	</footer><!-- .site-footer -->
 
-<?php //wp_footer(); ?>
+<?php wp_footer(); ?>
 </div>
 
 <!-- Slider start -->

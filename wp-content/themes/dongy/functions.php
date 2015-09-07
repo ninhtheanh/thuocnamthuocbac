@@ -1,6 +1,6 @@
 <?php
 /**
- * Twenty Fifteen functions and definitions
+ * Dong Y functions and definitions
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
@@ -21,8 +21,8 @@
  * {@link https://codex.wordpress.org/Plugin_API}
  *
  * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
+ * @subpackage DongY
+ * @since DongY 1.0
  */
 
 /**
@@ -103,8 +103,8 @@ function twentyfifteen_setup() {
 		'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
 	) );
 
-	$color_scheme  = twentyfifteen_get_color_scheme();
-	$default_color = trim( $color_scheme[0], '#' );
+	//$color_scheme  = twentyfifteen_get_color_scheme();
+	//$default_color = trim( $color_scheme[0], '#' );
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'twentyfifteen_custom_background_args', array(
@@ -215,7 +215,7 @@ endif;
 function twentyfifteen_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
-add_action( 'wp_head', 'twentyfifteen_javascript_detection', 0 );
+//add_action( 'wp_head', 'twentyfifteen_javascript_detection', 0 );
 
 /**
  * Enqueue scripts and styles.
@@ -309,21 +309,21 @@ add_filter( 'get_search_form', 'twentyfifteen_search_form_modify' );
  *
  * @since Twenty Fifteen 1.0
  */
-require get_template_directory() . '/inc/custom-header.php';
+//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
  *
  * @since Twenty Fifteen 1.0
  */
-require get_template_directory() . '/inc/template-tags.php';
+//require get_template_directory() . '/inc/template-tags.php';
 
 /**
  * Customizer additions.
  *
  * @since Twenty Fifteen 1.0
  */
-require get_template_directory() . '/inc/customizer.php';
+//require get_template_directory() . '/inc/customizer.php';
 
 if ( ! function_exists( 'dongy_posted_on' ) ) :
 /**
@@ -482,3 +482,10 @@ function content($limit) {
   $content = str_replace(']]>', ']]&gt;', $content);
   return $content;
 }
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar() {
+	if (!current_user_can('administrator') && !is_admin()) {
+	  show_admin_bar(false);
+	}
+}
+add_action( 'wp_footer', 'wp_admin_bar_render', 1000 );
