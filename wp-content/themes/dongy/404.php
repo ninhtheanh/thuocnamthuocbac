@@ -1,30 +1,29 @@
 <?php
 /**
- * The template for displaying 404 pages (not found)
- *
- * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
+ * Displays the 404 error page of the theme.
  */
+?>
 
-get_header(); ?>
+<?php get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'twentyfifteen' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentyfifteen' ); ?></p>
-
-					<?php get_search_form(); ?>
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
+<div id="content">
+		<header class="entry-header">
+			<h1 class="entry-title header-404"><?php _e( 'Error 404 - Page NOT Found', 'travelify' ); ?></a></h1>
+		</header>
+		<div class="entry-content clearfix" >
+			<p><?php _e( 'It seems we can\'t find what you\'re looking for.', 'travelify' ); ?></p>
+			<h3><?php _e( 'This might be because:', 'travelify' ); ?></h3>
+			<ul>
+				<li><?php _e( 'You have typed the web address incorrectly', 'travelify' ); ?></li>
+				<li><?php _e( 'The page you were looking for may have been moved, updated or deleted.', 'travelify' ); ?></li>
+			</ul>
+			<h3><?php _e( 'Please try the following:', 'travelify' ); ?></h3>
+			<ul>
+				<li><?php _e( 'Check for a mis-typed URL error', 'travelify' ); ?></li>
+				<li><?php _e( 'Press the refresh button on your browser.', 'travelify' ); ?></li>
+				<li><?php _e( 'Go back to', 'travelify' ); ?> <a href="<?php echo home_url() ?>/" title="<?php bloginfo( 'name' ) ?>" rel="home"><?php _e( 'Homepage', 'travelify' ); ?></a></li>
+			</ul>
+		</div><!-- .entry-content -->
+	</div><!-- #content -->
 
 <?php get_footer(); ?>

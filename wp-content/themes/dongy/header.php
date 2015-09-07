@@ -21,7 +21,6 @@
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/x-icon" />
 	<script type='text/javascript' src='https://cdn1.colorlib.com/travelify/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
 	<?php wp_head(); ?>
-
 </head>
 
 <body <?php body_class(); ?>>
@@ -43,7 +42,7 @@
 						</div><!-- .social-icons -->					
 					</section><!-- .hgroup-right -->
 						<hgroup id="site-logo" class="clearfix">
-							<img title="Twitter" alt="Twitter" src="<?php echo get_template_directory_uri(); ?>/images/logo2.jpg">
+							<a href="<?php echo site_url(); ?>"><img title="Twitter" alt="Twitter" src="<?php echo get_template_directory_uri(); ?>/images/logo2.jpg"></a>
 						</hgroup><!-- #site-logo -->
 				</div><!-- .hgroup-wrap -->
 			</div><!-- .container -->
@@ -75,7 +74,7 @@
 			if( is_home() || is_front_page() ) {
 			?>
 				<section class="featured-slider">
-				   <div class="slider-cycle" style="width: 100%; height: 263px;">
+				   <div class="slider-cycle" style="width: 100%; height: 293px;">
 				      <div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
 				         <figure>
 				         	<a href="https://colorlib.com/travelify/layout-test/" title="Content Layout Preview">
@@ -83,7 +82,7 @@
 					         	class="pngfix wp-post-image" alt="Content Layout Preview" title="Content Layout Preview">				         	
 					        </a>
 				     	</figure>
-			         	<article class="featured-text">
+			         	<article class="featured-text" style="display:none">
 				            <div class="featured-title">
 				            	<a href="https://colorlib.com/travelify/layout-test/" title="Content Layout Preview">Thuốc Việt Nam</a>
 				            </div>

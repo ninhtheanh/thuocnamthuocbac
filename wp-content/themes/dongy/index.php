@@ -22,46 +22,46 @@ get_header(); ?>
 				<div class="col-3-full">
 					<div class="featured_block-1">							
 						<div class="featured_block_text">							
-							<p>
+							<h3>
 								<a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/" title="Trĩ Hỗn Hợp">
 									Trĩ Hỗn Hợp								</a>
-							</p>
+							</h3>
 							<p>
 								Bệnh trĩ hỗn hợp là một trong những bệnh lý ở vùng hậu môn, có thể xuất hiện ở cả nam và nữ....							</p>
-							<a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/">Chi tiết</a>
+							<div><a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/">Chi tiết</a></div>
 						</div>
 					</div>
 				</div>
 				<div class="col-3-full">
 					<div class="featured_block-2">							
 						<div class="featured_block_text">							
-							<p>
+							<h3>
 								<a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/" title="Trĩ Hỗn Hợp">
 									Trĩ Hỗn Hợp								</a>
-							</p>
+							</h3>
 							<p>
 								Bệnh trĩ hỗn hợp là một trong những bệnh lý ở vùng hậu môn, có thể xuất hiện ở cả nam và nữ....							</p>
-							<a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/">Chi tiết</a>
+							<div><a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/">Chi tiết</a></div>
 						</div>
 					</div>
 				</div>
 				<div class="col-3-full last">
 					<div class="featured_block-3">							
 						<div class="featured_block_text">							
-							<p>
+							<h3>
 								<a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/" title="Trĩ Hỗn Hợp">
 									Trĩ Hỗn Hợp								</a>
-							</p>
+							</h3>
 							<p>
 								Bệnh trĩ hỗn hợp là một trong những bệnh lý ở vùng hậu môn, có thể xuất hiện ở cả nam và nữ....							</p>
-							<a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/">Chi tiết</a>
+							<div><a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/">Chi tiết</a></div>
 						</div>
 					</div>
 				</div>						
 			</div><!-- .entry-content -->
 		</div>
 
-		<div class="ta-row">
+		<div class="ta-row" style="display:block">
 			<header class="entry-header">							
 				<div class="heading_title">		 
 					<h3>Bệnh Trĩ</h3>		
@@ -76,10 +76,14 @@ get_header(); ?>
 				// The Query
 				$the_query = new WP_Query( $args );
 				if ( $the_query->have_posts() ) {
+					$i = 0;					
 					while ( $the_query->have_posts() ) {
-						$the_query->the_post();								
+						$the_query->the_post();
+						$css_last = "";
+						if($i == $the_query->post_count - 1)
+							$css_last = "last";
 			?>
-			<div class="col-3">
+			<div class="col-3 <?php echo $css_last; ?>">
 				<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
 					<div class="circular" style="background: url(http://localhost:8080/Wordpress/thuocnamthuocbac/wp-content/uploads/2015/09/tri1.jpg) center no-repeat;">
 						<img width="160" align="center" src="http://localhost:8080/Wordpress/thuocnamthuocbac/wp-content/uploads/2015/09/tri1.jpg" border="0" title="<?php echo the_title( '', '', false ); ?>">
@@ -96,6 +100,7 @@ get_header(); ?>
 				<p><a href="<?php echo get_permalink(); ?>">Chi tiết</a></p>
 			</div>
 			<?php			
+						$i++;
 					}
 				} else {
 					// no posts found
@@ -107,13 +112,14 @@ get_header(); ?>
 			<div class="featured_block">
 				<div class="featured_block_inner">
 					<div class="featured_block_text">
-						<p><span style="font-family: Satisfy; font-size: 32px; color: #fff774;">Have a Question?</span></p>
-						<p><span style="font-family: lato; font-size: 52px; line-height: 36px; font-weight: 900; color: #ffffff;">Chat with Us!</span></p>
-						<p><a style="font-family: lato; font-size: 20px; font-weight: 300; color: #ffffff;" href="http://medicine-plus.cmsmasters.net/contacts/">connect with our support manager</a></p>
+						<p><span style="font-family: Satisfy; font-size: 32px; color: #fff774;">Nếu Bạn Có Bất Kỳ Câu Hỏi Nào?</span></p>
+						<p><span style="font-family: lato; font-size: 52px; line-height: 36px; font-weight: 900; color: #ffffff;">Hảy Liên Hệ Với Chúng Tôi!</span></p>
+						<p><a style="font-family: lato; font-size: 20px; font-weight: 300; color: #ffffff;" href="<?php echo get_page_link(34); ?>">Liên Hệ Với Thầy Thuốc</a></p>
 					</div>
 				</div>
 			</div>
-		</div>		
+		</div>
+
 	</div><!-- #container -->
 </div><!-- #main-content -->
 
