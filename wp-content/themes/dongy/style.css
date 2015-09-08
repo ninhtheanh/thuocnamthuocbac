@@ -2251,3 +2251,21 @@ div.wpcf7-response-output {
      color: #3c763d;
 }
 /*Styling Contact Form 7 Validation With CSS And Border - End*/
+
+.menu-footer ul {text-transform:uppercase; 
+     display: inline; 
+     list-style-type: none; 
+     list-style-image:none; 
+     margin:0; 
+ }
+.menu-footer li {
+     display: inline; 
+     padding: 0px 6px 0px 3px; 
+     border-right: 1px solid;
+ }
+ .menu-footer li:last-child {
+	border-right: 0px;
+}
+ .menu-footer li a{
+	text-transform: none;
+ }

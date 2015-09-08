@@ -12,10 +12,14 @@
 	<footer id="footerarea" class="clearfix">
 		<div id="site-generator">
 				<div class="container">
-					<div class="copyright">
-						Copyright © 2015 <a href="https://colorlib.com/travelify/" title="Travelify"><span>Travelify</span></a>. Theme by <a href="http://colorlib.com/wp/travelify/" target="_blank" title="Colorlib"><span>Colorlib</span></a> Powered by <a href="http://wordpress.org" target="_blank" title="WordPress"><span>WordPress</span></a>
+					<div class="copyright">						
+						© 2014 Copyright by TA. All rights reserved.
 					</div><!-- .copyright -->
-					<div class="footer-right"><a href="https://colorlib.com/travelify/">Travelify</a> - Multipurpose WordPress Theme</div>
+					<div class="footer-right">
+												
+						<?php wp_nav_menu( array( 'container_class' => 'menu-footer', 'theme_location' => 'footer-menu' ) ); ?>
+						
+					</div>
 					<div style="clear:both;"></div>
 				</div><!-- .container -->
 		</div><!-- .site-info -->
