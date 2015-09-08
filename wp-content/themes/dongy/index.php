@@ -18,6 +18,14 @@ get_header(); ?>
 <div id="main" class="container clearfix">
 	<div id="container">
 		<div class="ta-row">
+			<div class="home-search-box">
+				<form id="headersearchform" method="get" action="<?php bloginfo('siteurl')?>/">
+					<input type="text" name="s" id="s" class="textbox" value="Tìm Kiếm" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
+					<input id="btnSearch" type="submit" name="submit" value="<?php _e('Go'); ?>" />
+				</form>
+			</div>
+		</div>
+		<div class="ta-row">
 			<div class="ta-row-inner clearfix">						
 				<div class="col-3-full">
 					<div class="featured_block-1">							

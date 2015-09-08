@@ -303,7 +303,7 @@ add_filter( 'walker_nav_menu_start_el', 'twentyfifteen_nav_description', 10, 4 )
 function twentyfifteen_search_form_modify( $html ) {
 	return str_replace( 'class="search-submit"', 'class="search-submit screen-reader-text"', $html );
 }
-add_filter( 'get_search_form', 'twentyfifteen_search_form_modify' );
+//add_filter( 'get_search_form', 'twentyfifteen_search_form_modify' );
 
 /**
  * Implement the Custom Header feature.
@@ -376,9 +376,12 @@ if ( ! function_exists( 'travelify_header_title' ) ) :
  * Show the title in header
  */
 function travelify_header_title() {
-	if( is_archive() ) {
+	if( is_category() ) {
 		$travelify_header_title = single_cat_title( '', FALSE );
 	}
+	elseif( is_archive() ) {
+		$travelify_header_title = get_the_archive_title();
+	}	
 	elseif( is_search() ) {
 		$travelify_header_title = __( 'Search Results', 'travelify' );
 	}

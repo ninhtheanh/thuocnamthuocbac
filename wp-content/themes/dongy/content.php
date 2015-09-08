@@ -10,7 +10,7 @@
  */
 ?>
 
-<section id="post-<?php the_ID(); ?>" <?php post_class(); ?>> content.php
+<section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<article>
 		<header class="entry-header">
 			<?php

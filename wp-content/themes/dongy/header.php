@@ -36,7 +36,7 @@
 								   <a href="http://facebook.com/" target="_blank"><img title="Facebook" alt="Facebook" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/facebook.png"></a>
 								   <a href="https://plus.google.com/" target="_blank"><img title="Google Plus" alt="Google Plus" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/gplus.png"></a>
 								   <a href="http://www.linkedin.com/" target="_blank"><img title="LinkedIn" alt="LinkedIn" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/linkedin.png"></a>								   
-								   <a href="mailto:your@email.com" target="_blank"><img title="Email" alt="Email" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/email.png"></a>
+								   <a href="mailto:ninhtheanh@gmail.com" target="_blank"><img title="Email" alt="Email" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/email.png"></a>
 							   </li>
 							</ul>
 						</div><!-- .social-icons -->					
@@ -74,7 +74,7 @@
 			if( is_home() || is_front_page() ) {
 			?>
 				<section class="featured-slider">
-				   <div class="slider-cycle" style="width: 100%; height: 293px;">
+				   <div class="slider-cycle" style="width: 100%; height: 263px;">
 				      <div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
 				         <figure>
 				         	<a href="https://colorlib.com/travelify/layout-test/" title="Content Layout Preview">

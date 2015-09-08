@@ -2269,3 +2269,16 @@ div.wpcf7-response-output {
  .menu-footer li a{
 	text-transform: none;
  }
+ .home-search-box{
+ 	float: right;
+ 	display: block;
+ 	text-align: right;
+ 	width: 300px;
+ 	height: 50px;
+ }
+#headersearchform .textbox {
+    color:#000;
+    cursor: text;
+    text-indent: 10px;
+    width: 200px;
+}

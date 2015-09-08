@@ -13,7 +13,7 @@
 		<div id="site-generator">
 				<div class="container">
 					<div class="copyright">						
-						© 2014 Copyright by TA. All rights reserved.
+						© 2015 Copyright by TA. All rights reserved.
 					</div><!-- .copyright -->
 					<div class="footer-right">
 												
