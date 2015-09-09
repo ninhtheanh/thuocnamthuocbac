@@ -5,7 +5,7 @@
  * Learn more: {@link https://codex.wordpress.org/Template_Hierarchy}
  *
  * @package WordPress
- * @subpackage Twenty_Fifteen
+ * @subpackage Dong_Y
  * @since Dong Y 1.0
  */
 ?>

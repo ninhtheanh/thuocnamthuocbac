@@ -3,7 +3,7 @@
  * The template for displaying image attachments
  *
  * @package WordPress
- * @subpackage Twenty_Fifteen
+ * @subpackage Dong_Y
  * @since Dong Y 1.0
  */
 

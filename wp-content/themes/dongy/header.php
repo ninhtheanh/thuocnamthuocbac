@@ -5,7 +5,7 @@
  * Displays all of the head element and everything up until the "site-content" div.
  *
  * @package WordPress
- * @subpackage Twenty_Fifteen
+ * @subpackage Dong_Y
  * @since Dong Y 1.0
  */
 ?><!DOCTYPE html>
