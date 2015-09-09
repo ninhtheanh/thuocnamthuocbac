@@ -2282,3 +2282,25 @@ div.wpcf7-response-output {
     text-indent: 10px;
     width: 200px;
 }
+
+.posted-on-title {
+	float: left;
+	position: relative;
+    height: 23px;    
+}
+.social {
+	float: left;
+	position: relative;
+    height: 23px;       
+    line-height: 22px;
+}
+.end-post-box-contact {
+	border: 2px dotted #57ad68;
+	padding: 10px;
+	color: #000;
+	background-color: #ffffff;	
+	width: 98%;
+	margin: 5px 0px 5px 0px;
+}
+
+

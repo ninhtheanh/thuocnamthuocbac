@@ -60,6 +60,59 @@
 	});
 </script>
 <!-- Slider end -->
+<!-- Facebook share start -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '841394139216651',
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+  };
 
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     //js.src = "//connect.facebook.net/en_US/sdk.js";
+     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=841394139216651&version=v2.4";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+	function share_feed()
+	{
+	    var share_link = $("meta[property='og:url']").attr("content");
+	    var picture = $("meta[property='og:image']").attr("content");
+	    var name = $("meta[property='og:title']").attr("content");
+	    var caption = '';
+	    var description = $("meta[property='og:description']").attr("content");
+
+	    var obj = {
+	        method: 'share',
+	        link: share_link,
+	        picture: picture,
+	        name: name,
+	        caption: caption,
+	        description: description,
+	        actions: [{ name: name, link: share_link }],
+	        href: 'http://yougapi.com',
+	    };
+	    FB.ui(obj);
+	}
+</script>
+
+<p><a href="javascript:" onclick="fb_display_share_dialog711891220140413707023()">Share Dialog</a>
+		<script>
+		function fb_display_share_dialog711891220140413707023() {
+			FB.ui({ 
+				method: 'share',
+     			to: '',
+     			href: 'http://yougapi.com',
+			}, function(response){} );
+		}
+		</script>
+
+<!-- Facebook share end -->
+<input type="button" value="Share" onclick="share_feed()">
 </body>
 </html>

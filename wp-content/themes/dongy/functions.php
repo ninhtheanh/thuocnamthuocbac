@@ -330,7 +330,8 @@ if ( ! function_exists( 'dongy_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function dongy_posted_on() {
+function dongy_posted_on($categories) {
+	echo '<div class="posted-on-title">';
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -344,7 +345,19 @@ function dongy_posted_on() {
 	$byline = sprintf(
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
-	echo '<span class="byline"> ' . $byline . '</span><span class="posted-on">' . '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>' . '</span>';
+	//echo '<span class="byline"> ' . $byline . '</span>';
+	echo '<span class="posted-on">' . '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>' . '</span>';	
+	
+	if ( ! empty( $categories ) ) {
+		echo '<span class="category">';
+	    foreach( $categories as $category ) {
+	        $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+	    }
+	    echo trim( $output, $separator );
+	    echo '</span>';
+	}
+
+	echo '</div>';
 }
 endif;
 //
@@ -493,3 +506,205 @@ function remove_admin_bar() {
 	}
 }
 add_action( 'wp_footer', 'wp_admin_bar_render', 1000 );
+
+if ( ! function_exists( 'twentyfifteen_post_thumbnail' ) ) :
+/**
+ * Display an optional post thumbnail.
+ *
+ * Wraps the post thumbnail in an anchor element on index views, or a div
+ * element when on single views.
+ *
+ * @since Twenty Fifteen 1.0
+ */
+function twentyfifteen_post_thumbnail() {
+	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+		return;
+	}
+
+	if ( is_singular() ) :
+	?>
+
+	<div class="post-thumbnail">
+		<?php the_post_thumbnail(); ?>
+	</div><!-- .post-thumbnail -->
+
+	<?php else : ?>
+
+	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+		<?php
+			the_post_thumbnail( 'post-thumbnail', array( 'alt' => get_the_title() ) );
+		?>
+	</a>
+
+	<?php endif; // End is_singular()
+}
+endif;
+
+if ( ! function_exists( 'twentyfifteen_entry_meta' ) ) :
+/**
+ * Prints HTML with meta information for the categories, tags.
+ *
+ * @since Twenty Fifteen 1.0
+ */
+function twentyfifteen_entry_meta() {
+	if ( is_sticky() && is_home() && ! is_paged() ) {
+		printf( '<span class="sticky-post">%s</span>', __( 'Featured', 'twentyfifteen' ) );
+	}
+
+	$format = get_post_format();
+	if ( current_theme_supports( 'post-formats', $format ) ) {
+		printf( '<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',
+			sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'twentyfifteen' ) ),
+			esc_url( get_post_format_link( $format ) ),
+			get_post_format_string( $format )
+		);
+	}
+
+	if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		}
+
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			get_the_date(),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			get_the_modified_date()
+		);
+
+		printf( '<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
+			_x( 'Posted on', 'Used before publish date.', 'twentyfifteen' ),
+			esc_url( get_permalink() ),
+			$time_string
+		);
+	}
+
+	if ( 'post' == get_post_type() ) {
+		if ( is_singular() || is_multi_author() ) {
+			printf( '<span class="byline"><span class="author vcard"><span class="screen-reader-text">%1$s </span><a class="url fn n" href="%2$s">%3$s</a></span></span>',
+				_x( 'Author', 'Used before post author name.', 'twentyfifteen' ),
+				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+				get_the_author()
+			);
+		}
+
+		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentyfifteen' ) );
+		if ( $categories_list && twentyfifteen_categorized_blog() ) {
+			printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+				_x( 'Categories', 'Used before category names.', 'twentyfifteen' ),
+				$categories_list
+			);
+		}
+
+		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'twentyfifteen' ) );
+		if ( $tags_list ) {
+			printf( '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+				_x( 'Tags', 'Used before tag names.', 'twentyfifteen' ),
+				$tags_list
+			);
+		}
+	}
+
+	if ( is_attachment() && wp_attachment_is_image() ) {
+		// Retrieve attachment metadata.
+		$metadata = wp_get_attachment_metadata();
+
+		printf( '<span class="full-size-link"><span class="screen-reader-text">%1$s </span><a href="%2$s">%3$s &times; %4$s</a></span>',
+			_x( 'Full size', 'Used before full size attachment link.', 'twentyfifteen' ),
+			esc_url( wp_get_attachment_url() ),
+			$metadata['width'],
+			$metadata['height']
+		);
+	}
+
+	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		echo '<span class="comments-link">';
+		/* translators: %s: post title */
+		comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'twentyfifteen' ), get_the_title() ) );
+		echo '</span>';
+	}
+}
+endif;
+
+function twentyfifteen_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'twentyfifteen_categories' ) ) ) {
+		// Create an array of all the categories that are attached to posts.
+		$all_the_cool_cats = get_categories( array(
+			'fields'     => 'ids',
+			'hide_empty' => 1,
+
+			// We only need to know if there is more than one category.
+			'number'     => 2,
+		) );
+
+		// Count the number of categories that are attached to the posts.
+		$all_the_cool_cats = count( $all_the_cool_cats );
+
+		set_transient( 'twentyfifteen_categories', $all_the_cool_cats );
+	}
+
+	if ( $all_the_cool_cats > 1 ) {
+		// This blog has more than 1 category so twentyfifteen_categorized_blog should return true.
+		return true;
+	} else {
+		// This blog has only 1 category so twentyfifteen_categorized_blog should return false.
+		return false;
+	}
+}
+
+if ( ! function_exists( 'dongy_sharing' ) ) :
+function dongy_sharing($url) {
+	$content .= '<div id="fb-root"></div>
+				<script>(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) return;
+				  js = d.createElement(s); js.id = id;
+				  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=841394139216651";
+				  fjs.parentNode.insertBefore(js, fjs);
+				}(document, \'script\', \'facebook-jssdk\'));</script>';	
+	if(is_single()) {
+		$content .= '<div class="fb-send" data-href="' . $url . '"></div>';
+	}
+	$content .= '<div class="fb-share-button" data-href="' . $url . '"></div>';
+	$content .= '<div class="fb-like" data-href="' . $url . '" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>';	
+	echo '<div class="social"> ' . $content . ' </div>';	
+}
+endif;
+function contact_information(){
+	$str = '<div class="end-post-box-contact">
+				<p><strong>Mọi chi tiết xin liên hệ:</strong></p>
+				<p>ĐC:&nbsp;59/33 Mã Lò, P. Binh Trị Đông A, Q. Bình Tân<br>
+				ĐT:&nbsp;098.368.7979</p>
+				<p>Người bệnh hoặc người nhà bệnh nhân có thể điện thoại nói về bệnh tình và được ThuocNamThuocBac&nbsp;tư vấn, sau đó Nhà thuốc gửi thuốc qua chuyển phát nhanh ( hoặc ô tô) đến cho khách hàng.</p>
+			</div>';
+	return $str;
+}
+function facebook_comments(){
+	return '<div class="fb-comments" data-href="' . get_permalink() . '" data-numposts="5"></div>';
+}
+function end_post_contact( $content ){
+	$str = contact_information();
+	$str .= facebook_comments();
+	if ( is_singular('post') ) {
+		$content .= $str;	
+	}
+	return $content;
+}
+function end_post_shortcode($attr) {
+   extract(shortcode_atts(array(
+       'contact_info' => 0,
+       'fb_comments' => 0
+   ), $attr));
+	$str = "";
+	if($contact_info == 1){
+		$str .= contact_information();	
+	}
+	if($fb_comments == 1){
+		$str .= facebook_comments();
+	}
+	return $str;
+}
+add_shortcode('thongtinlienhe', 'end_post_shortcode');
+add_filter( 'the_content', 'end_post_contact' );

@@ -19,7 +19,7 @@
 	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
 	<![endif]-->
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/x-icon" />
-	<script type='text/javascript' src='https://cdn1.colorlib.com/travelify/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+	<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/jquery-1.11.3.js?ver=1.0.0'></script>	
 	<?php wp_head(); ?>
 </head>
 
