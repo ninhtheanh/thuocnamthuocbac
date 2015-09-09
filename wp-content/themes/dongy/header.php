@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
+ * @since Dong Y 1.0
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -100,15 +100,15 @@
 			<?php	
 	   		}
 			else {
-				if( ( '' != travelify_header_title() ) || function_exists( 'bcn_display_list' ) ) {
+				if( ( '' != dongy_header_title() ) || function_exists( 'bcn_display_list' ) ) {
 			?>
 				<div class="page-title-wrap">
 		    		<div class="container clearfix">
 		    			<?php
-			    		if( function_exists( 'travelify_breadcrumb' ) )
-							travelify_breadcrumb();
+			    		if( function_exists( 'dongy_breadcrumb' ) )
+							dongy_breadcrumb();
 						?>
-					   <h3 class="page-title"><?php echo travelify_header_title(); ?></h3><!-- .page-title -->
+					   <h3 class="page-title"><?php echo dongy_header_title(); ?></h3><!-- .page-title -->
 					</div>
 		    	</div>
 		   <?php		   			

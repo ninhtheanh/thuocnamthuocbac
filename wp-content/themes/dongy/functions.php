@@ -28,20 +28,20 @@
 /**
  * Set the content width based on the theme's design and stylesheet.
  *
- * @since Twenty Fifteen 1.0
+ * @since Dong Y 1.0
  */
 if ( ! isset( $content_width ) ) {
 	$content_width = 660;
 }
 
 /**
- * Twenty Fifteen only works in WordPress 4.1 or later.
+ * Dong Y only works in WordPress 4.1 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.1-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-if ( ! function_exists( 'twentyfifteen_setup' ) ) :
+if ( ! function_exists( 'dongy_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -49,17 +49,17 @@ if ( ! function_exists( 'twentyfifteen_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  *
- * @since Twenty Fifteen 1.0
+ * @since Dong Y 1.0
  */
-function twentyfifteen_setup() {
+function dongy_setup() {
 
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on twentyfifteen, use a find and replace
-	 * to change 'twentyfifteen' to the name of your theme in all the template files
+	 * If you're building a theme based on dongy, use a find and replace
+	 * to change 'dongy' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'twentyfifteen', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'dongy', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -82,9 +82,9 @@ function twentyfifteen_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu',      'twentyfifteen' ),
-		'footer-menu'  => __( 'Footer Menu', 'twentyfifteen' ),
-		'social'  => __( 'Social Links Menu', 'twentyfifteen' ),
+		'primary' => __( 'Primary Menu',      'dongy' ),
+		'footer-menu'  => __( 'Footer Menu', 'dongy' ),
+		'social'  => __( 'Social Links Menu', 'dongy' ),
 	) );
 
 	/*
@@ -104,11 +104,11 @@ function twentyfifteen_setup() {
 		'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
 	) );
 
-	//$color_scheme  = twentyfifteen_get_color_scheme();
+	//$color_scheme  = dongy_get_color_scheme();
 	//$default_color = trim( $color_scheme[0], '#' );
 
 	// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'twentyfifteen_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'dongy_custom_background_args', array(
 		'default-color' => '#d3d3d3',
 		'default-image' => get_template_directory_uri() . '/images/background.png',
 	) ) );
@@ -117,40 +117,40 @@ function twentyfifteen_setup() {
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
-	//add_editor_style( array( 'css/editor-style.css', 'genericons/genericons.css', twentyfifteen_fonts_url() ) );
+	//add_editor_style( array( 'css/editor-style.css', 'genericons/genericons.css', dongy_fonts_url() ) );
 }
-endif; // twentyfifteen_setup
-add_action( 'after_setup_theme', 'twentyfifteen_setup' );
+endif; // dongy_setup
+add_action( 'after_setup_theme', 'dongy_setup' );
 
 /**
  * Register widget area.
  *
- * @since Twenty Fifteen 1.0
+ * @since Dong Y 1.0
  *
  * @link https://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function twentyfifteen_widgets_init() {
+function dongy_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Widget Area', 'twentyfifteen' ),
+		'name'          => __( 'Widget Area', 'dongy' ),
 		'id'            => 'sidebar-1',
-		'description'   => __( 'Add widgets here to appear in your sidebar.', 'twentyfifteen' ),
+		'description'   => __( 'Add widgets here to appear in your sidebar.', 'dongy' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'twentyfifteen_widgets_init' );
+add_action( 'widgets_init', 'dongy_widgets_init' );
 
-if ( ! function_exists( 'twentyfifteen_fonts_url' ) ) :
+if ( ! function_exists( 'dongy_fonts_url' ) ) :
 /**
- * Register Google fonts for Twenty Fifteen.
+ * Register Google fonts for Dong Y.
  *
- * @since Twenty Fifteen 1.0
+ * @since Dong Y 1.0
  *
  * @return string Google fonts URL for the theme.
  */
-function twentyfifteen_fonts_url() {
+function dongy_fonts_url() {
 	$fonts_url = '';
 	$fonts     = array();
 	$subsets   = 'latin,latin-ext';
@@ -159,7 +159,7 @@ function twentyfifteen_fonts_url() {
 	 * Translators: If there are characters in your language that are not supported
 	 * by Noto Sans, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Noto Sans font: on or off', 'twentyfifteen' ) ) {
+	if ( 'off' !== _x( 'on', 'Noto Sans font: on or off', 'dongy' ) ) {
 		$fonts[] = 'Noto Sans:400italic,700italic,400,700';
 	}
 
@@ -167,7 +167,7 @@ function twentyfifteen_fonts_url() {
 	 * Translators: If there are characters in your language that are not supported
 	 * by Noto Serif, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Noto Serif font: on or off', 'twentyfifteen' ) ) {
+	if ( 'off' !== _x( 'on', 'Noto Serif font: on or off', 'dongy' ) ) {
 		$fonts[] = 'Noto Serif:400italic,700italic,400,700';
 	}
 
@@ -175,7 +175,7 @@ function twentyfifteen_fonts_url() {
 	 * Translators: If there are characters in your language that are not supported
 	 * by Inconsolata, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'twentyfifteen' ) ) {
+	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'dongy' ) ) {
 		$fonts[] = 'Inconsolata:400,700';
 	}
 
@@ -183,7 +183,7 @@ function twentyfifteen_fonts_url() {
 	 * Translators: To add an additional character subset specific to your language,
 	 * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
 	 */
-	$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'twentyfifteen' );
+	$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'dongy' );
 
 	if ( 'cyrillic' == $subset ) {
 		$subsets .= ',cyrillic,cyrillic-ext';
@@ -211,120 +211,25 @@ endif;
  *
  * Adds a `js` class to the root `<html>` element when JavaScript is detected.
  *
- * @since Twenty Fifteen 1.1
+ * @since Dong Y 1.1
  */
-function twentyfifteen_javascript_detection() {
+function dongy_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
-//add_action( 'wp_head', 'twentyfifteen_javascript_detection', 0 );
+//add_action( 'wp_head', 'dongy_javascript_detection', 0 );
 
 /**
  * Enqueue scripts and styles.
  *
- * @since Twenty Fifteen 1.0
+ * @since Dong Y 1.0
  */
-function twentyfifteen_scripts() {
+function dongy_scripts() {
 	
 	// Load our main stylesheet.
-	wp_enqueue_style( 'twentyfifteen-style', get_stylesheet_uri() );	
+	wp_enqueue_style( 'dongy-style', get_stylesheet_uri() );	
 }
-add_action( 'wp_enqueue_scripts', 'twentyfifteen_scripts' );
+add_action( 'wp_enqueue_scripts', 'dongy_scripts' );
 
-/**
- * Add featured image as background image to post navigation elements.
- *
- * @since Twenty Fifteen 1.0
- *
- * @see wp_add_inline_style()
- */
-function twentyfifteen_post_nav_background() {
-	if ( ! is_single() ) {
-		return;
-	}
-
-	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-	$next     = get_adjacent_post( false, '', false );
-	$css      = '';
-
-	if ( is_attachment() && 'attachment' == $previous->post_type ) {
-		return;
-	}
-
-	if ( $previous &&  has_post_thumbnail( $previous->ID ) ) {
-		$prevthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $previous->ID ), 'post-thumbnail' );
-		$css .= '
-			.post-navigation .nav-previous { background-image: url(' . esc_url( $prevthumb[0] ) . '); }
-			.post-navigation .nav-previous .post-title, .post-navigation .nav-previous a:hover .post-title, .post-navigation .nav-previous .meta-nav { color: #fff; }
-			.post-navigation .nav-previous a:before { background-color: rgba(0, 0, 0, 0.4); }
-		';
-	}
-
-	if ( $next && has_post_thumbnail( $next->ID ) ) {
-		$nextthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'post-thumbnail' );
-		$css .= '
-			.post-navigation .nav-next { background-image: url(' . esc_url( $nextthumb[0] ) . '); border-top: 0; }
-			.post-navigation .nav-next .post-title, .post-navigation .nav-next a:hover .post-title, .post-navigation .nav-next .meta-nav { color: #fff; }
-			.post-navigation .nav-next a:before { background-color: rgba(0, 0, 0, 0.4); }
-		';
-	}
-
-	wp_add_inline_style( 'twentyfifteen-style', $css );
-}
-add_action( 'wp_enqueue_scripts', 'twentyfifteen_post_nav_background' );
-
-/**
- * Display descriptions in main navigation.
- *
- * @since Twenty Fifteen 1.0
- *
- * @param string  $item_output The menu item output.
- * @param WP_Post $item        Menu item object.
- * @param int     $depth       Depth of the menu.
- * @param array   $args        wp_nav_menu() arguments.
- * @return string Menu item with possible description.
- */
-function twentyfifteen_nav_description( $item_output, $item, $depth, $args ) {
-	if ( 'primary' == $args->theme_location && $item->description ) {
-		$item_output = str_replace( $args->link_after . '</a>', '<div class="menu-item-description">' . $item->description . '</div>' . $args->link_after . '</a>', $item_output );
-	}
-
-	return $item_output;
-}
-add_filter( 'walker_nav_menu_start_el', 'twentyfifteen_nav_description', 10, 4 );
-
-/**
- * Add a `screen-reader-text` class to the search form's submit button.
- *
- * @since Twenty Fifteen 1.0
- *
- * @param string $html Search form HTML.
- * @return string Modified search form HTML.
- */
-function twentyfifteen_search_form_modify( $html ) {
-	return str_replace( 'class="search-submit"', 'class="search-submit screen-reader-text"', $html );
-}
-//add_filter( 'get_search_form', 'twentyfifteen_search_form_modify' );
-
-/**
- * Implement the Custom Header feature.
- *
- * @since Twenty Fifteen 1.0
- */
-//require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- *
- * @since Twenty Fifteen 1.0
- */
-//require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Customizer additions.
- *
- * @since Twenty Fifteen 1.0
- */
-//require get_template_directory() . '/inc/customizer.php';
 
 if ( ! function_exists( 'dongy_posted_on' ) ) :
 /**
@@ -363,14 +268,14 @@ endif;
 //
 /****************************************************************************************/
 
-if ( ! function_exists( 'travelify_breadcrumb' ) ) :
+if ( ! function_exists( 'dongy_breadcrumb' ) ) :
 /**
  * Display breadcrumb on header.
  *
  * If the page is home or front page, slider is displayed.
  * In other pages, breadcrumb will display if breadcrumb NavXT plugin exists.
  */
-function travelify_breadcrumb() {
+function dongy_breadcrumb() {
 	if( function_exists( 'bcn_display_list' ) ) {
 		echo '<div class="breadcrumb">
 		<ul>';
@@ -384,87 +289,29 @@ endif;
 
 /****************************************************************************************/
 
-if ( ! function_exists( 'travelify_header_title' ) ) :
+if ( ! function_exists( 'dongy_header_title' ) ) :
 /**
  * Show the title in header
  */
-function travelify_header_title() {
+function dongy_header_title() {
 	if( is_category() ) {
-		$travelify_header_title = single_cat_title( '', FALSE );
+		$dongy_header_title = single_cat_title( '', FALSE );
 	}
 	elseif( is_archive() ) {
-		$travelify_header_title = get_the_archive_title();
+		$dongy_header_title = get_the_archive_title();
 	}	
 	elseif( is_search() ) {
-		$travelify_header_title = __( 'Search Results', 'travelify' );
+		$dongy_header_title = __( 'Search Results', 'travelify' );
 	}
 	elseif( is_page_template()  ) {
-		$travelify_header_title = get_the_title();
+		$dongy_header_title = get_the_title();
 	}
 	else {
-		$travelify_header_title = '';
+		$dongy_header_title = '';
 	}
 
-	return $travelify_header_title;
+	return $dongy_header_title;
 
-}
-endif;
-
-if ( ! function_exists( 'travelify_featured_post_slider' ) ) :
-/**
- * display featured post slider
- *
- */
-function travelify_featured_post_slider() {
-	global $post;
-
-	global $travelify_theme_options_settings;
-  	$options = $travelify_theme_options_settings;
-
-  $travelify_featured_post_slider = '';
-	if (!empty( $options[ 'featured_post_slider' ] ) ) {
-		$travelify_featured_post_slider .= '
-		<section class="featured-slider"><div class="slider-cycle">';
-			$get_featured_posts = new WP_Query( array(
-				'posts_per_page' 		    => $options[ 'slider_quantity' ],
-				'post_type'					    => array( 'post', 'page' ),
-				'post__in'		 			    => $options[ 'featured_post_slider' ],
-				'orderby' 		 			    => 'post__in',
-				'suppress_filters' 	    => false,
-				'ignore_sticky_posts' 	=> 1 						// ignore sticky posts
-			));
-			$i=0; while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
-				$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
-				$excerpt = get_the_excerpt();
-				if ( 1 == $i ) { $classes = "slides displayblock"; } else { $classes = "slides displaynone"; }
-				$travelify_featured_post_slider .= '
-				<div class="'.$classes.'">';
-						if( has_post_thumbnail() ) {
-
-							$travelify_featured_post_slider .= '<figure><a href="' . get_permalink() . '" title="'.the_title('','',false).'">';
-
-							$travelify_featured_post_slider .= get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) ).'</a></figure>';
-						}
-						if( $title_attribute != '' || $excerpt !='' ) {
-						$travelify_featured_post_slider .= '
-							<article class="featured-text">';
-							if( $title_attribute !='' ) {
-									$travelify_featured_post_slider .= '<div class="featured-title"><a href="' . get_permalink() . '" title="'.the_title('','',false).'">'. get_the_title() . '</a></div><!-- .featured-title -->';
-							}
-							if( $excerpt !='' ) {
-								$travelify_featured_post_slider .= '<div class="featured-content">'.$excerpt.'</div><!-- .featured-content -->';
-							}
-						$travelify_featured_post_slider .= '
-							</article><!-- .featured-text -->';
-						}
-				$travelify_featured_post_slider .= '
-				</div><!-- .slides -->';
-			endwhile; wp_reset_query();
-		$travelify_featured_post_slider .= '</div>
-		<nav id="controllers" class="clearfix">
-		</nav><!-- #controllers --></section><!-- .featured-slider -->';
-	}
-	echo $travelify_featured_post_slider;
 }
 endif;
 
@@ -507,16 +354,16 @@ function remove_admin_bar() {
 }
 add_action( 'wp_footer', 'wp_admin_bar_render', 1000 );
 
-if ( ! function_exists( 'twentyfifteen_post_thumbnail' ) ) :
+if ( ! function_exists( 'dongy_post_thumbnail' ) ) :
 /**
  * Display an optional post thumbnail.
  *
  * Wraps the post thumbnail in an anchor element on index views, or a div
  * element when on single views.
  *
- * @since Twenty Fifteen 1.0
+ * @since Dong Y 1.0
  */
-function twentyfifteen_post_thumbnail() {
+function dongy_post_thumbnail() {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
 	}
@@ -540,21 +387,21 @@ function twentyfifteen_post_thumbnail() {
 }
 endif;
 
-if ( ! function_exists( 'twentyfifteen_entry_meta' ) ) :
+if ( ! function_exists( 'dongy_entry_meta' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags.
  *
- * @since Twenty Fifteen 1.0
+ * @since Dong Y 1.0
  */
-function twentyfifteen_entry_meta() {
+function dongy_entry_meta() {
 	if ( is_sticky() && is_home() && ! is_paged() ) {
-		printf( '<span class="sticky-post">%s</span>', __( 'Featured', 'twentyfifteen' ) );
+		printf( '<span class="sticky-post">%s</span>', __( 'Featured', 'dongy' ) );
 	}
 
 	$format = get_post_format();
 	if ( current_theme_supports( 'post-formats', $format ) ) {
 		printf( '<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',
-			sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'twentyfifteen' ) ),
+			sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'dongy' ) ),
 			esc_url( get_post_format_link( $format ) ),
 			get_post_format_string( $format )
 		);
@@ -575,7 +422,7 @@ function twentyfifteen_entry_meta() {
 		);
 
 		printf( '<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
-			_x( 'Posted on', 'Used before publish date.', 'twentyfifteen' ),
+			_x( 'Posted on', 'Used before publish date.', 'dongy' ),
 			esc_url( get_permalink() ),
 			$time_string
 		);
@@ -584,24 +431,24 @@ function twentyfifteen_entry_meta() {
 	if ( 'post' == get_post_type() ) {
 		if ( is_singular() || is_multi_author() ) {
 			printf( '<span class="byline"><span class="author vcard"><span class="screen-reader-text">%1$s </span><a class="url fn n" href="%2$s">%3$s</a></span></span>',
-				_x( 'Author', 'Used before post author name.', 'twentyfifteen' ),
+				_x( 'Author', 'Used before post author name.', 'dongy' ),
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				get_the_author()
 			);
 		}
 
-		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentyfifteen' ) );
-		if ( $categories_list && twentyfifteen_categorized_blog() ) {
+		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'dongy' ) );
+		if ( $categories_list && dongy_categorized_blog() ) {
 			printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-				_x( 'Categories', 'Used before category names.', 'twentyfifteen' ),
+				_x( 'Categories', 'Used before category names.', 'dongy' ),
 				$categories_list
 			);
 		}
 
-		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'twentyfifteen' ) );
+		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'dongy' ) );
 		if ( $tags_list ) {
 			printf( '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-				_x( 'Tags', 'Used before tag names.', 'twentyfifteen' ),
+				_x( 'Tags', 'Used before tag names.', 'dongy' ),
 				$tags_list
 			);
 		}
@@ -612,7 +459,7 @@ function twentyfifteen_entry_meta() {
 		$metadata = wp_get_attachment_metadata();
 
 		printf( '<span class="full-size-link"><span class="screen-reader-text">%1$s </span><a href="%2$s">%3$s &times; %4$s</a></span>',
-			_x( 'Full size', 'Used before full size attachment link.', 'twentyfifteen' ),
+			_x( 'Full size', 'Used before full size attachment link.', 'dongy' ),
 			esc_url( wp_get_attachment_url() ),
 			$metadata['width'],
 			$metadata['height']
@@ -622,14 +469,14 @@ function twentyfifteen_entry_meta() {
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
 		/* translators: %s: post title */
-		comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'twentyfifteen' ), get_the_title() ) );
+		comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'dongy' ), get_the_title() ) );
 		echo '</span>';
 	}
 }
 endif;
 
-function twentyfifteen_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'twentyfifteen_categories' ) ) ) {
+function dongy_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'dongy_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
@@ -642,14 +489,14 @@ function twentyfifteen_categorized_blog() {
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'twentyfifteen_categories', $all_the_cool_cats );
+		set_transient( 'dongy_categories', $all_the_cool_cats );
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so twentyfifteen_categorized_blog should return true.
+		// This blog has more than 1 category so dongy_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so twentyfifteen_categorized_blog should return false.
+		// This blog has only 1 category so dongy_categorized_blog should return false.
 		return false;
 	}
 }
