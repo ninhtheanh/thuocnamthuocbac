@@ -17,7 +17,7 @@ get_header(); ?>
 
 <div id="main" class="container clearfix">
 	<div id="container">
-		<div class="ta-row">
+		<div class="ta-row" style="display:none">
 			<div class="home-search-box">
 				<form id="headersearchform" method="get" action="<?php bloginfo('siteurl')?>/">
 					<input type="text" name="s" id="s" class="textbox" value="Tìm Kiếm" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
@@ -27,7 +27,7 @@ get_header(); ?>
 		</div>
 		<div class="ta-row">
 			<div class="ta-row-inner clearfix">						
-				<div class="col-3-full">
+				<div class="col-3-full dongy-column">
 					<div class="featured_block-1">							
 						<div class="featured_block_text">							
 							<h3>
@@ -35,12 +35,13 @@ get_header(); ?>
 									Trĩ Hỗn Hợp								</a>
 							</h3>
 							<p>
-								Bệnh trĩ hỗn hợp là một trong những bệnh lý ở vùng hậu môn, có thể xuất hiện ở cả nam và nữ....							</p>
+								Bệnh trĩ hỗn hợp là một trong những<br> bệnh lý ở vùng hậu môn, có thể xuất<br> hiện ở cả nam và nữ....							
+							</p>
 							<div><a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/">Chi tiết</a></div>
 						</div>
 					</div>
 				</div>
-				<div class="col-3-full">
+				<div class="col-3-full dongy-column">
 					<div class="featured_block-2">							
 						<div class="featured_block_text">							
 							<h3>
@@ -48,12 +49,13 @@ get_header(); ?>
 									Trĩ Hỗn Hợp								</a>
 							</h3>
 							<p>
-								Bệnh trĩ hỗn hợp là một trong những bệnh lý ở vùng hậu môn, có thể xuất hiện ở cả nam và nữ....							</p>
+								Bệnh trĩ hỗn hợp là một trong những<br> bệnh lý ở vùng hậu môn, có thể xuất<br> hiện ở cả nam và nữ....							
+							</p>
 							<div><a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/">Chi tiết</a></div>
 						</div>
 					</div>
 				</div>
-				<div class="col-3-full last">
+				<div class="col-3-full dongy-column last">
 					<div class="featured_block-3">							
 						<div class="featured_block_text">							
 							<h3>
@@ -61,7 +63,8 @@ get_header(); ?>
 									Trĩ Hỗn Hợp								</a>
 							</h3>
 							<p>
-								Bệnh trĩ hỗn hợp là một trong những bệnh lý ở vùng hậu môn, có thể xuất hiện ở cả nam và nữ....							</p>
+								Bệnh trĩ hỗn hợp là một trong những<br> bệnh lý ở vùng hậu môn, có thể xuất<br> hiện ở cả nam và nữ....							
+							</p>
 							<div><a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/">Chi tiết</a></div>
 						</div>
 					</div>

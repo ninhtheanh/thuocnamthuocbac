@@ -27,7 +27,7 @@
 
 <?php wp_footer(); ?>
 </div>
-
+<a href="#" class="back-to-top"></a>
 <!-- Slider start -->
 <script type='text/javascript' src='https://cdn1.colorlib.com/travelify/wp-content/themes/travelify/library/js/jquery.cycle.all.min.js?ver=2.9999.5'></script>
 <script type='text/javascript'>

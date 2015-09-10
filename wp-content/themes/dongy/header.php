@@ -19,7 +19,9 @@
 	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
 	<![endif]-->
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/x-icon" />
-	<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/jquery-1.11.3.js?ver=1.0.0'></script>	
+	<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/jquery-1.11.3.js?ver=1.0.0'></script>
+	<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/navigation.js?ver=1.0.0'></script>
+	<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/scripts.js?ver=1.0.0'></script>
 	<?php wp_head(); ?>
 </head>
 
@@ -41,58 +43,84 @@
 							</ul>
 						</div><!-- .social-icons -->					
 					</section><!-- .hgroup-right -->
-						<hgroup id="site-logo" class="clearfix">
-							<a href="<?php echo site_url(); ?>"><img title="Twitter" alt="Twitter" src="<?php echo get_template_directory_uri(); ?>/images/logo2.jpg"></a>
-						</hgroup><!-- #site-logo -->
+					<hgroup id="site-logo" class="clearfix">
+						<a href="<?php echo site_url(); ?>"><img title="Logo" alt="Logo" src="<?php echo get_template_directory_uri(); ?>/images/logo2.jpg"></a>
+					</hgroup><!-- #site-logo -->
 				</div><!-- .hgroup-wrap -->
 			</div><!-- .container -->
-			<nav id="main-nav" class="clearfix">
-					<?php
-					if ( has_nav_menu( 'primary' ) ) {
-						$args = array(
-							'theme_location'    => 'primary',
-							'container'         => '',
-							'items_wrap'        => '<ul class="root">%3$s</ul>'
-						);
-						echo '<nav id="main-nav" class="clearfix">
-								<div class="container clearfix">';
-							wp_nav_menu( $args );
-						echo '</div><!-- .container -->
-								</nav><!-- #main-nav -->';
-					}
-					else {
-						echo '<nav id="main-nav" class="clearfix">
-								<div class="container clearfix">';
-							wp_page_menu( array( 'menu_class'  => 'root' ) );
-						echo '</div><!-- .container -->
-								</nav><!-- #main-nav -->';
-					}
-				?>
-			</nav><!-- #main-nav -->		
-			
+			<div class="main-menu-contaiter">
+				<?php
+				if ( has_nav_menu( 'primary' ) ) {
+					$args = array(
+						'theme_location'    => 'primary',
+						'container'         => '',
+						'items_wrap'        => '<ul class="root">%3$s</ul>'
+					);
+					echo '<nav id="main-nav" class="clearfix">
+							<div class="container clearfix">';
+						wp_nav_menu( $args );
+					echo '</div><!-- .container -->
+							</nav><!-- #main-nav -->';
+				}
+				else {
+					echo '<nav id="main-nav" class="clearfix">
+							<div class="container clearfix">';
+						wp_page_menu( array( 'menu_class'  => 'root' ) );
+					echo '</div><!-- .container -->
+							</nav><!-- #main-nav -->';
+				}
+				?>			
+				<a href="#" class="navbutton" id="top-nav-button"><?php _e( 'Main Menu', 'dongy' ); ?></a>
+				<div class="responsive-topnav"></div>
+				<div class="dongy-search-button-icon"></div>
+				<div class="dongy-search-box-container">
+					<div class="dongy-search-box">
+						<form action="<?php echo esc_url( home_url( '/' ) ); ?>" id="dongy-search-form" method="get">
+							<input type="text" placeholder="<?php esc_attr_e( 'Search', 'dongy' ); ?>" value="" name="s" id="s">
+							<input type="submit" value="Search">
+						</form>
+					</div><!-- th-search-box -->
+				</div>
+			</div>
 			<?php
 			if( is_home() || is_front_page() ) {
 			?>
 				<section class="featured-slider">
-				   <div class="slider-cycle" style="width: 100%; height: 263px;">
-				      <div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
-				         <figure>
-				         	<a href="https://colorlib.com/travelify/layout-test/" title="Content Layout Preview">
-					         	<img width="960" src="http://localhost:8080/Wordpress/thuocnamthuocbac/wp-content/uploads/2015/09/banner_scr.jpg" 
-					         	class="pngfix wp-post-image" alt="Content Layout Preview" title="Content Layout Preview">				         	
-					        </a>
-				     	</figure>
-			         	<article class="featured-text" style="display:none">
-				            <div class="featured-title">
-				            	<a href="https://colorlib.com/travelify/layout-test/" title="Content Layout Preview">Thuốc Việt Nam</a>
-				            </div>
-				            <!-- .featured-title -->
-				            <div class="featured-content">Chung Tay Chăm Sóc Sức Khỏe Cộng Đồng </div>
-				            <!-- .featured-content -->
-				        </article>
-				         <!-- .featured-text -->
+				   <div class="slider-cycle" style="width: 100%;">
+				   		<div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
+					        <figure>
+					         	<a href="https://colorlib.com/travelify/layout-test/" title="Content Layout Preview">
+						         	<img width="960" src="http://localhost:8080/Wordpress/thuocnamthuocbac/wp-content/uploads/2015/09/banner_scr.jpg" 
+						         	class="pngfix wp-post-image" alt="Content Layout Preview" title="Content Layout Preview">				         	
+						        </a>
+					     	</figure>
+				         	<article class="featured-text" style="display:none">
+					            <div class="featured-title">
+					            	<a href="https://colorlib.com/travelify/layout-test/" title="Content Layout Preview">Thuốc Việt Nam</a>
+					            </div>
+					            <!-- .featured-title -->
+					            <div class="featured-content">Chung Tay Chăm Sóc Sức Khỏe Cộng Đồng </div>
+					            <!-- .featured-content -->
+					        </article>
+					         <!-- .featured-text -->
 				      </div>
-				     
+				      <div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
+					        <figure>
+					         	<a href="https://colorlib.com/travelify/layout-test/" title="Content Layout Preview">
+						         	<img width="960" src="http://localhost:8080/Wordpress/thuocnamthuocbac/wp-content/uploads/2015/09/banner_scr.jpg" 
+						         	class="pngfix wp-post-image" alt="Content Layout Preview" title="Content Layout Preview">				         	
+						        </a>
+					     	</figure>
+				         	<article class="featured-text" style="display:none">
+					            <div class="featured-title">
+					            	<a href="https://colorlib.com/travelify/layout-test/" title="Content Layout Preview">Thuốc Việt Nam</a>
+					            </div>
+					            <!-- .featured-title -->
+					            <div class="featured-content">Chung Tay Chăm Sóc Sức Khỏe Cộng Đồng </div>
+					            <!-- .featured-content -->
+					        </article>
+					         <!-- .featured-text -->
+				       </div>
 				   </div>
 				   <nav id="controllers" class="clearfix"></nav>			   
 				   <!-- #controllers -->
