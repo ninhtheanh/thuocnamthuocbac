@@ -112,12 +112,6 @@ function dongy_setup() {
 		'default-color' => '#d3d3d3',
 		'default-image' => get_template_directory_uri() . '/images/background.png',
 	) ) );
-
-	/*
-	 * This theme styles the visual editor to resemble the theme style,
-	 * specifically font, colors, icons, and column width.
-	 */
-	//add_editor_style( array( 'css/editor-style.css', 'genericons/genericons.css', dongy_fonts_url() ) );
 }
 endif; // dongy_setup
 add_action( 'after_setup_theme', 'dongy_setup' );
@@ -142,70 +136,6 @@ function dongy_widgets_init() {
 }
 add_action( 'widgets_init', 'dongy_widgets_init' );
 
-if ( ! function_exists( 'dongy_fonts_url' ) ) :
-/**
- * Register Google fonts for Dong Y.
- *
- * @since Dong Y 1.0
- *
- * @return string Google fonts URL for the theme.
- */
-function dongy_fonts_url() {
-	$fonts_url = '';
-	$fonts     = array();
-	$subsets   = 'latin,latin-ext';
-
-	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Noto Sans, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ( 'off' !== _x( 'on', 'Noto Sans font: on or off', 'dongy' ) ) {
-		$fonts[] = 'Noto Sans:400italic,700italic,400,700';
-	}
-
-	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Noto Serif, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ( 'off' !== _x( 'on', 'Noto Serif font: on or off', 'dongy' ) ) {
-		$fonts[] = 'Noto Serif:400italic,700italic,400,700';
-	}
-
-	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Inconsolata, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'dongy' ) ) {
-		$fonts[] = 'Inconsolata:400,700';
-	}
-
-	/*
-	 * Translators: To add an additional character subset specific to your language,
-	 * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
-	 */
-	$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'dongy' );
-
-	if ( 'cyrillic' == $subset ) {
-		$subsets .= ',cyrillic,cyrillic-ext';
-	} elseif ( 'greek' == $subset ) {
-		$subsets .= ',greek,greek-ext';
-	} elseif ( 'devanagari' == $subset ) {
-		$subsets .= ',devanagari';
-	} elseif ( 'vietnamese' == $subset ) {
-		$subsets .= ',vietnamese';
-	}
-
-	if ( $fonts ) {
-		$fonts_url = add_query_arg( array(
-			'family' => urlencode( implode( '|', $fonts ) ),
-			'subset' => urlencode( $subsets ),
-		), '//fonts.googleapis.com/css' );
-	}
-
-	return $fonts_url;
-}
-endif;
-
 /**
  * JavaScript Detection.
  *
@@ -225,9 +155,15 @@ function dongy_javascript_detection() {
  */
 function dongy_scripts() {
 	
+	//Css
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '1.0.0' );
+	wp_enqueue_style( 'font-satisfy-regular', 'https://fonts.googleapis.com/css?family=Satisfy', array() );
 	// Load our main stylesheet.
-	wp_enqueue_style( 'dongy-style', get_stylesheet_uri() );	
+	wp_enqueue_style( 'dongy-style', get_stylesheet_uri() );
+	//Javascript file
+	wp_enqueue_script('jquery-script', get_stylesheet_directory_uri() . '/js/jquery-1.11.3.js', array(), '1.0.0' );
+	wp_enqueue_script('menu-script', get_stylesheet_directory_uri() . '/js/navigation.js', array(), '1.0.0.0' );
+	wp_enqueue_script('dongy-script', get_stylesheet_directory_uri() . '/js/scripts.js', array(), '1.0.0.0' );
 }
 add_action( 'wp_enqueue_scripts', 'dongy_scripts' );
 

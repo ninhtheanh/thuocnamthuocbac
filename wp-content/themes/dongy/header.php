@@ -18,10 +18,7 @@
 	<!--[if lt IE 9]>
 	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
 	<![endif]-->
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/x-icon" />
-	<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/jquery-1.11.3.js?ver=1.0.0'></script>
-	<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/navigation.js?ver=1.0.0'></script>
-	<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/scripts.js?ver=1.0.0'></script>
+	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/x-icon" />	
 	<?php wp_head(); ?>
 </head>
 
@@ -107,7 +104,7 @@
 				      <div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
 					        <figure>
 					         	<a href="https://colorlib.com/travelify/layout-test/" title="Content Layout Preview">
-						         	<img width="960" src="http://localhost:8080/Wordpress/thuocnamthuocbac/wp-content/uploads/2015/09/banner_scr.jpg" 
+						         	<img width="960" src="http://localhost:8080/Wordpress/thuocnamthuocbac/wp-content/themes/dongy/images/banner/banner2.jpg" 
 						         	class="pngfix wp-post-image" alt="Content Layout Preview" title="Content Layout Preview">				         	
 						        </a>
 					     	</figure>

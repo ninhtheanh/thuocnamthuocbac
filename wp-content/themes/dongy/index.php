@@ -16,14 +16,20 @@
 get_header(); ?>
 
 <div id="main" class="container clearfix">
-	<div id="container">
-		<div class="ta-row" style="display:none">
-			<div class="home-search-box">
-				<form id="headersearchform" method="get" action="<?php bloginfo('siteurl')?>/">
-					<input type="text" name="s" id="s" class="textbox" value="Tìm Kiếm" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
-					<input id="btnSearch" type="submit" name="submit" value="<?php _e('Go'); ?>" />
-				</form>
-			</div>
+	<div id="container">		
+		<div class="ta-row">			
+			<div class="welcome-inner">
+				<div class="welcome-col">
+					<div class="welcome-text">Liên Hệ</div>
+					<div class="welcome-text"><img width="88" align="center" src="<?php echo get_template_directory_uri(); ?>/images/arrow-right88-55.png" border="0"></div>
+					<div class="welcome-text">Dùng Thuốc</div>
+					<div class="welcome-text"><img width="88" align="center" src="<?php echo get_template_directory_uri(); ?>/images/arrow-right88-55.png" border="0"></div>
+					<div class="welcome-text">Hết Bệnh!</div>				
+				</div>
+				<div class="welcome-button">					
+					<a class="button" href="<?php echo get_page_link(34); ?>"><?php _e('Liên Hệ', "dongy"); ?></a>
+				</div>
+			</div>			
 		</div>
 		<div class="ta-row">
 			<div class="ta-row-inner clearfix">						

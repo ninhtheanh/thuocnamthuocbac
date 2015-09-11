@@ -1875,6 +1875,7 @@ article {
 }
 .ta-row .featured_block .featured_block_inner .featured_block_text{
     text-align: left;
+    line-height: 44px;
 }
 .featured_block-1{
 	padding: 15px;    
@@ -2071,20 +2072,6 @@ div.wpcf7-response-output {
  .menu-footer li a{
 	text-transform: none;
  }
- .home-search-box{
- 	float: right;
- 	display: block;
- 	text-align: right;
- 	width: 300px;
- 	height: 50px;
- }
-#headersearchform .textbox {
-    color:#000;
-    cursor: text;
-    text-indent: 10px;
-    width: 200px;
-}
-
 .posted-on-title {
 	float: left;
 	position: relative;
@@ -2231,6 +2218,60 @@ div.wpcf7-response-output {
 }
 .back-to-top:hover {
 	background: #439f55 url("http://localhost:8080/Wordpress/thuocnamthuocbac/wp-content/themes/dongy/images/up-arrow.png") no-repeat center 40%;  
+}
+.welcome-inner{
+	position: relative;
+	width: 100%;
+	margin-left: 54px;
+}
+.welcome-col{	
+	float: left;
+	width: 77%;
+	margin: 5px 0px 5px 0px;
+}
+.welcome-button{	
+	float: left;
+	width: 5%;
+	margin:19px 0 0 -14px;
+}
+.welcome-text{
+	display: block;
+	float: left;
+	font-family: 'Satisfy', cursive;
+	line-height: 60px;
+	font-size: 35px;
+	padding: 10px;
+}
+.welcome-text img{
+	line-height: 60px;
+}
+.button{
+	display: inline-block;    
+    font-size: 14px;
+    white-space: nowrap;
+    background: #57ad68;
+	background-image: -webkit-linear-gradient(top, #57ad68, #57ad68);
+	background-image: -moz-linear-gradient(top, #57ad68, #57ad68);
+	background-image: -ms-linear-gradient(top, #57ad68, #57ad68);
+	background-image: -o-linear-gradient(top, #57ad68, #57ad68);
+	background-image: linear-gradient(to bottom, #57ad68, #57ad68);
+	-webkit-border-radius: 6;
+	-moz-border-radius: 6;
+	border-radius: 6px;
+	font-family: Arial;
+	color: #ffffff;	
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+}
+.button:hover{
+	color: #fff;
+	background: #439f55;
+	background-image: -webkit-linear-gradient(top, #439f55, #439f55);
+	background-image: -moz-linear-gradient(top, #439f55, #439f55);
+	background-image: -ms-linear-gradient(top, #439f55, #439f55);
+	background-image: -o-linear-gradient(top, #439f55, #439f55);
+	background-image: linear-gradient(to bottom, #439f55, #439f55);
+	text-decoration: none;
 }
 /* Adding css end*/
 
@@ -2443,6 +2484,31 @@ div.wpcf7-response-output {
 	.dongy-column{
 		margin-bottom: 20px;
 	}
+	.welcome-inner{		
+		margin-left: 0px;
+	}
+	.welcome-col{	
+		float: left;
+		width: 100%;
+		margin: 5px 0px 5px 0px;
+	}
+	.welcome-button{
+		width: 100%;		
+	}
+	.welcome-button input{
+		margin: -20px -50px; 
+	    position:relative;
+	    top:50%; 
+	    left:50%;
+	}
+	.welcome-text{
+		display: block;
+		float: left;
+		font-family: 'Satisfy', cursive;
+		line-height: 62px;
+		font-size: 35px;
+		padding: 5px;
+	}	
 }
 
 /* All Mobile landscape size and All Mini Tablet Portrait size smaller than standard 768 and larger than 480 (devices and browsers) */
