@@ -238,7 +238,7 @@ function dongy_header_title() {
 		$dongy_header_title = get_the_archive_title();
 	}	
 	elseif( is_search() ) {
-		$dongy_header_title = __( 'Search Results for: ' . get_search_query(), 'dongy' );
+		$dongy_header_title = __( 'Kết quả tìm kiếm: ' . get_search_query(), 'dongy' );
 	}
 	elseif( is_page_template()  ) {
 		$dongy_header_title = get_the_title();
@@ -458,9 +458,16 @@ function dongy_sharing($url) {
 endif;
 function contact_information(){
 	$str = '<div class="end-post-box-contact">
-				<p><strong>Mọi chi tiết xin liên hệ:</strong></p>
-				<p>ĐC:&nbsp;59/33 Mã Lò, P. Binh Trị Đông A, Q. Bình Tân<br>
-				ĐT:&nbsp;098.368.7979</p>
+				<p><strong>Quý khách có nhu cầu mua thuốc hoặc cần được tư vấn vui lòng liên hệ:</strong></p>
+				<p>
+				<strong>- Tại Phú Yên - Tuy Hòa</strong><br>
+				LY. Nguyễn Đình Tuân - LY. Phan Vũ Như Nguyện<br>
+				ĐT: 01236910957<br><br>
+				<strong>- Tại TP Hồ Chí Minh</strong><br>
+				Tư vấn: Ninh Thế Anh<br>
+				ĐC: 59/33 Mã Lò, P. Binh Trị Đông A, Q. Bình Tân<br>
+				ĐT: 098.368.7979
+				</p>
 				<p>Người bệnh hoặc người nhà bệnh nhân có thể điện thoại nói về bệnh tình và được ThuocNamThuocBac&nbsp;tư vấn, sau đó Nhà thuốc gửi thuốc qua chuyển phát nhanh ( hoặc ô tô) đến cho khách hàng.</p>
 			</div>';
 	return $str;
@@ -474,6 +481,7 @@ function end_post_contact( $content ){
 	if ( is_singular('post') ) {
 		$content .= $str;	
 	}
+	$content .= get_related_posts_by_category();
 	return $content;
 }
 function end_post_shortcode($attr) {
@@ -492,6 +500,32 @@ function end_post_shortcode($attr) {
 }
 add_shortcode('thongtinlienhe', 'end_post_shortcode');
 add_filter( 'the_content', 'end_post_contact' );
+
+function get_related_posts_by_category() {
+	$str = "";
+	if (is_single()) {
+		global $post;
+		$current_post = $post->ID;
+		$categories = get_the_category();
+		foreach ($categories as $category) :			
+			$posts = get_posts('numberposts=10&category='. $category->term_id . '&exclude=' . $current_post);
+			if(count($posts) > 0){
+				$str .= '<div class="related-posts"><header class="entry-header">							
+					<div class="heading_title">		 
+						<h3>' . __('Bài liên quan') . '</h3>		
+					</div>
+				</header><ul>';
+			}
+			foreach($posts as $post) :
+				$str .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';	
+			endforeach;
+		endforeach;
+		if($str != "")
+			$str .= '</ul></div>';
+	}
+	return $str;
+	wp_reset_query();
+}
 
 function custom_pagination($numpages = '', $pagerange = '', $paged='') {
 

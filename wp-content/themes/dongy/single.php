@@ -33,6 +33,8 @@ get_header(); ?>
 				while ( have_posts() ) : the_post();
 					if ( in_category( 'blog' )) {
 						get_template_part( 'content', 'blog' ); 
+					}elseif ( in_category( 'benh-tri' )) {
+						get_template_part( 'content', 'benh-tri' ); 
 					}else{
 						get_template_part( 'content', 'single' ); 
 					}

@@ -46,13 +46,11 @@
 
 		<div class="entry-meta-bar clearfix">
 			<div class="entry-meta">
-					<?php dongy_posted_on(); ?>
-					<?php if( has_category() ) { ?>
-	         		<span class="category"><?php the_category(', '); ?></span>
-	         	<?php } ?>
-					<?php if ( comments_open() ) { ?>
-	         		<span class="comments"><?php comments_popup_link( __( 'No Comments', 'travelify' ), __( '1 Comment', 'travelify' ), __( '% Comments', 'travelify' ), '', __( 'Comments Off', 'travelify' ) ); ?></span>
-	         	<?php } ?>
+					<?php						
+						$category = has_category() ? get_the_category() : ""; //the_category(', ') will show html
+						dongy_posted_on($category); 
+					?>
+	         		<?php dongy_sharing(get_permalink()); ?>	
 			</div><!-- .entry-meta -->
 			<?php
 			echo '<a class="readmore" href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">'.__( 'Read more', 'travelify' ).'</a>';

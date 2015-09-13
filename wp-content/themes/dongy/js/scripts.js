@@ -2,6 +2,7 @@ $(document).ready(function () {
 	/*Search box*/
 	jQuery(".dongy-search-button-icon").click(function(){
     	jQuery(".dongy-search-box-container").toggle('fast');
+    	$('#dongy-search-form').find('input[name="s"]').focus();
   	});
 	/*Scroll top*/	
 	$(window).scroll(function () {

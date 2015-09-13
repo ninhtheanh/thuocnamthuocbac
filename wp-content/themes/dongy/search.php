@@ -42,9 +42,6 @@ get_header(); ?>
 					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'dongy' ) . ' </span>',
 				) );
 
-				echo get_option("posts_per_page");
-				
-
 			// If no content, include the "No posts found" template.
 			else :
 				get_template_part( 'content', 'none' );

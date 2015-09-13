@@ -13,7 +13,7 @@
 		<div id="site-generator">
 				<div class="container">
 					<div class="copyright">						
-						© 2015 Copyright by TA. All rights reserved.
+						© 2015 Copyright by Đông Y Đình Tuân.
 					</div><!-- .copyright -->
 					<div class="footer-right">
 												
@@ -29,7 +29,7 @@
 </div>
 <a href="#" class="back-to-top"></a>
 <!-- Slider start -->
-<script type='text/javascript' src='https://cdn1.colorlib.com/travelify/wp-content/themes/travelify/library/js/jquery.cycle.all.min.js?ver=2.9999.5'></script>
+<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/jquery.cycle.all.min.js?ver=1.0.0'></script>
 <script type='text/javascript'>
 	/* <![CDATA[ */
 	var travelify_slider_value = {"transition_effect":"fade","transition_delay":"4000","transition_duration":"1000"};

@@ -25,10 +25,7 @@
 						$category = has_category() ? get_the_category() : ""; //the_category(', ') will show html
 						dongy_posted_on($category); 
 					?>
-	         		<?php dongy_sharing(get_permalink()); ?>
-					<?php if ( comments_open() ) { ?>
-	         		<span class="comments"><?php comments_popup_link( __( 'No Comments', 'travelify' ), __( '1 Comment', 'travelify' ), __( '% Comments', 'travelify' ), '', __( 'Comments Off', 'travelify' ) ); ?></span>
-	         	<?php } ?>
+	         		<?php dongy_sharing(get_permalink()); ?>					
 			</div><!-- .entry-meta -->			
 		</div>
 
@@ -40,7 +37,7 @@
 					$image .= get_the_post_thumbnail( $post->ID, 'featured-medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) );
 					$image .= '</figure>';
 
-					echo $image;
+					//echo $image;
 			}
 		?>
 

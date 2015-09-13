@@ -31,50 +31,37 @@ get_header(); ?>
 				</div>
 			</div>			
 		</div>
+		
 		<div class="ta-row">
-			<div class="ta-row-inner clearfix">						
-				<div class="col-3-full dongy-column">
-					<div class="featured_block-1">							
+			<div class="ta-row-inner clearfix">
+				<?php
+					$args = array(
+		                    'post_type' => 'post',
+		                    'post__in' => array(1, 79, 9) );
+		            $posts = get_posts($args);
+		            $i = 0;
+		            foreach ( $posts as $post ) : setup_postdata( $posts );
+		            $i++;
+				?>
+				<div class="col-3-full dongy-column <?php if($i==3) echo "last";?>">
+					<div class="featured_block-<?php echo $i;?>">							
 						<div class="featured_block_text">							
 							<h3>
-								<a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/" title="Trĩ Hỗn Hợp">
-									Trĩ Hỗn Hợp								</a>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							</h3>
-							<p>
-								Bệnh trĩ hỗn hợp là một trong những<br> bệnh lý ở vùng hậu môn, có thể xuất<br> hiện ở cả nam và nữ....							
-							</p>
-							<div><a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/">Chi tiết</a></div>
+						    <div class="ellipsis-block">
+							    <div class="text">
+							        <?php echo excerpt(45); ?>
+							    </div>
+							</div>
+							<div><a href="<?php the_permalink(); ?>">Chi tiết</a></div>
 						</div>
 					</div>
 				</div>
-				<div class="col-3-full dongy-column">
-					<div class="featured_block-2">							
-						<div class="featured_block_text">							
-							<h3>
-								<a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/" title="Trĩ Hỗn Hợp">
-									Trĩ Hỗn Hợp								</a>
-							</h3>
-							<p>
-								Bệnh trĩ hỗn hợp là một trong những<br> bệnh lý ở vùng hậu môn, có thể xuất<br> hiện ở cả nam và nữ....							
-							</p>
-							<div><a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/">Chi tiết</a></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-3-full dongy-column last">
-					<div class="featured_block-3">							
-						<div class="featured_block_text">							
-							<h3>
-								<a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/" title="Trĩ Hỗn Hợp">
-									Trĩ Hỗn Hợp								</a>
-							</h3>
-							<p>
-								Bệnh trĩ hỗn hợp là một trong những<br> bệnh lý ở vùng hậu môn, có thể xuất<br> hiện ở cả nam và nữ....							
-							</p>
-							<div><a href="http://localhost:8080/Wordpress/thuocnamthuocbac/tri-hon-hop/">Chi tiết</a></div>
-						</div>
-					</div>
-				</div>						
+				<?php 
+					endforeach; 
+					wp_reset_postdata();
+				?>					
 			</div><!-- .entry-content -->
 		</div>
 
@@ -102,19 +89,21 @@ get_header(); ?>
 			?>
 			<div class="col-3 <?php echo $css_last; ?>">
 				<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
-					<div class="circular" style="background: url(http://localhost:8080/Wordpress/thuocnamthuocbac/wp-content/uploads/2015/09/tri1.jpg) center no-repeat;">
-						<img width="160" align="center" src="http://localhost:8080/Wordpress/thuocnamthuocbac/wp-content/uploads/2015/09/tri1.jpg" border="0" title="<?php echo the_title( '', '', false ); ?>">
+					<div class="circular" style="background: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>) center no-repeat;">
+						<img width="160" align="center" src="<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>" border="0" title="<?php echo the_title( '', '', false ); ?>">
 					</div>
 				</a>
 				<h2>
 					<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
 						<?php echo get_the_title()?>
 					</a>
-				</h2>
-				<p>
-					<?php echo excerpt(24); ?>
-				</p>
-				<p><a href="<?php echo get_permalink(); ?>">Chi tiết</a></p>
+				</h2>				
+				<div class="ellipsis-circular">
+				    <div class="text">
+				        <?php echo excerpt(45); ?>
+				    </div>
+				</div>
+				<br>
 			</div>
 			<?php			
 						$i++;
