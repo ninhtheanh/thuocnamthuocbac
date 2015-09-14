@@ -2222,8 +2222,9 @@ div.wpcf7-response-output {
     float: left;
     height: 40px;
     margin: 0;
-    padding: 0 11px;
+    padding: 0 19px;
     width: 220px;
+    height: 34px;
 }
 .dongy-search-box {
 	width: 100%;

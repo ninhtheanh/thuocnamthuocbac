@@ -125,6 +125,32 @@ get_header(); ?>
 				</div>
 			</div>
 		</div>
+
+		<section id="post-134" class="post-134 post type-post status-publish format-standard has-post-thumbnail sticky hentry category-new-work category-other-destinations">
+			<article>
+			<div class="medium-wrap">
+							<header class="entry-header">
+	    			<h2 class="entry-title">
+	    				<a href="https://colorlib.com/travelify/this-post-has-no-body/" title="This post has no body – almost">This post has no body – almost</a>
+	    			</h2><!-- .entry-title -->
+	  			</header>
+
+	  			
+	  			
+				<figure class="post-featured-image"><a href="https://colorlib.com/travelify/this-post-has-no-body/" title="This post has no body – almost"><img width="230" height="230" src="https://cdn3.colorlib.com/travelify/wp-content/uploads/sites/4/2013/05/Spain-Plaza-de-Cibeles-Madrid-230x230.jpg" class="attachment-featured-medium wp-post-image" alt="This post has no body – almost" title="This post has no body – almost"></a></figure>
+	    		<p>Cras leo tortor, condimentum id semper eu, sodales id elit. Maecenas commodo dolor vel massa gravida vehicula. Morbi tristique sapien ac dui tempus imperdiet.</p>
+
+
+	  			
+	  					</div>
+	  			<div class="entry-meta-bar clearfix">
+	    			<div class="entry-meta">
+		    				<span class="byline"> <span class="author vcard"><a class="url fn n" href="https://colorlib.com/travelify/author/aigars-silkalns/">Aigars</a></span></span><span class="posted-on"><a href="https://colorlib.com/travelify/this-post-has-no-body/" rel="bookmark"><time class="entry-date published" datetime="2014-03-05T09:39:56+00:00">5 March, 2014</time><time class="updated" datetime="2014-11-21T09:04:21+00:00">21 November, 2014</time></a></span>	    					             		<span class="category"><a href="https://colorlib.com/travelify/category/new-work/" rel="category tag">New York</a>, <a href="https://colorlib.com/travelify/category/other-destinations/" rel="category tag">Other Destinations</a></span>
+		             		    				    			</div><!-- .entry-meta -->
+	    			<a class="readmore" href="https://colorlib.com/travelify/this-post-has-no-body/" title="This post has no body – almost">Read more</a>    		</div>
+
+	    				</article>
+		</section>
 		
 	</div><!-- #container -->
 </div><!-- #main-content -->

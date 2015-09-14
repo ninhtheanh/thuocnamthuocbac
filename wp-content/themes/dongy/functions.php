@@ -324,94 +324,6 @@ function dongy_post_thumbnail() {
 }
 endif;
 
-if ( ! function_exists( 'dongy_entry_meta' ) ) :
-/**
- * Prints HTML with meta information for the categories, tags.
- *
- * @since Dong Y 1.0
- */
-function dongy_entry_meta() {
-	if ( is_sticky() && is_home() && ! is_paged() ) {
-		printf( '<span class="sticky-post">%s</span>', __( 'Featured', 'dongy' ) );
-	}
-
-	$format = get_post_format();
-	if ( current_theme_supports( 'post-formats', $format ) ) {
-		printf( '<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',
-			sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'dongy' ) ),
-			esc_url( get_post_format_link( $format ) ),
-			get_post_format_string( $format )
-		);
-	}
-
-	if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-		}
-
-		$time_string = sprintf( $time_string,
-			esc_attr( get_the_date( 'c' ) ),
-			get_the_date(),
-			esc_attr( get_the_modified_date( 'c' ) ),
-			get_the_modified_date()
-		);
-
-		printf( '<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
-			_x( 'Posted on', 'Used before publish date.', 'dongy' ),
-			esc_url( get_permalink() ),
-			$time_string
-		);
-	}
-
-	if ( 'post' == get_post_type() ) {
-		if ( is_singular() || is_multi_author() ) {
-			printf( '<span class="byline"><span class="author vcard"><span class="screen-reader-text">%1$s </span><a class="url fn n" href="%2$s">%3$s</a></span></span>',
-				_x( 'Author', 'Used before post author name.', 'dongy' ),
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				get_the_author()
-			);
-		}
-
-		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'dongy' ) );
-		if ( $categories_list && dongy_categorized_blog() ) {
-			printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-				_x( 'Categories', 'Used before category names.', 'dongy' ),
-				$categories_list
-			);
-		}
-
-		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'dongy' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-				_x( 'Tags', 'Used before tag names.', 'dongy' ),
-				$tags_list
-			);
-		}
-	}
-
-	if ( is_attachment() && wp_attachment_is_image() ) {
-		// Retrieve attachment metadata.
-		$metadata = wp_get_attachment_metadata();
-
-		printf( '<span class="full-size-link"><span class="screen-reader-text">%1$s </span><a href="%2$s">%3$s &times; %4$s</a></span>',
-			_x( 'Full size', 'Used before full size attachment link.', 'dongy' ),
-			esc_url( wp_get_attachment_url() ),
-			$metadata['width'],
-			$metadata['height']
-		);
-	}
-
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		/* translators: %s: post title */
-		comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'dongy' ), get_the_title() ) );
-		echo '</span>';
-	}
-}
-endif;
-
 function dongy_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'dongy_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
@@ -512,14 +424,21 @@ function get_related_posts_by_category() {
 	$str = "";
 	if (is_single()) {
 		global $post;
-		$current_post = $post->ID;
-		$categories = get_the_category();
-		foreach ($categories as $category) :			
-			$posts = get_posts('numberposts=10&category='. $category->term_id . '&exclude=' . $current_post);
+		$current_post = $post->ID;		
+		//var_dump(get_the_category( $current_post )); //only one cat by post id
+		$post_categories = wp_get_post_categories( $current_post );
+		$cats = array();	
+		foreach($post_categories as $c){
+			$cat = get_category( $c );
+			$cats[] = array( 'term_id' => $cat->term_id, 'name' => $cat->name, 'slug' => $cat->slug );
+		}
+		//var_dump($cats);
+		foreach ($cats as $category) :			
+			$posts = get_posts('numberposts=10&category='. $category['term_id'] . '&exclude=' . $current_post);
 			if(count($posts) > 0){
 				$str .= '<div class="related-posts"><header class="entry-header">							
 					<div class="heading_title">		 
-						<h3>' . __('Bài liên quan') . '</h3>		
+						<h3>' . __('Bài liên quan:' . $category['term_id']) . '</h3>		
 					</div>
 				</header><ul>';
 			}
