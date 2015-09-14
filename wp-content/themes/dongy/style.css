@@ -1657,7 +1657,7 @@ ul.default-wp-page li a:active {
 }
 /* WP Caption */
 .wp-caption {
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 	max-width: 100%;
 }
 .wp-caption .wp-caption-text,.gallery-caption {
@@ -1665,8 +1665,10 @@ ul.default-wp-page li a:active {
 }
 .wp-caption .wp-caption-text {
 	margin-bottom: 0;
-	padding: 15px 0;
+	padding: 5px 0;
 	border-bottom: 1px solid #EAEAEA;
+	font-style: italic;
+	font-size: 11px;
 }
 .widget select {
 	max-width: 100%;
@@ -2362,14 +2364,14 @@ div.wpcf7-response-output {
     padding-right: 5px;
     text-align: right;    
 }
-.related-posts header .heading_title h3{
+.normal-list-style header .heading_title h3{
 	font-size: 20px !important;
 }
-.related-posts ul {
+.normal-list-style ul {
     list-style: none;
     margin: 0 0 10px 10px !important;
  }
-.related-posts ul li {
+.normal-list-style ul li {
     background-image: url('./images/arrow-right.png');
     background-position: 0 8px;
     background-repeat: no-repeat;
@@ -2377,9 +2379,28 @@ div.wpcf7-response-output {
     font-size: 13px;
     list-style-type: none;
 }
+.normal-list-style ul li a {
+    color: #57ad68 !important;
+    text-decoration: none;
+}
+.related-posts header .heading_title h3{
+	font-size: 20px !important;
+}
+.related-posts ul {
+    list-style: none !important;
+    margin: 0 0 10px 10px !important;
+ }
+.related-posts ul li:before {
+    content: '\f0a9';
+    font-size: 15px;
+    font-family: FontAwesome;
+    color: #439f55;
+    padding-right: 10px;
+}
 .related-posts ul li a {
     color: #57ad68 !important;
     text-decoration: none;
+    font-weight:bold !important;;
 }
 .logo-name{
 	display: block;
@@ -2391,6 +2412,16 @@ div.wpcf7-response-output {
 .logo-name a:hover{
 	color: #57ad68;
 }
+
+.separator_wrapper { display: block; margin: 0px 0px 10px 0; }
+.separator_wrapper:after, .separator_wrapper:before { border-bottom: 2px dashed #57ad68; content: ""; display: inline-block; height: 1px; margin-top: 0px; vertical-align: middle; width: 220px; }
+.separator_first_circle { 
+	display: inline-block;
+    height: 38px;
+    width: 36px;
+    line-height: 36px; 
+}
+
 /* Adding css end*/
 
 /* =Responsive Structure

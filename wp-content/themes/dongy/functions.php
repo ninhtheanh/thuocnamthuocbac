@@ -468,7 +468,14 @@ function contact_information(){
 				ĐC: 59/33 Mã Lò, P. Binh Trị Đông A, Q. Bình Tân<br>
 				ĐT: 098.368.7979
 				</p>
-				<p>Người bệnh hoặc người nhà bệnh nhân có thể điện thoại nói về bệnh tình và được ThuocNamThuocBac&nbsp;tư vấn, sau đó Nhà thuốc gửi thuốc qua chuyển phát nhanh ( hoặc ô tô) đến cho khách hàng.</p>
+				<div style="text-align: center;">
+					<div class="separator_wrapper wow bounceIn animated" data-wow-duration="0.7s" data-wow-delay="0.7s" style="visibility: visible; animation-duration: 0.7s; animation-delay: 0.7s; animation-name: bounceIn;">
+			            <div class="separator_first_circle">
+			            <img src="' . get_template_directory_uri() . '/images/green-flower.png" alt="green flower">
+			            </div>
+			        </div>
+		        </div>
+				<p><em>Người bệnh hoặc người nhà bệnh nhân có thể điện thoại nói về bệnh tình và được ThuocNamThuocBac&nbsp;tư vấn, sau đó Nhà thuốc gửi thuốc qua chuyển phát nhanh ( hoặc ô tô) đến cho khách hàng.</em></p>
 			</div>';
 	return $str;
 }
@@ -522,65 +529,8 @@ function get_related_posts_by_category() {
 		endforeach;
 		if($str != "")
 			$str .= '</ul></div>';
-	}
+	}	
 	return $str;
 	wp_reset_query();
 }
 
-function custom_pagination($numpages = '', $pagerange = '', $paged='') {
-
-  if (empty($pagerange)) {
-    $pagerange = 2;
-  }
-
-  /**
-   * This first part of our function is a fallback
-   * for custom pagination inside a regular loop that
-   * uses the global $paged and global $wp_query variables.
-   * 
-   * It's good because we can now override default pagination
-   * in our theme, and use this function in default quries
-   * and custom queries.
-   */
-  global $paged;
-  if (empty($paged)) {
-    $paged = 1;
-  }
-  if ($numpages == '') {
-    global $wp_query;
-    $numpages = $wp_query->max_num_pages;
-    if(!$numpages) {
-        $numpages = 1;
-    }
-  }
-
-  /** 
-   * We construct the pagination arguments to enter into our paginate_links
-   * function. 
-   */
-  $pagination_args = array(
-    'base'            => get_pagenum_link(1) . '%_%',
-    'format'          => 'page/%#%',
-    'total'           => $numpages,
-    'current'         => $paged,
-    'show_all'        => False,
-    'end_size'        => 1,
-    'mid_size'        => $pagerange,
-    'prev_next'       => True,
-    'prev_text'       => __('Previous'),
-    'next_text'       => __('Next'),
-    'type'            => 'plain',
-    'add_args'        => false,
-    'add_fragment'    => ''
-  );
-
-  $paginate_links = paginate_links($pagination_args);
-
-  if ($paginate_links) {
-    echo "<nav class='custom-pagination'>";
-      echo "<span class='page-numbers page-num'>Page " . $paged . " of " . $numpages . ": </span> ";
-      echo $paginate_links;
-    echo "</nav>";
-  }
-
-}
