@@ -1983,7 +1983,7 @@ article {
     right:                      -5px;
     color: red;
 }
-.circular {
+.circular { /*using(for img is not in the same size) <div class="circular" style="background: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>) center no-repeat;"></div>*/
 	width: 160px;
 	height: 160px;
 	border-radius: 150px;
@@ -1996,10 +1996,19 @@ article {
 	opacity: 0;
 	filter: alpha(opacity=0);	
 }
+.circle {
+    text-align: center;
+}
+.circle img{
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border: 2px dotted #439f55;
+}
 .item-thumbnail {
     -moz-box-sizing: border-box;
      -webkit-box-sizing: border-box; 
-     box-sizing: border-box; 
+     box-sizing: border-box;
+     text-align: center;
 }
 .item-thumbnail img {
     border: 5px solid #fff !important;

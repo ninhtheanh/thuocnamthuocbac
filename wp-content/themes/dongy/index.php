@@ -70,6 +70,7 @@ get_header(); ?>
 				<div class="heading_title">		 
 					<h3>Bệnh Trĩ</h3>		
 				</div>
+				<br>
 			</header><!-- .entry-header -->
 			<?php
 				$myarray = array('9', '11', '13');
@@ -77,6 +78,7 @@ get_header(); ?>
 				   'post_type' => 'post',
 				   'post__in'      => $myarray
 				);
+				$css_circle = rand(0, 1) ? 'circle' : 'item-thumbnail';
 				// The Query
 				$the_query = new WP_Query( $args );
 				if ( $the_query->have_posts() ) {
@@ -87,12 +89,12 @@ get_header(); ?>
 						if($i == $the_query->post_count - 1)
 							$css_last = "last";
 			?>
-			<div class="col-3 <?php echo $css_last; ?>">
-				<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
-					<div class="circular" style="background: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>) center no-repeat;">
-						<img width="160" align="center" src="<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>" border="0" title="<?php echo the_title( '', '', false ); ?>">
-					</div>
-				</a>
+			<div class="col-3 <?php echo $css_last; ?>">				
+				<div class="<?php echo $css_circle;?>">
+					<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
+						<?php the_post_thumbnail( 'thumbnail', array( 'class' => '' ) ); ?>
+					</a>
+				</div>
 				<h2>
 					<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
 						<?php echo get_the_title()?>
@@ -126,32 +128,7 @@ get_header(); ?>
 			</div>
 		</div>
 
-		<section id="post-134" class="post-134 post type-post status-publish format-standard has-post-thumbnail sticky hentry category-new-work category-other-destinations">
-			<article>
-			<div class="medium-wrap">
-							<header class="entry-header">
-	    			<h2 class="entry-title">
-	    				<a href="https://colorlib.com/travelify/this-post-has-no-body/" title="This post has no body – almost">This post has no body – almost</a>
-	    			</h2><!-- .entry-title -->
-	  			</header>
-
-	  			
-	  			
-				<figure class="post-featured-image"><a href="https://colorlib.com/travelify/this-post-has-no-body/" title="This post has no body – almost"><img width="230" height="230" src="https://cdn3.colorlib.com/travelify/wp-content/uploads/sites/4/2013/05/Spain-Plaza-de-Cibeles-Madrid-230x230.jpg" class="attachment-featured-medium wp-post-image" alt="This post has no body – almost" title="This post has no body – almost"></a></figure>
-	    		<p>Cras leo tortor, condimentum id semper eu, sodales id elit. Maecenas commodo dolor vel massa gravida vehicula. Morbi tristique sapien ac dui tempus imperdiet.</p>
-
-
-	  			
-	  					</div>
-	  			<div class="entry-meta-bar clearfix">
-	    			<div class="entry-meta">
-		    				<span class="byline"> <span class="author vcard"><a class="url fn n" href="https://colorlib.com/travelify/author/aigars-silkalns/">Aigars</a></span></span><span class="posted-on"><a href="https://colorlib.com/travelify/this-post-has-no-body/" rel="bookmark"><time class="entry-date published" datetime="2014-03-05T09:39:56+00:00">5 March, 2014</time><time class="updated" datetime="2014-11-21T09:04:21+00:00">21 November, 2014</time></a></span>	    					             		<span class="category"><a href="https://colorlib.com/travelify/category/new-work/" rel="category tag">New York</a>, <a href="https://colorlib.com/travelify/category/other-destinations/" rel="category tag">Other Destinations</a></span>
-		             		    				    			</div><!-- .entry-meta -->
-	    			<a class="readmore" href="https://colorlib.com/travelify/this-post-has-no-body/" title="This post has no body – almost">Read more</a>    		</div>
-
-	    				</article>
-		</section>
-		
+	
 	</div><!-- #container -->
 </div><!-- #main-content -->
 
