@@ -31,10 +31,10 @@
 						<div class="social-icons clearfix">
 							<ul>
 							   <li class="social-profiles-widget"> 
-								   <a href="#" target="_blank"><img title="Twitter" alt="Twitter" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/twitter.png"></a>
-								   <a href="#" target="_blank"><img title="Facebook" alt="Facebook" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/facebook.png"></a>
-								   <a href="#" target="_blank"><img title="Google Plus" alt="Google Plus" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/gplus.png"></a>
-								   <a href="#" target="_blank"><img title="LinkedIn" alt="LinkedIn" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/linkedin.png"></a>								   
+								   <a style="display:none" href="#" target="_blank"><img title="Twitter" alt="Twitter" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/twitter.png"></a>
+								   <a href="https://www.facebook.com/dongydinhtuan" target="_blank"><img title="Facebook" alt="Facebook" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/facebook.png"></a>
+								   <a style="display:none" href="#" target="_blank"><img title="Google Plus" alt="Google Plus" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/gplus.png"></a>
+								   <a style="display:none" href="#" target="_blank"><img title="LinkedIn" alt="LinkedIn" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/linkedin.png"></a>								   
 								   <a href="mailto:ninhtheanh@gmail.com" target="_blank"><img title="Email" alt="Email" src="<?php echo get_template_directory_uri(); ?>/images/social-profiles/email.png"></a>
 							   </li>
 							</ul>
