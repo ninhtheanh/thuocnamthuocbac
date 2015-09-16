@@ -2432,6 +2432,23 @@ div.wpcf7-response-output {
     line-height: 36px; 
 }
 
+.column, .columns {
+    float: left;
+    min-height: 1px;    
+    position: relative;
+}
+.one_half {
+    width: 50%;
+}
+.alpha {
+    clear: both;
+}
+.recent-thumb{float:left; width:150px; height: 155px; margin:0px 18px 0px 0px;}
+.recent-item{margin-bottom:20px; }
+.recent-title{padding-bottom: 15px; font-size:15px; line-height:normal; font-weight: bold; margin-bottom:0px; overflow:hidden;}
+.smalldate{font-size:11px; display:block; font-style:italic; overflow:hidden;}
+.recent-text{text-align: left;}
+.recent-link{clear:both; margin-top:7px;}
 /* Adding css end*/
 
 /* =Responsive Structure

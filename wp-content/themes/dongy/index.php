@@ -35,9 +35,11 @@ get_header(); ?>
 		<div class="ta-row">
 			<div class="ta-row-inner clearfix">
 				<?php
+					$arr_benhtri_ids = array(9, 11, 13);
+					$rand_benhtri_id =  $arr_benhtri_ids[array_rand($arr_benhtri_ids, 1)];
 					$args = array(
 		                    'post_type' => 'post',
-		                    'post__in' => array(1, 79, 9) );
+		                    'post__in' => array(1, 79, $rand_benhtri_id) );
 		            $posts = get_posts($args);
 		            $i = 0;
 		            foreach ( $posts as $post ) : setup_postdata( $posts );
@@ -127,7 +129,60 @@ get_header(); ?>
 				</div>
 			</div>
 		</div>
+		
+		<div class="ta-row">
+			<?php
+				$args = array( 'numberposts' => '6' );
+				$recent_posts = wp_get_recent_posts( $args );
+				foreach( $recent_posts as $recent ){
+					//print_r( $recent );
+					//echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
+			?>
+			<div class="one_half columns">
+			    <div class="recent-item">
+			    	<h3 class="recent-title"><a href="<?php echo get_permalink($recent["ID"]);?>"><?php echo $recent["post_title"];?></a></h3>
+			        <div class="recent-thumb"><img width="150" src="http://demowordpress.templatesquare.com/beautiful/files/2013/07/post51-189x154.jpg" class="frame wp-post-image" alt="post5">
+			        </div>
+			        
+			        <span class="smalldate"><?php echo date( 'l F jS', strtotime( $recent['post_date'] ) );?></span>
+			        <div class="sep"></div>
+			        <div class="ellipsis-circular" style="height: 95px">
+				        <div class="recent-text">
+				        	<?php echo $recent["post_excerpt"];?>
+				        </div>
+			        </div>
 
+			        
+
+			        <div class="clear"></div>
+			    </div>
+			</div>
+			<?php
+				}
+			?>
+			<div class="one_half columns">
+			    <div class="recent-item">
+			        <div class="recent-thumb"><img width="150" src="http://demowordpress.templatesquare.com/beautiful/files/2013/07/post51-189x154.jpg" class="frame wp-post-image" alt="post5">
+			        </div>
+			        <h3 class="recent-title"><a href="http://demowordpress.templatesquare.com/beautiful/2013/07/31/natural-aloe-vera-soap/">Natural Aloe Vera Soap</a></h3><span class="smalldate">July 31, 2013</span>
+			        <div class="sep"></div>
+			        <div class="recent-text">Nullam arcu velit, commodo non mi quis, varius dignissim turpis. Donec rutrum rhoncus ipsum, quis luctus nulla vestibulu</div>
+			        <div class="clear"></div>
+			    </div>
+			</div>
+			<div class="one_half columns">
+			    <div class="recent-item">
+			        <div class="recent-thumb"><img width="150" src="http://demowordpress.templatesquare.com/beautiful/files/2013/07/post32-189x154.jpg" class="frame wp-post-image" alt="post3">
+			        </div>
+			        <h3 class="recent-title"><a href="http://demowordpress.templatesquare.com/beautiful/2013/07/31/etiam-tincidunt-pharetra/">Feet Spa</a></h3><span class="smalldate">July 31, 2013</span>
+			        <div class="sep"></div>
+			        <div class="recent-text">Nullam arcu velit, commodo non mi quis, varius dignissim turpis. Donec rutrum rhoncus ipsum, quis luctus nulla vestibulu</div>			        
+			        
+			        <div class="clear"></div>
+			    </div>
+			</div>
+
+		</div>
 	
 	</div><!-- #container -->
 </div><!-- #main-content -->
