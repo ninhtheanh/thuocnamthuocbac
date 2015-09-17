@@ -129,7 +129,7 @@ get_header(); ?>
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="ta-row home-recent">
 			<header class="entry-header">							
 				<div class="heading_title">		 
@@ -154,9 +154,11 @@ get_header(); ?>
 			    <div class="recent-item <?php echo $css_first_col;?>">
 			    	<h3 class="recent-title"><a href="<?php echo get_permalink($recent["ID"]);?>"><?php echo $recent["post_title"];?></a></h3>
 			        <div class="recent-thumb">
-			        	<a href="<?php echo get_permalink($recent["ID"]);?>">
-			        		<img width="150" src="<?php echo $thumb_url;?>" class="frame wp-post-image" alt="<?php echo $recent["post_title"];?>">
-			        	</a>
+			        	<span class="image_rounded_shadow">
+				        	<a href="<?php echo get_permalink($recent["ID"]);?>">
+				        		<img width="150" src="<?php echo $thumb_url;?>" class="frame wp-post-image" alt="<?php echo $recent["post_title"];?>">
+				        	</a>
+				        </span>
 			        </div>			        
 			        <span class="smalldate"><?php echo date( 'd/m/Y H:i:s', strtotime( $recent['post_date'] ) );?></span>
 			        <div class="sep"></div>

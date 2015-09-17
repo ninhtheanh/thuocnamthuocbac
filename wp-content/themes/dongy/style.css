@@ -2480,8 +2480,28 @@ div.wpcf7-response-output {
 .home-recent .recent-item.first-col{ margin-right: 10px;}
 .home-recent .recent-title{padding-bottom: 10px; font-size:15px; line-height:normal; font-weight: bold; margin-bottom:0px; overflow:hidden;}
 .home-recent .smalldate{font-size:11px; display:block; font-style:italic; overflow:hidden;}
-.home-recent .recent-text{text-align: left;}
+.home-recent .recent-text{text-align: justify;}
 .home-recent .recent-link{clear:both; margin-top:7px;}
+.image_rounded_shadow {
+    display: inline-block;
+    margin: 2px 2px 2px 2px;
+    padding: 3px 3px 3px 3px;
+    border: solid 1px #BDBED9;
+    background-color:#F5F5F8;
+    box-shadow: 1px 1px 6px #888888;
+    -webkit-box-shadow: 1px 1px 6px #888888;
+    -moz-box-shadow: 1px 1px 6px #888888;
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+.image_rounded_shadow img {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    border-radius:6px;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+}
 /* Adding css end*/
 
 /* =Responsive Structure
@@ -2538,14 +2558,13 @@ div.wpcf7-response-output {
 	}
 	#primary,
 	#secondary,
-	#content-woocommerce,
 	#footerarea .col-3  {
 		float: none;
 		margin-left: 0;
 		width: auto;
 	}
 	.left-sidebar-template #primary,
-	.left-sidebar-template #content-woocommerce {
+	.left-sidebar-template {
 		float: none;
 	}
 	.featured-title,.featured-content,.featured-text {
