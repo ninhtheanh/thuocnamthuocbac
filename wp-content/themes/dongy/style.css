@@ -2374,6 +2374,42 @@ div.wpcf7-response-output {
     padding-right: 5px;
     text-align: right;    
 }
+
+.ellipsis-circular-home-rp {
+    overflow: hidden;
+    height: 120px;
+    line-height: 25px;
+    margin: 5px;
+    text-align: justify;
+}
+.ellipsis-circular-home-rp:before {
+    content:"";
+    float: left;
+    width: 5px;
+    height: 120px;
+}
+.ellipsis-circular-home-rp > *:first-child {
+    float: right;
+    width: 100%;
+    margin-left: -5px;
+}
+.ellipsis-circular-home-rp:after {
+    content: "\02026";
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    float: right; position: relative;
+    top: -21px; left: 100%;
+    width: 3em; margin-left: -3em;
+    padding-right: 5px;
+    text-align: right;
+    background: -webkit-gradient(linear, left top, right top,
+        from(rgba(255, 255, 255, 0)), to(white), color-stop(50%, white));
+    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+    background: -ms-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #f8f8f8 50%, #f8f8f8);
+}
 .normal-list-style header .heading_title h3{
 	font-size: 20px !important;
 }
@@ -2431,7 +2467,6 @@ div.wpcf7-response-output {
     width: 36px;
     line-height: 36px; 
 }
-
 .column, .columns {
     float: left;
     min-height: 1px;    
@@ -2440,15 +2475,13 @@ div.wpcf7-response-output {
 .one_half {
     width: 50%;
 }
-.alpha {
-    clear: both;
-}
-.recent-thumb{float:left; width:150px; height: 155px; margin:0px 18px 0px 0px;}
-.recent-item{margin-bottom:20px; }
-.recent-title{padding-bottom: 15px; font-size:15px; line-height:normal; font-weight: bold; margin-bottom:0px; overflow:hidden;}
-.smalldate{font-size:11px; display:block; font-style:italic; overflow:hidden;}
-.recent-text{text-align: left;}
-.recent-link{clear:both; margin-top:7px;}
+.home-recent .recent-thumb{float:left; width:150px; height: 150px; margin:0px 18px 0px 0px;}
+.home-recent .recent-item{margin-bottom:22px;}
+.home-recent .recent-item.first-col{ margin-right: 10px;}
+.home-recent .recent-title{padding-bottom: 10px; font-size:15px; line-height:normal; font-weight: bold; margin-bottom:0px; overflow:hidden;}
+.home-recent .smalldate{font-size:11px; display:block; font-style:italic; overflow:hidden;}
+.home-recent .recent-text{text-align: left;}
+.home-recent .recent-link{clear:both; margin-top:7px;}
 /* Adding css end*/
 
 /* =Responsive Structure
@@ -2486,7 +2519,7 @@ div.wpcf7-response-output {
 	}
 	#footerarea .widget_info,#footerarea .widget_text {
 		margin-bottom: 30px;
-	}
+	}	
 }
 
 /* All Mobile Portrait size smaller than 768 (devices and browsers) */
@@ -2684,6 +2717,9 @@ div.wpcf7-response-output {
 		line-height: 62px;
 		font-size: 35px;
 		padding: 5px;
+	}
+	.one_half {
+    	width: 100%;
 	}	
 }
 

@@ -70,7 +70,7 @@ get_header(); ?>
 		<div class="ta-row" style="display:block">
 			<header class="entry-header">							
 				<div class="heading_title">		 
-					<h3>Bệnh Trĩ</h3>		
+					<h3><?php _e("Bệnh Trĩ", "dongy")?></h3>		
 				</div>
 				<br>
 			</header><!-- .entry-header -->
@@ -130,57 +130,47 @@ get_header(); ?>
 			</div>
 		</div>
 		
-		<div class="ta-row">
+		<div class="ta-row home-recent">
+			<header class="entry-header">							
+				<div class="heading_title">		 
+					<h3><?php _e("Tin mới nhất", "dongy")?></h3>		
+				</div>
+				<br>
+			</header><!-- .entry-header -->
 			<?php
 				$args = array( 'numberposts' => '6' );
 				$recent_posts = wp_get_recent_posts( $args );
+				$i = 0;
 				foreach( $recent_posts as $recent ){
-					//print_r( $recent );
-					//echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
+					//print_r( $recent ); return;
+					$css_first_col = ($i%2 == 0 ? "first-col" : "");					
+        			$thumb_url = wp_get_attachment_thumb_url( get_post_thumbnail_id($recent["ID"]) );
+        			if($thumb_url == "")
+        			{        				
+        				$thumb_url = catch_first_image_in_content($recent["post_content"]);
+        			}
 			?>
 			<div class="one_half columns">
-			    <div class="recent-item">
+			    <div class="recent-item <?php echo $css_first_col;?>">
 			    	<h3 class="recent-title"><a href="<?php echo get_permalink($recent["ID"]);?>"><?php echo $recent["post_title"];?></a></h3>
-			        <div class="recent-thumb"><img width="150" src="http://demowordpress.templatesquare.com/beautiful/files/2013/07/post51-189x154.jpg" class="frame wp-post-image" alt="post5">
-			        </div>
-			        
-			        <span class="smalldate"><?php echo date( 'l F jS', strtotime( $recent['post_date'] ) );?></span>
+			        <div class="recent-thumb">
+			        	<a href="<?php echo get_permalink($recent["ID"]);?>">
+			        		<img width="150" src="<?php echo $thumb_url;?>" class="frame wp-post-image" alt="<?php echo $recent["post_title"];?>">
+			        	</a>
+			        </div>			        
+			        <span class="smalldate"><?php echo date( 'd/m/Y H:i:s', strtotime( $recent['post_date'] ) );?></span>
 			        <div class="sep"></div>
-			        <div class="ellipsis-circular" style="height: 95px">
+			        <div class="ellipsis-circular-home-rp">
 				        <div class="recent-text">
 				        	<?php echo $recent["post_excerpt"];?>
 				        </div>
-			        </div>
-
-			        
-
-			        <div class="clear"></div>
+			        </div>			        
 			    </div>
 			</div>
 			<?php
+					$i++;
 				}
-			?>
-			<div class="one_half columns">
-			    <div class="recent-item">
-			        <div class="recent-thumb"><img width="150" src="http://demowordpress.templatesquare.com/beautiful/files/2013/07/post51-189x154.jpg" class="frame wp-post-image" alt="post5">
-			        </div>
-			        <h3 class="recent-title"><a href="http://demowordpress.templatesquare.com/beautiful/2013/07/31/natural-aloe-vera-soap/">Natural Aloe Vera Soap</a></h3><span class="smalldate">July 31, 2013</span>
-			        <div class="sep"></div>
-			        <div class="recent-text">Nullam arcu velit, commodo non mi quis, varius dignissim turpis. Donec rutrum rhoncus ipsum, quis luctus nulla vestibulu</div>
-			        <div class="clear"></div>
-			    </div>
-			</div>
-			<div class="one_half columns">
-			    <div class="recent-item">
-			        <div class="recent-thumb"><img width="150" src="http://demowordpress.templatesquare.com/beautiful/files/2013/07/post32-189x154.jpg" class="frame wp-post-image" alt="post3">
-			        </div>
-			        <h3 class="recent-title"><a href="http://demowordpress.templatesquare.com/beautiful/2013/07/31/etiam-tincidunt-pharetra/">Feet Spa</a></h3><span class="smalldate">July 31, 2013</span>
-			        <div class="sep"></div>
-			        <div class="recent-text">Nullam arcu velit, commodo non mi quis, varius dignissim turpis. Donec rutrum rhoncus ipsum, quis luctus nulla vestibulu</div>			        
-			        
-			        <div class="clear"></div>
-			    </div>
-			</div>
+			?>			
 
 		</div>
 	

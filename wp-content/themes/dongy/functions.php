@@ -452,4 +452,15 @@ function get_related_posts_by_category() {
 	return $str;
 	wp_reset_query();
 }
-
+function catch_first_image_in_content($post_content) {				
+	$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post_content, $matches);
+	$first_img = $matches[1][0];
+	if(empty($first_img)) {
+		$first_img = get_template_directory_uri() . "/images/no-image-found.jpg";
+	}
+	else
+	{
+		$first_img = get_template_directory_uri() . '/timthumb.php?src=' . urlencode($first_img) . '&h=150&w=150&zc=1';
+	}				
+	return $first_img;
+}
