@@ -54,7 +54,7 @@
 	         		<?php dongy_sharing(get_permalink()); ?>					
 			</div><!-- .entry-meta -->
 			<?php
-			echo '<a class="readmore" href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">'.__( 'Đọc thêm', 'dongy' ).'</a>';
+			echo '<a class="readmore" href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">'.__( 'Chi Tiết', 'dongy' ).'</a>';
 			?>
 		</div>
 
