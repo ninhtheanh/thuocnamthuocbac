@@ -17,7 +17,7 @@ get_header(); ?>
 
 <div id="main" class="container clearfix">
 	<div id="container">		
-		<div class="ta-row">			
+		<div class="ta-row welcome-row">			
 			<div class="welcome-inner">
 				<div class="welcome-col">
 					<div class="welcome-text">Liên Hệ</div>
@@ -67,7 +67,7 @@ get_header(); ?>
 			</div><!-- .entry-content -->
 		</div>
 
-		<div class="ta-row" style="display:block">
+		<div class="ta-row">
 			<header class="entry-header">							
 				<div class="heading_title">		 
 					<h3><?php _e("Bệnh Trĩ", "dongy")?></h3>		
@@ -122,9 +122,9 @@ get_header(); ?>
 			<div class="featured_block">
 				<div class="featured_block_inner">
 					<div class="featured_block_text">
-						<p><span style="font-family: Satisfy; font-size: 32px; color: #fff774;">Nếu Bạn Có Bất Kỳ Câu Hỏi Nào?</span></p>
-						<p><span style="font-family: lato; font-size: 52px; line-height: 36px; font-weight: 900; color: #ffffff;">Hảy Liên Hệ Với Chúng Tôi!</span></p>
-						<p><a style="font-family: lato; font-size: 20px; font-weight: 300; color: #ffffff;" href="<?php echo get_page_link(34); ?>">Liên Hệ Với Thầy Thuốc</a></p>
+						<p class="title1">Nếu Bạn Có Bất Kỳ Câu Hỏi Nào?</p>
+						<p class="title2">Hảy Liên Hệ Với Chúng Tôi!</p>
+						<p class="title3"><a href="<?php echo get_page_link(34); ?>">Liên Hệ Với Thầy Thuốc</a></p>
 					</div>
 				</div>
 			</div>
@@ -133,7 +133,7 @@ get_header(); ?>
 		<div class="ta-row home-recent">
 			<header class="entry-header">							
 				<div class="heading_title">		 
-					<h3><?php _e("Tin mới nhất", "dongy")?></h3>		
+					<h3><?php _e("Bài mới nhất", "dongy")?></h3>		
 				</div>
 				<br>
 			</header><!-- .entry-header -->

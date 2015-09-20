@@ -17,19 +17,39 @@
  *
  * @package WordPress
  */
+$domainName =  isset($_SERVER['SERVER_NAME']) && $_SERVER['SERVER_NAME'] != "" ? $_SERVER['SERVER_NAME'] : "" ;
+if($domainName == "")
+	$domainName =  isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] != "" ? $_SERVER['HTTP_HOST'] : "" ;
+if($domainName == "localhost" || strpos($domainName, "127.0.0.1") !== FALSE)
+{
+	// ** MySQL settings - You can get this info from your web host ** //
+	/** The name of the database for WordPress */
+	define('DB_NAME', 'thuocnamthuocbac');
+	/** MySQL database username */
+	define('DB_USER', 'root');
+	/** MySQL database password */
+	define('DB_PASSWORD', '');
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost');
+	
+	//define('WP_HOME','localhost:8080/Wordpress/thuocnamthuocbac/');
+	//define('WP_SITEURL','localhost:8080/Wordpress/thuocnamthuocbac/');
+}
+else
+{
+	// ** MySQL settings - You can get this info from your web host ** //
+	/** The name of the database for WordPress */
+	define('DB_NAME', 'taichinh_theanh');
+	/** MySQL database username */
+	define('DB_USER', 'taichinh_theanh');
+	/** MySQL database password */
+	define('DB_PASSWORD', 'CSLQHR4OLTe8');
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost');
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'thuocnamthuocbac');
-
-/** MySQL database username */
-define('DB_USER', 'root');
-
-/** MySQL database password */
-define('DB_PASSWORD', '');
-
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+	define('WP_HOME','http://dongydinhtuan.com');
+	define('WP_SITEURL','http://dongydinhtuan.com');
+}
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');

@@ -30,6 +30,10 @@
  *
  * @since Dong Y 1.0
  */
+
+//update_option('siteurl','http://dongydinhtuan.com');
+//update_option('home','http://dongydinhtuan.com');
+
 if ( ! isset( $content_width ) ) {
 	$content_width = 660;
 }
@@ -363,17 +367,22 @@ function dongy_sharing($url) {
 	if(is_single()) {
 		$content .= '<div class="fb-send" data-href="' . $url . '"></div>';
 	}
-	$content .= '<div class="fb-share-button" data-href="' . $url . '"></div>';
+	$content .= '<div class="fb-share-button" data-href="' . $url . '" data-layout="button"></div>';
 	$content .= '<div class="fb-like" data-href="' . $url . '" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>';	
 	echo '<div class="social"> ' . $content . ' </div>';	
 }
 endif;
 function contact_information(){
-	$str = '<div class="end-post-box-contact">
+	$str = "";
+	if ( !is_sticky() && !is_page() )
+	{
+		$str .= '<blockquote><p>Thông tin chỉ mang tính chất tham khảo, không phải là các tư vấn y tế, vui lòng tham khảo ý kiến của bác sĩ trước khi sử dụng.</p></blockquote>';
+	}
+	$str .= '<div class="end-post-box-contact">
 				<p><strong>Quý khách có nhu cầu mua thuốc hoặc cần được tư vấn vui lòng liên hệ:</strong></p>
 				<p>
 				<strong>- Tại Phú Yên - Tuy Hòa</strong><br>
-				LY. Nguyễn Đình Tuân - LY. Phan Vũ Như Nguyện<br>
+				YS. Nguyễn Đình Tuân - YS. Phan Vũ Như Nguyện<br>
 				ĐT: 01236910957<br><br>
 				<strong>- Tại TP Hồ Chí Minh</strong><br>
 				Tư vấn: Ninh Thế Anh<br>
@@ -387,7 +396,7 @@ function contact_information(){
 			            </div>
 			        </div>
 		        </div>
-				<p><em>Người bệnh hoặc người nhà bệnh nhân có thể điện thoại nói về bệnh tình và được ThuocNamThuocBac&nbsp;tư vấn, sau đó Nhà thuốc gửi thuốc qua chuyển phát nhanh ( hoặc ô tô) đến cho khách hàng.</em></p>
+				<p><em>Người bệnh hoặc người nhà bệnh nhân có thể điện thoại nói về bệnh tình và được Đông Y Đình Tuân tư vấn, sau đó Nhà thuốc gửi thuốc qua chuyển phát nhanh ( hoặc ô tô) đến cho khách hàng.</em></p>
 			</div>';
 	return $str;
 }
@@ -432,22 +441,25 @@ function get_related_posts_by_category() {
 			$cat = get_category( $c );
 			$cats[] = array( 'term_id' => $cat->term_id, 'name' => $cat->name, 'slug' => $cat->slug );
 		}
+		$str = "";		
 		//var_dump($cats);
 		foreach ($cats as $category) :			
 			$posts = get_posts('numberposts=10&category='. $category['term_id'] . '&exclude=' . $current_post);
-			if(count($posts) > 0){
-				$str .= '<div class="related-posts"><header class="entry-header">							
-					<div class="heading_title">		 
-						<h3>' . __('Bài liên quan:' . $category['term_id']) . '</h3>		
-					</div>
-				</header><ul>';
+			if(count($posts) > 0 && $str == ""){
+								
 			}
 			foreach($posts as $post) :
 				$str .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';	
 			endforeach;
 		endforeach;
 		if($str != "")
-			$str .= '</ul></div>';
+		{
+			$str .= '<div class="related-posts"><header class="entry-header">							
+					<div class="heading_title">		 
+						<h3>' . __('Bài liên quan') . '</h3>		
+					</div>
+				</header><ul>' . $str . '</ul></div>';
+		}
 	}	
 	return $str;
 	wp_reset_query();

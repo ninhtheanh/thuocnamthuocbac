@@ -18,7 +18,7 @@
 	<!--[if lt IE 9]>
 	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
 	<![endif]-->
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/x-icon" />	
+	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" type="image/x-icon" />	
 	<?php wp_head(); ?>
 </head>
 
@@ -95,14 +95,14 @@
 				   <div class="slider-cycle" style="width: 100%;">
 				   		<div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
 					        <figure>
-					         	<a href="https://colorlib.com/travelify/layout-test/" title="Content Layout Preview">
-						         	<img width="960" src="http://localhost:8080/Wordpress/thuocnamthuocbac/wp-content/uploads/2015/09/banner_scr.jpg" 
-						         	class="pngfix wp-post-image" alt="Content Layout Preview" title="Content Layout Preview">				         	
+					         	<a href="#" title="">
+						         	<img width="960" src="<?php echo get_template_directory_uri(); ?>/images/banner/banner.jpg" 
+						         	class="pngfix wp-post-image" alt="" title="">				         	
 						        </a>
 					     	</figure>
 				         	<article class="featured-text" style="display:none">
 					            <div class="featured-title">
-					            	<a href="https://colorlib.com/travelify/layout-test/" title="Content Layout Preview">Thuốc Việt Nam</a>
+					            	<a href="https://colorlib.com/travelify/layout-test/" title="Đông Y Đình Tuân">Thuốc Việt Nam</a>
 					            </div>
 					            <!-- .featured-title -->
 					            <div class="featured-content">Chung Tay Chăm Sóc Sức Khỏe Cộng Đồng </div>
@@ -112,14 +112,14 @@
 				      </div>
 				      <div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
 					        <figure>
-					         	<a href="https://colorlib.com/travelify/layout-test/" title="Content Layout Preview">
-						         	<img width="960" src="http://localhost:8080/Wordpress/thuocnamthuocbac/wp-content/themes/dongy/images/banner/banner2.jpg" 
-						         	class="pngfix wp-post-image" alt="Content Layout Preview" title="Content Layout Preview">				         	
+					         	<a href="#" title="Đông Y Đình Tuân">
+						         	<img width="960" src="<?php echo get_template_directory_uri(); ?>/images/banner/banner2.jpg" 
+						         	class="pngfix wp-post-image" alt="Đông Y Đình Tuân" title="Đông Y Đình Tuân">				         	
 						        </a>
 					     	</figure>
 				         	<article class="featured-text" style="display:none">
 					            <div class="featured-title">
-					            	<a href="https://colorlib.com/travelify/layout-test/" title="Content Layout Preview">Thuốc Việt Nam</a>
+					            	<a href="#" title="Đông Y Đình Tuân">Thuốc Việt Nam</a>
 					            </div>
 					            <!-- .featured-title -->
 					            <div class="featured-content">Chung Tay Chăm Sóc Sức Khỏe Cộng Đồng </div>
