@@ -454,7 +454,7 @@ function get_related_posts_by_category() {
 		endforeach;
 		if($str != "")
 		{
-			$str .= '<div class="related-posts"><header class="entry-header">							
+			$str = '<div class="related-posts"><header class="entry-header">							
 					<div class="heading_title">		 
 						<h3>' . __('Bài liên quan') . '</h3>		
 					</div>
