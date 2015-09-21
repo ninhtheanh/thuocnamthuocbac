@@ -2151,8 +2151,8 @@ div.wpcf7-response-output {
 	padding: 10px;
 	color: #000;
 	background-color: #ffffff;	
-	width: 91%;
-	margin: 5px 0px 5px 0px;
+	padding: 0.5em;
+    margin: 0.1em 0.1em;
 }
 
 #top-nav-button{
