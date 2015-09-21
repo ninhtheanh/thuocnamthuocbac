@@ -18,7 +18,7 @@
 	<!--[if lt IE 9]>
 	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
 	<![endif]-->
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" type="image/x-icon" />	
+	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/x-icon" />	
 	<?php wp_head(); ?>
 </head>
 
@@ -43,7 +43,7 @@
 					<hgroup id="site-logo" class="clearfix">
 						<div class="logo">
 							<a href="<?php echo site_url(); ?>">
-								<img title="Logo" alt="Logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg">
+								<img title="Logo" alt="Đông Y Đình Tuân" src="<?php echo get_template_directory_uri(); ?>/images/logo.png">
 							</a>
 						</div>						
 						<div class="logo-name">
