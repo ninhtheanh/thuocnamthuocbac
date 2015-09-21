@@ -535,6 +535,7 @@ a.more-link:hover {
 #site-logo {
 	float: left;
 	margin-top: 32px;
+	text-align: center;
 }
 #site-title {
 	font: 36px 'Ubuntu', sans-serif;
@@ -2621,7 +2622,7 @@ div.wpcf7-response-output {
 		margin-top: 15px;		
 	}
 	.hgroup-wrap {
-		padding-bottom: 25px;
+		padding-bottom: 20px;
 		padding-top: 0;
 	}
 	.hgroup-right {
@@ -2631,8 +2632,11 @@ div.wpcf7-response-output {
 		display: none;
 	}
 	#site-logo {
-		margin-top: 25px;
+		margin-top: 20px;
+		margin-left: 0px;
+		width: 100%;
 	}
+	.logo-name{text-align: center; width: 100%;}
 	#site-title a img {
 		max-width: 280px;
 	}
@@ -2664,7 +2668,7 @@ div.wpcf7-response-output {
 		padding-left: 28px;
 	}
 	#main {
-		padding-top: 40px;
+		padding-top: 30px;
 	}
 	.post-featured-image {
 		margin-bottom: 5px;
@@ -2831,5 +2835,6 @@ div.wpcf7-response-output {
 	.featured_block_text .title2{	
 		font-family: lato; font-size: 20px; line-height: 36px; font-weight: 900; color: #ffffff;	
 	}
+	.featured-slider{display: none;}
 }
 
