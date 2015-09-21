@@ -75,23 +75,20 @@ get_header(); ?>
 				<br>
 			</header><!-- .entry-header -->
 			<?php
-				$myarray = array('9', '11', '13');
+				$css_circle = rand(0, 1) ? 'circle' : 'item-thumbnail';
+
 				$args = array(
 				   'post_type' => 'post',
-				   'post__in'      => $myarray
-				);
-				$css_circle = rand(0, 1) ? 'circle' : 'item-thumbnail';
-				// The Query
-				$the_query = new WP_Query( $args );
-				if ( $the_query->have_posts() ) {
-					$i = 0;					
-					while ( $the_query->have_posts() ) {
-						$the_query->the_post();
-						$css_last = "";
-						if($i == $the_query->post_count - 1)
-							$css_last = "last";
+				   'post__in'      => array(9, 11, 13)
+				);								
+				// The Query				
+	            $posts = get_posts($args);				
+				if ( count($posts) > 0 ) {									
+					$i = 0;	
+					foreach ( $posts as $post ) : setup_postdata( $posts );						
+						$css_last = ($i == count($posts) - 1) ? "last" : "";						
 			?>
-			<div class="col-3 <?php echo $css_last; ?>">				
+			<div class="col-3 <?php the_ID(); ?> <?php echo $i; ?>  <?php echo $css_last; ?>">				
 				<div class="<?php echo $css_circle;?>">
 					<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
 						<?php the_post_thumbnail( 'thumbnail', array( 'class' => '' ) ); ?>
@@ -111,7 +108,7 @@ get_header(); ?>
 			</div>
 			<?php			
 						$i++;
-					}
+					endforeach;
 				} else {
 					// no posts found
 				}
