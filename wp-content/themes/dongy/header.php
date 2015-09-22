@@ -102,7 +102,7 @@
 					     	</figure>
 				         	<article class="featured-text" style="display:none">
 					            <div class="featured-title">
-					            	<a href="https://colorlib.com/travelify/layout-test/" title="Đông Y Đình Tuân">Thuốc Việt Nam</a>
+					            	<a href="#" title="Đông Y Đình Tuân">Thuốc Việt Nam</a>
 					            </div>
 					            <!-- .featured-title -->
 					            <div class="featured-content">Chung Tay Chăm Sóc Sức Khỏe Cộng Đồng </div>
