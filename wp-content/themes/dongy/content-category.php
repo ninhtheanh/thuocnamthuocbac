@@ -25,14 +25,20 @@
 		<div class="entry-content clearfix">
 			<p style="text-align: justify" text-align="justify">
 			<?php
-				if( has_post_thumbnail() ) {
-					$image = '';
-			 		$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );					
+				$thumb_url = '';
+		 		$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
+		 		$thumb_url = wp_get_attachment_thumb_url( get_post_thumbnail_id($post->ID) );
+    			if($thumb_url == ""){        				
+    				$thumb_url = catch_first_image_in_content(get_the_content( $post->ID ));
+
+    			}	
+    			//echo "thumb_url:" . $thumb_url;
+    			if($thumb_url != ""){			
 			?>
-			<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
-				<img title="<?php echo the_title( '', '', false ); ?>" alt="<?php echo esc_attr( $title_attribute ); ?>" class="wp-post-image" 
-             src="<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>" width="160" style="float: left; margin: 5px 12px 2px 5px;">
-             </a>
+					<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
+						<img title="<?php echo the_title( '', '', false ); ?>" alt="<?php echo esc_attr( $title_attribute ); ?>" class="entry-thumb" 
+		             src="<?php echo $thumb_url; ?>" width="150">
+		            </a>
 			<?php		
 				}
 			?>
