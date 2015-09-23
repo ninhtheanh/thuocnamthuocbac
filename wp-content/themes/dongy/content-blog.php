@@ -15,10 +15,10 @@
 		<?php
 			if( has_post_thumbnail() ) {
 				$image = '';
-		 		$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
+		 		$title_attribute = esc_attr( get_the_title( $post->ID ) );
 		 		$image .= '<figure class="post-featured-image">';
 					$image .= '<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">';
-					$image .= get_the_post_thumbnail( $post->ID, 'featured-medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'</a>';
+					$image .= get_the_post_thumbnail( $post->ID, 'featured-medium', array( 'title' => $title_attribute, 'alt' => $title_attribute ) ).'</a>';
 					$image .= '</figure>';
 
 					echo $image;
@@ -52,11 +52,11 @@
 	         		<span class="category"><?php the_category(', '); ?></span>
 	         	<?php } ?>
 					<?php if ( comments_open() ) { ?>
-	         		<span class="comments"><?php comments_popup_link( __( 'No Comments', 'travelify' ), __( '1 Comment', 'travelify' ), __( '% Comments', 'travelify' ), '', __( 'Comments Off', 'travelify' ) ); ?></span>
+	         		<span class="comments"><?php comments_popup_link( __( 'No Comments', 'dongy' ), __( '1 Comment', 'dongy' ), __( '% Comments', 'dongy' ), '', __( 'Comments Off', 'dongy' ) ); ?></span>
 	         	<?php } ?>
 			</div><!-- .entry-meta -->
-			<?php
-			echo '<a class="readmore" href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">'.__( 'Chi Tiết', 'travelify' ).'</a>';
+			<?php			
+				echo '<a class="readmore" href="' . get_permalink() . '" title="'.$title_attribute . '" alt="'.$title_attribute.'">' . __( 'Chi Tiết', 'dongy' ).'</a>';
 			?>
 		</div>
 

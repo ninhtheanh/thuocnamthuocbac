@@ -86,16 +86,17 @@ get_header(); ?>
 				if ( count($posts) > 0 ) {									
 					$i = 0;	
 					foreach ( $posts as $post ) : setup_postdata( $posts );						
-						$css_last = ($i == count($posts) - 1) ? "last" : "";						
+						$css_last = ($i == count($posts) - 1) ? "last" : "";
+						$title_attribute = esc_attr( get_the_title() );				
 			?>
-			<div class="col-3 <?php the_ID(); ?> <?php echo $i; ?>  <?php echo $css_last; ?>">				
+			<div class="col-3 page-id-<?php the_ID(); ?> <?php echo $css_last; ?>">				
 				<div class="<?php echo $css_circle;?>">
-					<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
-						<?php the_post_thumbnail( 'thumbnail', array( 'class' => '' ) ); ?>
+					<a href="<?php echo get_permalink(); ?>" title="<?php echo $title_attribute ?>">
+						<?php the_post_thumbnail( 'thumbnail', array( 'alt' => $title_attribute, 'title' => $title_attribute, 'class' => '') ); ?>
 					</a>
 				</div>
 				<h2>
-					<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
+					<a href="<?php echo get_permalink(); ?>" title="<?php echo $title_attribute; ?>">
 						<?php echo get_the_title()?>
 					</a>
 				</h2>				
@@ -140,20 +141,21 @@ get_header(); ?>
 				$i = 0;
 				foreach( $recent_posts as $recent ){
 					//print_r( $recent ); return;
-					$css_first_col = ($i%2 == 0 ? "first-col" : "");					
+					$css_first_col = ($i%2 == 0 ? "first-col" : "");
+					$title_attribute = esc_attr( $recent["post_title"] );
         			$thumb_url = wp_get_attachment_thumb_url( get_post_thumbnail_id($recent["ID"]) );
         			if($thumb_url == "")
         			{        				
         				$thumb_url = catch_first_image_in_content($recent["post_content"]);
         			}
 			?>
-			<div class="one_half columns">
+			<div class="one_half columns page-id-<?php echo $recent["ID"];?>">
 			    <div class="recent-item <?php echo $css_first_col;?>">
-			    	<h3 class="recent-title"><a href="<?php echo get_permalink($recent["ID"]);?>"><?php echo $recent["post_title"];?></a></h3>
+			    	<h3 class="recent-title"><a href="<?php echo get_permalink($recent["ID"]);?>" title="<?php echo $title_attribute ;?>"><?php echo $recent["post_title"];?></a></h3>
 			        <div class="recent-thumb">
 			        	<span class="image_rounded_shadow">
-				        	<a href="<?php echo get_permalink($recent["ID"]);?>">
-				        		<img width="150" src="<?php echo $thumb_url;?>" class="frame wp-post-image" alt="<?php echo $recent["post_title"];?>">
+				        	<a href="<?php echo get_permalink($recent["ID"]);?>" title="<?php echo $title_attribute ;?>">
+				        		<img width="150" height="150" src="<?php echo $thumb_url;?>" class="frame wp-post-image" alt="<?php echo $title_attribute;?>" title="<?php echo $title_attribute ;?>">
 				        	</a>
 				        </span>
 			        </div>			        

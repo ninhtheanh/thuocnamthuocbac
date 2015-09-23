@@ -51,11 +51,11 @@
 	         		<span class="category"><?php the_category(', '); ?></span>
 	         	<?php } ?>
 					<?php if ( comments_open() ) { ?>
-	         		<span class="comments"><?php comments_popup_link( __( 'No Comments', 'travelify' ), __( '1 Comment', 'travelify' ), __( '% Comments', 'travelify' ), '', __( 'Comments Off', 'travelify' ) ); ?></span>
+	         		<span class="comments"><?php comments_popup_link( __( 'No Comments', 'dongy' ), __( '1 Comment', 'dongy' ), __( '% Comments', 'dongy' ), '', __( 'Comments Off', 'dongy' ) ); ?></span>
 	         	<?php } ?>
 			</div><!-- .entry-meta -->
 			<?php
-			echo '<a class="readmore" href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">'.__( 'Chi Tiết', 'travelify' ).'</a>';
+			echo '<a class="readmore" href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">'.__( 'Chi Tiết', 'dongy' ).'</a>';
 			?>
 		</div>
 

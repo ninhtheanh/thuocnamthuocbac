@@ -26,12 +26,12 @@
 			<p style="text-align: justify" text-align="justify">
 			<?php
 				if( has_post_thumbnail() ) {
+					$title_attribute = esc_attr( get_the_title( $post->ID ) );
 					$image = '';
 			 		$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );					
 			?>
 			<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
-				<img title="<?php echo the_title( '', '', false ); ?>" alt="<?php echo esc_attr( $title_attribute ); ?>" class="wp-post-image" 
-             src="<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>" width="160" style="float: left; margin: 5px 12px 2px 5px;">
+				<img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>" width="150"  class="wp-post-image" style="float: left; margin: 5px 12px 2px 5px;" title="<?php echo $title_attribute; ?>" alt="<?php echo $title_attribute; ?>">
              </a>
 			<?php		
 				}
@@ -46,13 +46,13 @@
 		<div class="entry-meta-bar clearfix">
 			<div class="entry-meta">
 					<?php						
-						$category = has_category() ? get_the_category() : ""; //the_category(', ') will show html
+						$category = has_category() ? get_the_category() : "";
 						dongy_posted_on($category); 
 					?>
 	         		<?php dongy_sharing(get_permalink()); ?>					
 			</div><!-- .entry-meta -->
 			<?php
-			echo '<a class="readmore" href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">'.__( 'Chi Tiết', 'dongy' ).'</a>';
+				echo '<a class="readmore" href="' . get_permalink() . '" title="'.$title_attribute . '" alt="'.$title_attribute.'">' . __( 'Chi Tiết', 'dongy' ).'</a>';
 			?>
 		</div>
 

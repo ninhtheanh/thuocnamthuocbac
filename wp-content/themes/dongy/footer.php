@@ -32,15 +32,15 @@
 <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/jquery.cycle.all.min.js?ver=1.0.0'></script>
 <script type='text/javascript'>
 	/* <![CDATA[ */
-	var travelify_slider_value = {"transition_effect":"fade","transition_delay":"4000","transition_duration":"1000"};
+	var dongy_slider_value = {"transition_effect":"fade","transition_delay":"4000","transition_duration":"1000"};
 	/* ]]> */
 	/**
 	
 	/* Slider Setting */
 	jQuery(window).load(function() {
-	    var transition_effect = travelify_slider_value.transition_effect;
-	    var transition_delay = travelify_slider_value.transition_delay;
-	    var transition_duration = travelify_slider_value.transition_duration;
+	    var transition_effect = dongy_slider_value.transition_effect;
+	    var transition_delay = dongy_slider_value.transition_delay;
+	    var transition_duration = dongy_slider_value.transition_duration;
 	    jQuery('.slider-cycle').cycle({
 	        fx: transition_effect,
 	        pager: '#controllers',

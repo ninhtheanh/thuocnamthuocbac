@@ -22,17 +22,15 @@
 				$image = '';
 		 		$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
 		 		$image .= '<figure class="post-featured-image">';
-					$image .= '<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">';
-					$image .= get_the_post_thumbnail( $post->ID, 'featured-medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'</a>';
-					$image .= '</figure>';
-
-					//echo $image;
+				$image .= '<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">';
+				$image .= get_the_post_thumbnail( $post->ID, 'featured-medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'</a>';
+				$image .= '</figure>';
+				//echo $image;
 			}
 		?>
 
 		<div class="entry-content clearfix">
-			<?php
-				/* translators: %s: Name of current post */
+			<?php				
 				the_content();				
 			?>
 		</div><!-- .entry-content -->

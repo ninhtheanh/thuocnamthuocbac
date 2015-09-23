@@ -26,7 +26,7 @@
 			<p style="text-align: justify" text-align="justify">
 			<?php
 				$thumb_url = '';
-		 		$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
+		 		$title_attribute = esc_attr( get_the_title( $post->ID ) );
 		 		$thumb_url = wp_get_attachment_thumb_url( get_post_thumbnail_id($post->ID) );
     			if($thumb_url == ""){        				
     				$thumb_url = catch_first_image_in_content(get_the_content( $post->ID ));
@@ -36,8 +36,7 @@
     			if($thumb_url != ""){			
 			?>
 					<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
-						<img title="<?php echo the_title( '', '', false ); ?>" alt="<?php echo esc_attr( $title_attribute ); ?>" class="entry-thumb" 
-		             src="<?php echo $thumb_url; ?>" width="150">
+						<img src="<?php echo $thumb_url; ?>" width="150" height="150" class="entry-thumb" title="<?php echo $title_attribute; ?>" alt="<?php echo $title_attribute;?>">
 		            </a>
 			<?php		
 				}
@@ -49,21 +48,18 @@
 
 		</div><!-- .entry-content -->
 
-		
-
 		<div class="entry-meta-bar clearfix">
 			<div class="entry-meta">
 					<?php						
-						$category = has_category() ? get_the_category() : ""; //the_category(', ') will show html
+						$category = has_category() ? get_the_category() : "";
 						dongy_posted_on($category); 
 					?>
 	         		<?php dongy_sharing(get_permalink()); ?>					
 			</div><!-- .entry-meta -->
 			<?php
-			echo '<a class="readmore" href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">'.__( 'Chi Tiết', 'dongy' ).'</a>';
+			echo '<a class="readmore" href="' . get_permalink() . '" title="'.$title_attribute . '" alt="'.$title_attribute.'">' . __( 'Chi Tiết', 'dongy' ).'</a>';
 			?>
 		</div>
-
 
 	</article><!-- #article-## -->
 </section><!-- #section-## -->
