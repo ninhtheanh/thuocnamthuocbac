@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /wp-
+Sitemap: http://dongydinhtuan.com/sitemap.xml.gz

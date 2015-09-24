@@ -851,6 +851,9 @@ a.more-link:hover {
 .featured-text .featured-title a {
 	color: #fff;
 }
+.featured-banner div img{
+	max-width: 100%;
+}
 /* Controllers */
 #controllers {
 	text-align: center;

@@ -476,3 +476,14 @@ function catch_first_image_in_content($post_content) {
 	}				
 	return $first_img;
 }
+if ( ! function_exists( 'get_current_page_url' ) ) {
+	function get_current_page_url() {
+	  global $wp;
+	  return add_query_arg( $_SERVER['QUERY_STRING'], '', home_url( $wp->request ) );
+	}
+}
+if ( ! function_exists( 'the_current_page_url' ) ) {
+	function the_current_page_url() {
+	  echo get_current_page_url();
+}
+}

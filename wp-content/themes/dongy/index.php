@@ -121,7 +121,7 @@ get_header(); ?>
 				<div class="featured_block_inner">
 					<div class="featured_block_text">
 						<p class="title1">Nếu Bạn Có Bất Kỳ Câu Hỏi Nào?</p>
-						<p class="title2">Hảy Liên Hệ Với Chúng Tôi!</p>
+						<p class="title2">Hãy Liên Hệ Với Chúng Tôi!</p>
 						<p class="title3"><a href="<?php echo get_page_link(34); ?>">Liên Hệ Với Thầy Thuốc</a></p>
 					</div>
 				</div>
@@ -131,7 +131,7 @@ get_header(); ?>
 		<div class="ta-row home-recent">
 			<header class="entry-header">							
 				<div class="heading_title">		 
-					<h3><?php _e("Bài mới nhất", "dongy")?></h3>		
+					<h3><?php _e("Bài mới nhất", "dongy")?></h3>
 				</div>
 				<br>
 			</header><!-- .entry-header -->

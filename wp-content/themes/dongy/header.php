@@ -43,7 +43,7 @@
 					<hgroup id="site-logo" class="clearfix">
 						<div class="logo">
 							<a href="<?php echo site_url(); ?>">
-								<img title="Logo" alt="Đông Y Đình Tuân" src="<?php echo get_template_directory_uri(); ?>/images/logo.png">
+								<img title="Đông Y Đình Tuân" alt="Đông Y Đình Tuân" src="<?php echo get_template_directory_uri(); ?>/images/logo.png">
 							</a>
 						</div>						
 						<div class="logo-name">
@@ -92,32 +92,31 @@
 			if( is_home() || is_front_page() ) {
 			?>
 				<section class="featured-slider">
-				   <div class="slider-cycle" style="width: 100%;">
+				   	<div class="slider-cycle" style="width: 100%;">
 				   		<div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
 					        <figure>
 					         	<a href="#" title="">
-						         	<img width="960" src="<?php echo get_template_directory_uri(); ?>/images/banner/banner.jpg" 
+						         	<img width="960" src="<?php echo get_template_directory_uri(); ?>/images/banner/home/banner-tri.jpg" 
 						         	class="pngfix wp-post-image" alt="" title="">				         	
 						        </a>
 					     	</figure>
-				         	<article class="featured-text" style="display:none">
-					            <div class="featured-title">
-					            	<a href="#" title="Đông Y Đình Tuân">Thuốc Việt Nam</a>
-					            </div>
-					            <!-- .featured-title -->
-					            <div class="featured-content">Chung Tay Chăm Sóc Sức Khỏe Cộng Đồng </div>
-					            <!-- .featured-content -->
-					        </article>
-					         <!-- .featured-text -->
-				      </div>
-				      <div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
+				      	</div>
+				      	<div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
 					        <figure>
-					         	<a href="#" title="Đông Y Đình Tuân">
-						         	<img width="960" src="<?php echo get_template_directory_uri(); ?>/images/banner/banner2.jpg" 
-						         	class="pngfix wp-post-image" alt="Đông Y Đình Tuân" title="Đông Y Đình Tuân">				         	
+					         	<a href="#" title="">
+						         	<img width="960" src="<?php echo get_template_directory_uri(); ?>/images/banner/home/banner-suynhuocthankinh.jpg" 
+						         	class="pngfix wp-post-image" alt="" title="">				         	
 						        </a>
 					     	</figure>
-				         	<article class="featured-text" style="display:none">
+				      	</div>
+				      	<div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
+					        <figure>
+					         	<a href="#" title="">
+						         	<img width="960" src="<?php echo get_template_directory_uri(); ?>/images/banner/home/banner-banner-suynhuoc.jpg" 
+						         	class="pngfix wp-post-image" alt="" title="">				         	
+						        </a>
+					     	</figure>
+					     	<article class="featured-text" style="display:none">
 					            <div class="featured-title">
 					            	<a href="#" title="Đông Y Đình Tuân">Thuốc Việt Nam</a>
 					            </div>
@@ -126,12 +125,33 @@
 					            <!-- .featured-content -->
 					        </article>
 					         <!-- .featured-text -->
-				       </div>
+				      	</div>				      	
 				   </div>
 				   <nav id="controllers" class="clearfix"></nav>			   
 				   <!-- #controllers -->
 				</section>
-			<?php	
+			<?php
+	   		}
+	   		elseif( in_category(array('benh-tri', 'suy-nhuoc-co-the', 'suy-nhuoc-than-kinh')) ){	   			
+	   			$category = get_the_category();	   			
+	   			$cat_link = get_category_link($category[0]->cat_ID);
+	   			$arrURLs = array('benh-tri'=>$cat_link, 'suy-nhuoc-co-the'=>get_page_link(1), 'suy-nhuoc-than-kinh'=>get_page_link(79));
+
+	   			$result = array();
+	   			$current_page_url = get_current_page_url();
+	   			foreach ($arrURLs as $key => $value) {	   				
+	   				if(strpos($value, $current_page_url) !== FALSE)
+	   				{	   					
+	   					$arrURLs[$key] = "#";
+	   				}
+	   			}	   			
+	   		?>
+	   			<section class="featured-banner">
+	   				<div>
+						<a href="<?php echo $arrURLs[$category[0]->slug];?>"><img width="960" src="<?php echo get_template_directory_uri(); ?>/images/banner/banner-<?php echo $category[0]->slug;?>.jpg" title="Banner Thuoc Nam" alt="Banner Thuoc Nam"></a>
+	   				</div>
+	   			</section>
+	   		<?php
 	   		}
 			else {
 				if( ( '' != dongy_header_title() ) || function_exists( 'bcn_display_list' ) ) {
