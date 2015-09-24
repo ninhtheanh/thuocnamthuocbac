@@ -19,6 +19,9 @@
 	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
 	<![endif]-->
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/x-icon" />	
+	<meta name='yandex-verification' content='513dc5c377fa41be' />
+	<meta name="alexaVerifyID" content="UphTEFbQEJiblt4raVP28h60nOc"/>
+	<meta name="msvalidate.01" content="E9AF1BE6958FDCB438B5AB2B96198BF8" />
 	<?php wp_head(); ?>
 </head>
 
@@ -112,7 +115,7 @@
 				      	<div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
 					        <figure>
 					         	<a href="#" title="">
-						         	<img width="960" src="<?php echo get_template_directory_uri(); ?>/images/banner/home/banner-banner-suynhuoc.jpg" 
+						         	<img width="960" src="<?php echo get_template_directory_uri(); ?>/images/banner/home/banner-suynhuoc.jpg" 
 						         	class="pngfix wp-post-image" alt="" title="">				         	
 						        </a>
 					     	</figure>
