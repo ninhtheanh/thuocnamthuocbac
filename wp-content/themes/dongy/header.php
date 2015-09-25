@@ -135,23 +135,41 @@
 				</section>
 			<?php
 	   		}
-	   		elseif( in_category(array('benh-tri', 'suy-nhuoc-co-the', 'suy-nhuoc-than-kinh')) ){	   			
-	   			$category = get_the_category();	   			
+	   		elseif( in_category(array('benh-tri', 'suy-nhuoc-co-the', 'suy-nhuoc-than-kinh')) ){
+	   			$current_page_url = get_current_page_url();
+
+	   			/*$category = get_the_category();	   			
 	   			$cat_link = get_category_link($category[0]->cat_ID);
 	   			$arrURLs = array('benh-tri'=>$cat_link, 'suy-nhuoc-co-the'=>get_page_link(1), 'suy-nhuoc-than-kinh'=>get_page_link(79));
 
-	   			$result = array();
-	   			$current_page_url = get_current_page_url();
+	   			$result = array();	   			
 	   			foreach ($arrURLs as $key => $value) {	   				
 	   				if(strpos($value, $current_page_url) !== FALSE)
 	   				{	   					
 	   					$arrURLs[$key] = "#";
 	   				}
-	   			}	   			
+	   			}*/	   			
+	   			$banner_url = "";
+	   			$banner_result = array();
+	   			if ( in_category( 'benh-tri' ) ) {
+	   				$banner_result = array("benh-tri", "banner-benh-tri.jpg");
+	   			}
+	   			elseif ( in_category( 'suy-nhuoc-co-the' ) ) {	   				
+	   				$banner_result = array("benh-suy-nhuoc-co-the", "banner-suy-nhuoc-co-the.jpg");
+	   			}
+	   			elseif ( in_category( 'suy-nhuoc-than-kinh' ) ) {	   				
+	   				$banner_result = array("benh-suy-nhuoc-than-kinh", "banner-suy-nhuoc-than-kinh.jpg");
+	   			}
+
+	   			$banner_url = get_bloginfo('url') . "/" . $banner_result[0];	   			
+	   			if(strpos($banner_url, $current_page_url) !== FALSE)
+	   				$banner_url = "#";	   			
 	   		?>
 	   			<section class="featured-banner">
 	   				<div>
-						<a href="<?php echo $arrURLs[$category[0]->slug];?>"><img width="960" src="<?php echo get_template_directory_uri(); ?>/images/banner/banner-<?php echo $category[0]->slug;?>.jpg" title="Banner Thuoc Nam" alt="Banner Thuoc Nam"></a>
+						<a href="<?php echo $banner_url; ?>">
+							<img width="960" src="<?php echo get_template_directory_uri() . "/images/banner/" . $banner_result[1]; ?>" title="Banner Thuoc Nam" alt="Banner Thuoc Nam">
+						</a>
 	   				</div>
 	   			</section>
 	   		<?php
