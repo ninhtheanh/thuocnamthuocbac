@@ -3,7 +3,7 @@
  * Displays the 404 error page of the theme.
  */
 ?>
-
+<?php wp_redirect( home_url() ); exit; ?>
 <?php get_header(); ?>
 
 <div id="content">

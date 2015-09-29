@@ -22,6 +22,7 @@
 	<meta name='yandex-verification' content='513dc5c377fa41be' />
 	<meta name="alexaVerifyID" content="UphTEFbQEJiblt4raVP28h60nOc"/>
 	<meta name="msvalidate.01" content="E9AF1BE6958FDCB438B5AB2B96198BF8" />
+	<meta name="google-site-verification" content="eghVEPjMSNDJYEre07eZRY_-htVcCSvAT6rawxtXiwI" />
 	<?php wp_head(); ?>
 </head>
 

@@ -487,3 +487,8 @@ if ( ! function_exists( 'the_current_page_url' ) ) {
 	  echo get_current_page_url();
 }
 }
+
+function yst_wpseo_change_og_locale( $locale ) {
+	return 'vi_VN';
+}
+add_filter( 'wpseo_locale', 'yst_wpseo_change_og_locale' );
