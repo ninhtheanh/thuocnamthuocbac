@@ -29,9 +29,13 @@ get_header(); ?>
 				<?php endif; ?>
 
 				<?php
-				// Start the loop.
-				while ( have_posts() ) : the_post();
-					get_template_part( 'content', 'page' ); 
+				$page_load = "page"; //default page is content-page.php
+				$pagename = get_query_var('pagename');
+				if($pagename == "sitemap")
+					$page_load = "sitemap";
+				// Start the loop.				
+				while ( have_posts() ) : the_post();					
+					get_template_part( 'content', $page_load );					
 				// End the loop.
 				endwhile;
 

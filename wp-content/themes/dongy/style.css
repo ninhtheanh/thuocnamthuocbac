@@ -246,6 +246,7 @@ blockquote {
 	border-left: 4px solid #439f55;
 	margin-bottom: 20px;
 	background-color: #F9F9F9;
+	clear: both;
 }
 blockquote p {
 	margin: 0;
@@ -1590,6 +1591,12 @@ ul.default-wp-page li a:active {
 .widget ul li a {
 	margin: 0 0 8px 0;
 }
+.sitemap ul{
+	list-style: none !important;
+}
+.sitemap ul li a {
+	text-decoration: none;
+}
 #secondary .recentcomments ul li {
 	background-position: 30px 6px;
 }
@@ -1847,7 +1854,11 @@ article {
     position: relative;
     float: none;
     clear: both;
-    padding-bottom: 40px;
+    padding-bottom: 40px;    
+}
+.ta-row-fb-like-fanpage{	
+    text-align: center;
+    padding-bottom: 10px !important; 
 }
 .ta-row-inner{
 	position: relative;
@@ -2151,6 +2162,13 @@ div.wpcf7-response-output {
     height: 23px;       
     line-height: 22px;
 }
+.social-bottom{
+	float: right;
+	margin-bottom: 20px;
+}
+.social-bottom .fb-share-button{
+	padding-right: 10px;
+}
 .end-post-box-contact {
 	border: 2px dotted #57ad68;
 	padding: 10px;
@@ -2158,6 +2176,8 @@ div.wpcf7-response-output {
 	background-color: #ffffff;	
 	padding: 0.5em;
     margin: 0.1em 0.1em;
+    clear: both;
+    margin-bottom: 20px;
 }
 
 #top-nav-button{
@@ -2700,9 +2720,14 @@ div.wpcf7-response-output {
 	#primary {
 		max-width: 100%;
 	}
+	.widget_search{
+		margin-bottom: 0px !important;
+		height: 1px;
+		display: none;
+	}
 	.widget_search input.s,.widget_search input.s:focus {
 		width: 100%;
-	}
+	}	
 	#wp_page_numbers,.wp-pagenavi,#content ul.default-wp-page,.pagination {
 		margin-bottom: 30px;
 	}
@@ -2713,7 +2738,7 @@ div.wpcf7-response-output {
 		margin-bottom: 15px;
 	}
 	.widget {
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 	}
 	.widget_custom-tagcloud {
 		margin-bottom: 22px;
@@ -2808,6 +2833,9 @@ div.wpcf7-response-output {
 	}
 	.featured_block_text .title3 a{	
 		font-family: lato; font-size: 14px; font-weight: 300; color: #ffffff;
+	}
+	.end-post-box-contact{
+		margin-bottom: 20px;
 	}
 }
 

@@ -9,8 +9,7 @@
  * @since Dong Y 1.0
  */
 ?>
-
-<section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<section id="post-<?php the_ID(); ?>" <?php post_class( is_sticky() ? "sticky" : null ); ?>>
 	<article>
 		<header class="entry-header">
 			<?php

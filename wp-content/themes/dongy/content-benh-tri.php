@@ -25,10 +25,7 @@
 						$category = has_category() ? get_the_category() : ""; //the_category(', ') will show html
 						dongy_posted_on($category); 
 					?>
-	         		<?php dongy_sharing(get_permalink()); ?>
-					<?php if ( comments_open() ) { ?>
-	         		<span class="comments"><?php comments_popup_link( __( 'No Comments', 'dongy' ), __( '1 Comment', 'dongy' ), __( '% Comments', 'dongy' ), '', __( 'Comments Off', 'dongy' ) ); ?></span>
-	         	<?php } ?>
+	         		<?php dongy_sharing(get_permalink()); ?>					
 			</div><!-- .entry-meta -->			
 		</div>
 

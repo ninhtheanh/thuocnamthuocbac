@@ -171,8 +171,11 @@ get_header(); ?>
 			<?php
 					$i++;
 				}
-			?>			
+			?>
+		</div>
 
+		<div class="ta-row ta-row-fb-like-fanpage">
+			<div class="fb-like" data-href="https://www.facebook.com/dongydinhtuan" data-width="912" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 		</div>
 	
 	</div><!-- #container -->
