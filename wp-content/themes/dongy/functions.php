@@ -404,7 +404,7 @@ function contact_information(){
 			            </div>
 			        </div>
 		        </div>
-				<p><em>Người bệnh hoặc người nhà bệnh nhân có thể điện thoại nói về bệnh tình và được Đông Y Đình Tuân tư vấn, sau đó Nhà thuốc gửi thuốc qua chuyển phát nhanh ( hoặc ô tô) đến cho khách hàng.</em></p>
+				<p><em>Người bệnh hoặc người nhà bệnh nhân có thể điện thoại nói về bệnh tình và được Đông Y Gia Truyền Đình Tuân tư vấn, sau đó Nhà thuốc gửi thuốc qua chuyển phát nhanh ( hoặc ô tô) đến cho khách hàng.</em></p>
 			</div>';
 	return $str;
 }

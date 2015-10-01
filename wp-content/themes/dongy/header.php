@@ -48,12 +48,12 @@
 					<hgroup id="site-logo" class="clearfix">
 						<div class="logo">
 							<a href="<?php echo site_url(); ?>">
-								<img title="Đông Y Đình Tuân" alt="Đông Y Đình Tuân" src="<?php echo get_template_directory_uri(); ?>/images/logo.png">
+								<img title="Đông Y Gia Truyền Đình Tuân" alt="Đông Y Gia Truyền Đình Tuân" src="<?php echo get_template_directory_uri(); ?>/images/logo.png">
 							</a>
 						</div>						
 						<div class="logo-name">
 							<a href="<?php echo site_url(); ?>">
-								Đông Y Đình Tuân
+								Đông Y Gia Truyền Đình Tuân
 							</a>
 						</div>
 					</hgroup><!-- #site-logo -->

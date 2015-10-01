@@ -18,7 +18,7 @@
 						
 					</div>					
 					<div class="copyright">						
-						© 2015 Copyright by Đông Y Đình Tuân.
+						© 2015 Copyright by Đông Y Gia Truyền Đình Tuân.
 					</div><!-- .copyright -->
 				</div><!-- .container -->
 		</div><!-- .site-info -->
@@ -28,6 +28,7 @@
 </div>
 <a href="#" class="back-to-top"></a>
 <!-- Slider start -->
+<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/jquery.cycle.all.min.js?ver=1.0.0'></script>
 <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/navigation.js?ver=1.0.0.0'></script>
 <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/scripts.js?ver=1.0.0.0'></script>
 
