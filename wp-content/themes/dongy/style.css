@@ -2168,6 +2168,9 @@ div.wpcf7-response-output {
 .social-bottom .fb-share-button{
 	padding-right: 10px;
 }
+.social-bottom .fb-send{
+	padding-right: 10px;
+}
 .end-post-box-contact {
 	border: 2px dotted #57ad68;
 	padding: 10px;
