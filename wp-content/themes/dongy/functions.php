@@ -166,8 +166,9 @@ function dongy_scripts() {
 	wp_enqueue_style( 'dongy-style', get_stylesheet_uri() );
 	//Javascript file
 	wp_enqueue_script('jquery-script', get_stylesheet_directory_uri() . '/js/jquery-1.11.3.js', array(), '1.0.0' );
-	wp_enqueue_script('menu-script', get_stylesheet_directory_uri() . '/js/navigation.js', array(), '1.0.0.0' );
-	wp_enqueue_script('dongy-script', get_stylesheet_directory_uri() . '/js/scripts.js', array(), '1.0.0.0' );
+	//wp_enqueue_script('menu-script', get_stylesheet_directory_uri() . '/js/navigation.js', array('jquery'), '1.0.0.0' );
+	//wp_enqueue_script('dongy-script', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0.0' );
+	wp_enqueue_script('jquery-cycle-script', get_stylesheet_directory_uri() . '/js/jquery.cycle.all.min.js', array(), '1.0.0' );	
 }
 add_action( 'wp_enqueue_scripts', 'dongy_scripts' );
 
@@ -363,8 +364,7 @@ function dongy_sharing_button_code($url, $css = ""){
 	$content .= '<div class="fb-like" data-href="' . $url . '" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>';	
 	return '<div class="social ' . $css . '"> ' . $content . ' </div>';	
 }
-if ( ! function_exists( 'dongy_sharing' ) ) :
-function dongy_sharing($url) {
+function dongy_facebook_sdk() {
 	$facebookSDK .= '<div id="fb-root"></div>
 				<script>(function(d, s, id) {
 				  var js, fjs = d.getElementsByTagName(s)[0];
@@ -373,7 +373,10 @@ function dongy_sharing($url) {
 				  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=841394139216651";
 				  fjs.parentNode.insertBefore(js, fjs);
 				}(document, \'script\', \'facebook-jssdk\'));</script>';	
-	echo $facebookSDK;	
+	return $facebookSDK;
+}
+if ( ! function_exists( 'dongy_sharing' ) ) :
+function dongy_sharing($url) {	
 	echo dongy_sharing_button_code($url);
 }
 endif;
@@ -498,9 +501,9 @@ function yst_wpseo_change_og_locale( $locale ) {
 }
 add_filter( 'wpseo_locale', 'yst_wpseo_change_og_locale' );
 //Adding async to js
-add_filter( 'script_loader_tag', function ( $tag, $handle ) {    
+/*add_filter( 'script_loader_tag', function ( $tag, $handle ) {    
     if( is_admin() ) {
         return $tag;
     }
     return str_replace( ' src', ' async src', $tag );
-}, 10, 2 );
+}, 10, 2 );*/

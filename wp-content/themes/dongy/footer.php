@@ -28,7 +28,9 @@
 </div>
 <a href="#" class="back-to-top"></a>
 <!-- Slider start -->
-<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/jquery.cycle.all.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/navigation.js?ver=1.0.0.0'></script>
+<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/scripts.js?ver=1.0.0.0'></script>
+
 <script type='text/javascript'>
 	/* <![CDATA[ */
 	var dongy_slider_value = {"transition_effect":"fade","transition_delay":"4000","transition_duration":"1000"};

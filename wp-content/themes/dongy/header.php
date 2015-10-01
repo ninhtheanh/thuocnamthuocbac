@@ -27,6 +27,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<?php echo dongy_facebook_sdk();?>
 	<div class="wrapper">
 		<header id="branding" >				
 			<div class="container clearfix">
