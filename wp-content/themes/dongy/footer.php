@@ -11,16 +11,15 @@
 ?>
 	<footer id="footerarea" class="clearfix">
 		<div id="site-generator">
-				<div class="container">
-					<div class="copyright">						
-						© 2015 Copyright by Đông Y Đình Tuân.
-					</div><!-- .copyright -->
+				<div class="container">					
 					<div class="footer-right">
 												
 						<?php wp_nav_menu( array( 'container_class' => 'menu-footer', 'theme_location' => 'footer-menu' ) ); ?>
 						
-					</div>
-					<div style="clear:both;"></div>
+					</div>					
+					<div class="copyright">						
+						© 2015 Copyright by Đông Y Đình Tuân.
+					</div><!-- .copyright -->
 				</div><!-- .container -->
 		</div><!-- .site-info -->
 	</footer><!-- .site-footer -->

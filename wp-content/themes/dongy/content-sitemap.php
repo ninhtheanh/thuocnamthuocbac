@@ -46,7 +46,7 @@
 				foreach ($cats as $cat) {
 					echo '<li><h3><a href="' . get_category_link( $cat->term_id ) . '">'.$cat->cat_name.'</a></h3>';
 					echo "<ul>";
-					$args = array( 'posts_per_page' => 5, 'offset'=> 1, 'category' => $cat->cat_ID );
+					$args = array( 'posts_per_page' => 20, 'offset'=> 1, 'category' => $cat->cat_ID );
 					$myposts = get_posts( $args );
 					foreach ( $myposts as $post ) : setup_postdata( $post ); 
 						echo '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';

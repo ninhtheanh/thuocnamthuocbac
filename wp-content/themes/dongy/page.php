@@ -30,7 +30,7 @@ get_header(); ?>
 
 				<?php
 				$page_load = "page"; //default page is content-page.php
-				$pagename = get_query_var('pagename');
+				$pagename = get_query_var('pagename');				
 				if($pagename == "sitemap")
 					$page_load = "sitemap";
 				// Start the loop.				

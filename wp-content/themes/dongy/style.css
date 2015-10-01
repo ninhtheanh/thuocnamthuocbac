@@ -1756,15 +1756,14 @@ ul.default-wp-page li a:active {
 	padding: 20px 0px;
 	border-top: 2px dashed #eaeaea;
 	color: #999;
+	text-align: center;
 }
 #site-generator .copyright {
-	float: left;
 	padding-top: 5px;
 	font-size: 12px;
 }
 .footer-right {
   padding-top: 5px;
-  float: right;
   font-size: 12px;
 }
 #site-generator .copyright a {
