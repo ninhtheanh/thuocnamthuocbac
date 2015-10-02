@@ -296,7 +296,7 @@ input[type="text"],input[type="email"],input[type="search"],input[type="password
 }
 input[type=text],input[type=password],input[type="email"],textarea {
 	border: 1px solid #eaeaea;
-	width: 50%;
+	width: 60%;
 	margin: 0 0 10px;
 	background-color: #f9f9f9;
 	border-radius: 3px;
@@ -2617,9 +2617,20 @@ div.wpcf7-response-output {
 @media only screen and (max-width: 767px) {
 	hr {
 		margin-bottom: 30px;
-	}
+	}	
 	input[type="text"],input[type="password"],textarea,input[type="reset"],input[type="button"],input[type="submit"] {
 		margin-bottom: 20px;
+	}
+	.dongy-search-box-container {		
+	    width: 95.5%;	    
+	}
+	#dongy-search-form input[type="text"]
+	{
+		width: 63% !important;
+	}
+	#dongy-search-form input[type="submit"]
+	{
+		width: 23% !important;
 	}
 	input.s {
 		margin: 0;
@@ -2840,12 +2851,12 @@ div.wpcf7-response-output {
 	}
 	.end-post-box-contact{
 		margin-bottom: 20px;
-	}
-	.dongy-search-box-container {		
-	    width: 95.5%;	    
-	}
+	}	
 	.featured-slider{
 		height: 98px;
+	}
+	input[type=text],input[type=password],input[type="email"] {
+		width: 90%;
 	}
 }
 
