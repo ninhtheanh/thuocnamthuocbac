@@ -24,9 +24,10 @@
 		</div><!-- .site-info -->
 	</footer><!-- .site-footer -->
 
-<?php wp_footer(); ?>
+<?php wp_footer(); ?>	
 </div>
 <a href="#" class="back-to-top"></a>
+<?php echo dongy_facebook_sdk();?>
 <!-- Slider start -->
 <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/jquery.cycle.all.min.js?ver=1.0.0'></script>
 <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/navigation.js?ver=1.0.0.0'></script>

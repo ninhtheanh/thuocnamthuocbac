@@ -26,8 +26,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
-	<?php echo dongy_facebook_sdk();?>
+<body <?php body_class(); ?>>	
 	<div class="wrapper">
 		<header id="branding" >				
 			<div class="container clearfix">

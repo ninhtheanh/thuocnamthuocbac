@@ -372,7 +372,7 @@ function dongy_facebook_sdk() {
 				  js = d.createElement(s); js.id = id;
 				  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=841394139216651";
 				  fjs.parentNode.insertBefore(js, fjs);
-				}(document, \'script\', \'facebook-jssdk\'));</script>';	
+				}(document, \'script\', \'facebook-jssdk\'));</script>';
 	return $facebookSDK;
 }
 if ( ! function_exists( 'dongy_sharing' ) ) :

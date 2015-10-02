@@ -1853,11 +1853,14 @@ article {
     position: relative;
     float: none;
     clear: both;
-    padding-bottom: 40px;    
+    padding-bottom: 30px;    
 }
 .ta-row-fb-like-fanpage{	
     text-align: center;
     padding-bottom: 10px !important; 
+}
+.ta-row-fb-like-fanpage .fb-like span{
+    width: 100% !important;
 }
 .ta-row-inner{
 	position: relative;
@@ -1998,7 +2001,8 @@ article {
 .last {
     border-right: 0 !important;
     margin-right: 0 !important;
-    padding-right: 0 !important;    
+    padding-right: 0 !important;
+    margin-bottom: 0 !important;   
 }
 .box {
     position:                   relative;       
@@ -2272,9 +2276,7 @@ div.wpcf7-response-output {
     color: #fff;
 }
 .dongy-search-box-container {
-  display: none;
-}
-.dongy-search-box-container {
+	display: none;
     background: #fff;
     border: 3px solid #E3E3E3;
     display: none;
@@ -2839,6 +2841,12 @@ div.wpcf7-response-output {
 	.end-post-box-contact{
 		margin-bottom: 20px;
 	}
+	.dongy-search-box-container {		
+	    width: 95.5%;	    
+	}
+	.featured-slider{
+		height: 98px;
+	}
 }
 
 /* All Mobile landscape size and All Mini Tablet Portrait size smaller than standard 768 and larger than 480 (devices and browsers) */
@@ -2876,4 +2884,3 @@ div.wpcf7-response-output {
 	}
 	.featured-slider{display: none;}
 }
-
