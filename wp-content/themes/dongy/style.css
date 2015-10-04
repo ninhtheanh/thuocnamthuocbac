@@ -1859,9 +1859,6 @@ article {
     text-align: center;
     padding-bottom: 10px !important; 
 }
-.ta-row-fb-like-fanpage .fb-like span{
-    width: 100% !important;
-}
 .ta-row-inner{
 	position: relative;
     width: 100%;    
@@ -2521,7 +2518,6 @@ div.wpcf7-response-output {
 .logo-name a:hover{
 	color: #57ad68;
 }
-
 .separator_wrapper { display: block; margin: 0px 0px 10px 0; }
 .separator_wrapper:after, .separator_wrapper:before 
 { 	border-bottom: 2px dashed #57ad68; content: ""; display: inline-block; 
@@ -2857,6 +2853,9 @@ div.wpcf7-response-output {
 	}
 	input[type=text],input[type=password],input[type="email"] {
 		width: 90%;
+	}
+	.ta-row-fb-like-fanpage .fb-like span{
+	    width: 100% !important;
 	}
 }
 
