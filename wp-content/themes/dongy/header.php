@@ -99,7 +99,7 @@
 				   	<div class="slider-cycle" style="width: 100%;">
 				   		<div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
 					        <figure>
-					         	<a href="#" title="">
+					         	<a href="<?php echo get_category_link(3); ?>" title="">
 						         	<img width="960" src="<?php echo get_template_directory_uri(); ?>/images/banner/home/banner-tri.jpg" 
 						         	class="pngfix wp-post-image" alt="" title="">				         	
 						        </a>
@@ -107,7 +107,7 @@
 				      	</div>
 				      	<div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
 					        <figure>
-					         	<a href="#" title="">
+					         	<a href="http://dongydinhtuan.com/suy-nhuoc-than-kinh/benh-suy-nhuoc-than-kinh.html" title="">
 						         	<img width="960" src="<?php echo get_template_directory_uri(); ?>/images/banner/home/banner-suynhuocthankinh.jpg" 
 						         	class="pngfix wp-post-image" alt="" title="">				         	
 						        </a>
@@ -115,7 +115,7 @@
 				      	</div>
 				      	<div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
 					        <figure>
-					         	<a href="#" title="">
+					         	<a href="http://dongydinhtuan.com/suy-nhuoc-co-the/benh-suy-nhuoc-co-the.html" title="">
 						         	<img width="960" src="<?php echo get_template_directory_uri(); ?>/images/banner/home/banner-suynhuoc.jpg" 
 						         	class="pngfix wp-post-image" alt="" title="">				         	
 						        </a>
