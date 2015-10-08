@@ -2167,14 +2167,17 @@ div.wpcf7-response-output {
     height: 23px;    
     padding-top: 3px;
     position: relative;
-    width: 328px;
+    width: 240px;
     float: right;
 }
 .social > div{	
 	position: absolute;
 }
+.social > div:nth-child(1){
+	right: 165px;
+}
 .social > div:nth-child(2){
-	right: 90px;
+	right: 91px;
 }
 .social > div:nth-child(3){
 	right: 0px;
@@ -2184,14 +2187,13 @@ div.wpcf7-response-output {
 }
 
 .social-bottom{
-	float: right;
-	margin-bottom: 20px;
+	float: right;	
 }
 .social-bottom .fb-share-button{
-	padding-right: 10px;
+	
 }
 .social-bottom .fb-send{
-	padding-right: 10px;
+	
 }
 .end-post-box-contact {
 	border: 2px dotted #57ad68;
