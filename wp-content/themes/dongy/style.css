@@ -2156,12 +2156,33 @@ div.wpcf7-response-output {
 	position: relative;
     height: 23px;    
 }
-.social {
+/*.social {
 	float: left;
 	position: relative;
     height: 23px;       
     line-height: 22px;
+}*/
+.social{
+	clear: both;
+    height: 23px;    
+    padding-top: 3px;
+    position: relative;
+    width: 328px;
+    float: right;
 }
+.social > div{	
+	position: absolute;
+}
+.social > div:nth-child(2){
+	right: 90px;
+}
+.social > div:nth-child(3){
+	right: 0px;
+}
+.social > div:nth-child(4){	
+	left: 55px;
+}
+
 .social-bottom{
 	float: right;
 	margin-bottom: 20px;
