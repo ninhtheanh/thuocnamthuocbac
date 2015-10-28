@@ -53,7 +53,7 @@
 						$category = has_category() ? get_the_category() : "";
 						dongy_posted_on($category); 
 					?>
-	         		<?php dongy_sharing(get_permalink()); ?>					
+	         		<?php dongy_sharing(get_permalink(), "social-left"); ?>					
 			</div><!-- .entry-meta -->
 			<?php
 			echo '<a class="readmore" href="' . get_permalink() . '" title="'.$title_attribute . '" alt="'.$title_attribute.'">' . __( 'Chi Tiết', 'dongy' ).'</a>';

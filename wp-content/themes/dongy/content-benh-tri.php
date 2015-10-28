@@ -25,7 +25,7 @@
 						$category = has_category() ? get_the_category() : ""; //the_category(', ') will show html
 						dongy_posted_on($category); 
 					?>
-	         		<?php dongy_sharing(get_permalink()); ?>					
+	         		<?php dongy_sharing(get_permalink(), "social-right"); ?>					
 			</div><!-- .entry-meta -->			
 		</div>
 

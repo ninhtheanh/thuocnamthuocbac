@@ -42,7 +42,7 @@ function tg_facebook_comments_option_page() {
 	if( !$valid ) {	
 		$valid['version'] = '2.4';
 		$valid['appid'] = ''; 
-		$valid['language'] = 'en_US';
+		$valid['language'] = 'vi_VN'; //en_US
 		$valid['html5'] = 1;
 		$valid['moderators'] = '';  
 		$valid['posts'] = 1;
@@ -480,7 +480,7 @@ function tg_facebook_comments_validate_options( $input ) {
 	{ 
 		$valid['version'] = '2.4';
 		$valid['appid'] = ''; 
-		$valid['language'] = 'en_US';
+		$valid['language'] = 'vi_VN';
 		$valid['html5'] = 1;
 		$valid['moderators'] = '';
 		$valid['posts'] = 1;

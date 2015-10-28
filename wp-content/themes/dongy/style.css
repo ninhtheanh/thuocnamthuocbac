@@ -2162,7 +2162,7 @@ div.wpcf7-response-output {
     height: 23px;       
     line-height: 22px;
 }*/
-.social{
+.social-left{
 	clear: both;
     height: 23px;    
     padding-top: 3px;
@@ -2170,15 +2170,41 @@ div.wpcf7-response-output {
     width: 240px;
     float: right;
 }
-.social > div{	
+.social-left > div{	
 	position: absolute;
 }
-.social > div:nth-child(1){
-	right: 165px;
+.social-left .fb-send{
+	left: 144px;
 }
-.social > div:nth-child(2){
-	right: 91px;
+.social-left .fb-share-button{
+	left: 0;
 }
+.social-left .fb-like{
+	left: 72px;
+}
+
+.social-right{
+	clear: both;
+    height: 23px;    
+    padding-top: 3px;
+    position: relative;
+    width: 240px;
+    float: right;
+    margin-bottom: 10px;
+}
+.social-right > div{	
+	position: absolute;
+}
+.social-right .fb-send{
+	right: 168px;
+}
+.social-right .fb-share-button{
+	right: 94px;
+}
+.social-right .fb-like{
+	right: 0;
+}
+
 .social > div:nth-child(3){
 	right: 0px;
 }
@@ -2188,6 +2214,7 @@ div.wpcf7-response-output {
 
 .social-bottom{
 	float: right;	
+	margin-bottom: 15px;
 }
 .social-bottom .fb-share-button{
 	

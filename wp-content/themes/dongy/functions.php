@@ -355,14 +355,14 @@ function dongy_categorized_blog() {
 		return false;
 	}
 }
-function dongy_sharing_button_code($url, $css = ""){
+function dongy_sharing_button_code($url, $css_name){
 	$content = "";
 	if(is_single()) {
 		$content .= '<div class="fb-send" data-href="' . $url . '"></div>';
 	}
 	$content .= '<div class="fb-share-button" data-href="' . $url . '" data-layout="button"></div>';
 	$content .= '<div class="fb-like" data-href="' . $url . '" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>';	
-	return '<div class="social ' . $css . '"> ' . $content . ' </div>';	
+	return '<div class="' . $css_name . '"> ' . $content . ' </div>';	
 }
 function dongy_facebook_sdk() {
 	$facebookSDK .= '<div id="fb-root"></div>
@@ -376,12 +376,12 @@ function dongy_facebook_sdk() {
 	return $facebookSDK;
 }
 if ( ! function_exists( 'dongy_sharing' ) ) :
-function dongy_sharing($url) {	
-	echo dongy_sharing_button_code($url);
+function dongy_sharing($url, $css_name = "social-right") {	
+	echo dongy_sharing_button_code($url, $css_name);
 }
 endif;
 function contact_information(){
-	$str = dongy_sharing_button_code(get_permalink(), "social-bottom");
+	$str = dongy_sharing_button_code(get_permalink(), "social-right");
 	if ( !is_sticky() && !is_page() )
 	{
 		$str .= '<blockquote><p>Thông tin chỉ mang tính chất tham khảo, không phải là các tư vấn y tế, vui lòng tham khảo ý kiến của bác sĩ trước khi sử dụng.</p></blockquote>';
