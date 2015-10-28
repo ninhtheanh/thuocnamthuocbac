@@ -295,7 +295,7 @@ input[type="text"],input[type="email"],input[type="search"],input[type="password
 	appearance: none !important;
 }
 input[type=text],input[type=password],input[type="email"],textarea {
-	border: 1px solid #eaeaea;
+	border: 1px solid #cccccc;
 	width: 60%;
 	margin: 0 0 10px;
 	background-color: #f9f9f9;
