@@ -1098,7 +1098,7 @@ a.more-link:hover {
 .entry-content {
 	padding: 1.5% 2.5%;
 	display: block;
-	overflow: hidden;
+	overflow: visible; /*change from hidden to visible to fix popup of fb like*/
 }
 table {
 	background: #f9f9f9;
@@ -2618,6 +2618,9 @@ div.wpcf7-response-output {
 	border:1px solid #57ad68;
 	float: left; 
 	margin: 5px 12px 2px 5px;
+}
+.fb_iframe_widget iframe { /* fixed popup of fb like */    
+    max-width: inherit;
 }
 /* Adding css end*/
 
