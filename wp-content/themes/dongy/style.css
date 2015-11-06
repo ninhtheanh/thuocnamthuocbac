@@ -511,7 +511,7 @@ a.more-link:hover {
 /* =Header
 -----------------------------------------------*/
 #branding {
-	margin-top: 15px;	
+	margin-top: 5px;	
 }
 .main-menu-contaiter
 {
@@ -535,7 +535,7 @@ a.more-link:hover {
 }
 #site-logo {
 	float: left;
-	margin-top: 32px;
+	margin-top: 2px;
 	text-align: center;
 }
 #site-title {
@@ -561,7 +561,7 @@ a.more-link:hover {
 }
 .hgroup-right {
 	float: right;
-	margin-top: 38px;
+	margin-top: 5px;
 }
 /* Social Profiles */
 .social-icons {
