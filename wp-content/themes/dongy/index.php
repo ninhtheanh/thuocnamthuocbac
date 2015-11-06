@@ -175,7 +175,8 @@ get_header(); ?>
 		</div>
 
 		<div class="ta-row ta-row-fb-like-fanpage">
-			<div class="fb-like" data-href="https://www.facebook.com/dongydinhtuan" data-width="912" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+			
+			<div class="fb-page" data-href="https://www.facebook.com/dongydinhtuan" data-width="600" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/dongydinhtuan"><a href="https://www.facebook.com/dongydinhtuan">Đông Y Gia Truyền Đình Tuân</a></blockquote></div></div>
 		</div>
 	
 	</div><!-- #container -->
