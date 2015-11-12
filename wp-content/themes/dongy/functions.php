@@ -172,6 +172,8 @@ function dongy_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'dongy_scripts' );
 
+require get_template_directory() . '/inc/widget_recent_post_thumb.php';
+require get_template_directory() . '/inc/widget_bai_thuoc_gia_truyen.php';
 
 if ( ! function_exists( 'dongy_posted_on' ) ) :
 /**
