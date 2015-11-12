@@ -22,16 +22,15 @@ class bai_thuoc_gia_truyen_widget extends WP_Widget {
         <div class="rpwe-block ">
             <ul class="rpwe-ul">
             <?php
-                $args = array( 'post_type'=>'post', 'post__in'=>get_option('sticky_posts'), 'numberposts' => 6, 'order'=> 'DES', 'orderby' => 'date' );      
+                $args = array( 'post_type'=>'post', 'post_status' => 'publish', 'post__in'=>get_option('sticky_posts'), 'numberposts' => 6, 'order'=> 'DESC', 'orderby' => 'date' );      
                 $queryObj = new WP_Query( $args );
-                //$queryObj = new WP_Query( 'post_type=post&posts_per_page=6&orderby=date&order=desc' );
                 if ($queryObj->have_posts()) :
                     while ($queryObj->have_posts()) :
                         $queryObj->the_post();
                         $thumb_url = wp_get_attachment_thumb_url( get_post_thumbnail_id($queryObj->post->ID) );
                         if($thumb_url == "")
                         {                       
-                            $thumb_url = catch_first_image_in_content($queryObj->post->post_content);
+                            $thumb_url = catch_first_image_in_content($queryObj->post->post_content, 40, 40);
                         }
             ?>
                         <li class="rpwe-li rpwe-clearfix">

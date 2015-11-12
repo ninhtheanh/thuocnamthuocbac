@@ -21,18 +21,23 @@ class recent_post_thumb_widget extends WP_Widget {
                   echo $before_title . $title . $after_title; ?>
         <div class="rpwe-block ">
             <ul class="rpwe-ul">
-            <?php                
-                $queryObj = new WP_Query( 'post_type=post&posts_per_page=6&orderby=date&order=desc' );
+            <?php
+                global $wp_query;
+                $current_post_id = $wp_query->get_queried_object_id();                
+                $post_not_in = get_option('sticky_posts');
+                $post_not_in[] = $current_post_id;
+                $args = array( 'post_type'=>'post', 'post_status' => 'publish', 'post__not_in' => $post_not_in, 'posts_per_page' => 5, 'order'=> 'DESC', 'orderby' => 'date' );      
+                $queryObj = new WP_Query($args);
                 if ($queryObj->have_posts()) :
                     while ($queryObj->have_posts()) :
                         $queryObj->the_post();
                         $thumb_url = wp_get_attachment_thumb_url( get_post_thumbnail_id($queryObj->post->ID) );
                         if($thumb_url == "")
                         {                       
-                            $thumb_url = catch_first_image_in_content($queryObj->post->post_content);
+                            $thumb_url = catch_first_image_in_content($queryObj->post->post_content, 40, 40);
                         }
             ?>
-                        <li class="rpwe-li rpwe-clearfix">
+                        <li class="rpwe-li rpwe-clearfix" id="<?php print_r( get_option('sticky_posts'));?>">
                             <a class="rpwe-img" href="<?php the_permalink(); ?>" title="<?php echo the_title_attribute('echo=0'); ?>" rel="bookmark">
                                 <img class="rpwe-alignleft rpwe-thumb" src="<?=$thumb_url?>" alt="<?php echo the_title_attribute('echo=0'); ?>" width="40">
                             </a>

@@ -160,7 +160,7 @@ function dongy_javascript_detection() {
 function dongy_scripts() {
 	
 	//Css
-	//wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '1.0.0' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '1.0.0' );
 	//wp_enqueue_style( 'font-satisfy-regular', 'https://fonts.googleapis.com/css?family=Satisfy', array() );
 	// Load our main stylesheet.
 	wp_enqueue_style( 'dongy-style', get_stylesheet_uri() );
@@ -474,7 +474,7 @@ function get_related_posts_by_category() {
 	return $str;
 	wp_reset_query();
 }
-function catch_first_image_in_content($post_content) {				
+function catch_first_image_in_content($post_content, $w = 150, $h = 150, $zc = 1) {				
 	$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post_content, $matches);
 	$first_img = $matches[1][0];
 	if(empty($first_img)) {
@@ -482,7 +482,7 @@ function catch_first_image_in_content($post_content) {
 	}
 	else
 	{
-		$first_img = get_template_directory_uri() . '/timthumb.php?src=' . urlencode($first_img) . '&h=150&w=150&zc=1';
+		$first_img = get_template_directory_uri() . '/timthumb.php?src=' . urlencode($first_img) . '&h=' . $h . '&w=' . $w . '&zc=' . $zc . ''; //&h=150&w=150&zc=1
 	}				
 	return $first_img;
 }
