@@ -37,7 +37,7 @@ class recent_post_thumb_widget extends WP_Widget {
                             $thumb_url = catch_first_image_in_content($queryObj->post->post_content, 40, 40);
                         }
             ?>
-                        <li class="rpwe-li rpwe-clearfix" id="<?php print_r( get_option('sticky_posts'));?>">
+                        <li class="rpwe-li rpwe-clearfix">
                             <a class="rpwe-img" href="<?php the_permalink(); ?>" title="<?php echo the_title_attribute('echo=0'); ?>" rel="bookmark">
                                 <img class="rpwe-alignleft rpwe-thumb" src="<?=$thumb_url?>" alt="<?php echo the_title_attribute('echo=0'); ?>" width="40">
                             </a>

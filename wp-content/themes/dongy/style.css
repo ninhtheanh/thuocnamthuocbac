@@ -2635,6 +2635,11 @@ div.wpcf7-response-output {
     background-image: none !important;
     padding-left: 0px !important;
 }
+.rpwe-block li:last-child {
+    border-bottom: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
 .rpwe-block h3 {
     background: none!important;
     clear: none;
