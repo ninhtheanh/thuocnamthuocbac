@@ -175,6 +175,13 @@ add_action( 'wp_enqueue_scripts', 'dongy_scripts' );
 require get_template_directory() . '/inc/widget_recent_post_thumb.php';
 require get_template_directory() . '/inc/widget_bai_thuoc_gia_truyen.php';
 
+/*Security Start*/
+function remove_version_number() {
+     return '';
+}
+add_filter('the_generator', 'remove_version_number');
+/*Security End*/
+
 if ( ! function_exists( 'dongy_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
