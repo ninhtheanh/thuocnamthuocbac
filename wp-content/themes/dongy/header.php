@@ -23,6 +23,11 @@
 	<meta name="alexaVerifyID" content="UphTEFbQEJiblt4raVP28h60nOc"/>
 	<meta name="msvalidate.01" content="E9AF1BE6958FDCB438B5AB2B96198BF8" />
 	<meta name="google-site-verification" content="eghVEPjMSNDJYEre07eZRY_-htVcCSvAT6rawxtXiwI" />
+	<?php
+		global $wp;
+		$current_url = home_url(add_query_arg(array(),$wp->request)); 
+	?>
+	<link rel="alternate" href="<?php echo $current_url;?>" hreflang="vi-vn" />
 	<?php wp_head(); ?>
 </head>
 
