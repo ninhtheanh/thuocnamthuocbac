@@ -19,4 +19,7 @@ $(document).ready(function () {
 
 		return false;
 	});
+
+	$("a[title='Facebook Auto Publish']").parent().html("");
+
 });
