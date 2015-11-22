@@ -17,7 +17,7 @@ get_header(); ?>
 
 <div id="main" class="container clearfix">
 	<div id="container">		
-		<div class="ta-row welcome-row">			
+		<div class="ta-row welcome-row" style="display:none">			
 			<div class="welcome-inner">
 				<div class="welcome-col">
 					<div class="welcome-text">Liên Hệ</div>

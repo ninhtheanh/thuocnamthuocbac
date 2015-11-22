@@ -61,6 +61,13 @@
 							</a>
 						</div>
 					</hgroup><!-- #site-logo -->
+					<div class="top-welcome-col">
+						<div>Liên Hệ</div>
+						<div><img width="88" align="center" src="<?php echo get_template_directory_uri(); ?>/images/arrow-right88-55.png" border="0"></div>
+						<div>Dùng Thuốc</div>
+						<div><img width="88" align="center" src="<?php echo get_template_directory_uri(); ?>/images/arrow-right88-55.png" border="0"></div>
+						<div>Hết Bệnh!</div>				
+					</div>
 				</div><!-- .hgroup-wrap -->
 			</div><!-- .container -->
 			<div class="main-menu-contaiter">
