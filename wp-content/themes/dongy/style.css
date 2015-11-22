@@ -2369,16 +2369,16 @@ div.wpcf7-response-output {
 .welcome-inner{
 	position: relative;
 	width: 100%;
-	margin-left: 54px;
+	margin-left: 15px;
 }
 .welcome-col{	
 	float: left;
-	width: 77%;
+	width: 85%;
 	margin: 5px 0px 5px 0px;
 }
 .welcome-button{	
 	float: left;
-	width: 5%;
+	width: 12%;
 	margin:19px 0 0 -14px;
 }
 .welcome-text{
