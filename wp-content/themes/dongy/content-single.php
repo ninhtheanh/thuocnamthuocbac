@@ -43,7 +43,11 @@
 			<?php				
 				the_content();				
 			?>
-		</div><!-- .entry-content -->
-
+			<!-- Post Footer -->
+	        <footer class="post-footer-info">
+	        	<?php edit_post_link( __( 'Edit', 'dongydinhtuan' ), '<span class="edit-link">', '</span>' ); ?>
+	        </footer>
+	        <!-- END .post-footer-info -->
+		</div><!-- .entry-content -->		
 	</article><!-- #article-## -->
 </section><!-- #section-## -->
