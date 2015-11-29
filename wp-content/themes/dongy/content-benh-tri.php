@@ -46,6 +46,11 @@
 				/* translators: %s: Name of current post */
 				the_content();				
 			?>
+			<!-- Post Footer -->
+	        <footer class="post-footer-info">
+	        	<?php edit_post_link( __( 'Edit', 'dongydinhtuan' ), '<span class="edit-link">', '</span>' ); ?>
+	        </footer>
+	        <!-- END .post-footer-info -->
 		</div><!-- .entry-content -->
 
 	</article><!-- #article-## -->

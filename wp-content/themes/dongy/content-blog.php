@@ -42,7 +42,11 @@
 				the_excerpt();				
 			?>
 		</div><!-- .entry-content -->
-
+		<!-- Post Footer -->
+        <footer class="post-footer-info">
+        	<?php edit_post_link( __( 'Edit', 'dongydinhtuan' ), '<span class="edit-link">', '</span>' ); ?>
+        </footer>
+        <!-- END .post-footer-info -->
 		
 
 		<div class="entry-meta-bar clearfix">

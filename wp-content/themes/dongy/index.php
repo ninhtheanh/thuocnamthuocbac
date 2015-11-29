@@ -167,6 +167,11 @@ get_header(); ?>
 				        </div>
 			        </div>			        
 			    </div>
+			    <!-- Post Footer -->
+	            <footer class="post-footer-info">
+	            	<?php edit_post_link( __( 'Edit', 'dongydinhtuan' ), '<span class="edit-link">', '</span>' ); ?>
+	            </footer>
+	            <!-- END .post-footer-info -->
 			</div>
 			<?php
 					$i++;

@@ -9,7 +9,7 @@
  * @since Dong Y 1.0
  */
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
+<html lang="vi" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" class="no-js">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">

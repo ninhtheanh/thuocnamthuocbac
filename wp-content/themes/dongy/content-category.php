@@ -58,6 +58,11 @@
 			<?php
 			echo '<a class="readmore" href="' . get_permalink() . '" title="'.$title_attribute . '" alt="'.$title_attribute.'">' . __( 'Chi Tiết', 'dongy' ).'</a>';
 			?>
+			<!-- Post Footer -->
+            <footer class="post-footer-info">
+            	<?php edit_post_link( __( 'Edit', 'dongydinhtuan' ), '<span class="edit-link">', '</span>' ); ?>
+            </footer>
+            <!-- END .post-footer-info -->
 		</div>
 
 	</article><!-- #article-## -->
