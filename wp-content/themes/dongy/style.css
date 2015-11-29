@@ -2946,6 +2946,9 @@ div.wpcf7-response-output {
 		font-size: 35px;
 		padding: 5px;
 	}
+	.top-welcome-col{
+		display: none;
+	}
 	.one_half {
     	width: 100%;
 	}
