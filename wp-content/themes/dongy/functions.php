@@ -160,6 +160,7 @@ function dongy_javascript_detection() {
 function dongy_scripts() {
 	
 	//Css
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/animate.css', array(), '1.0.0' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '1.0.0' );
 	//wp_enqueue_style( 'font-satisfy-regular', 'https://fonts.googleapis.com/css?family=Satisfy', array() );
 	// Load our main stylesheet.
@@ -168,7 +169,8 @@ function dongy_scripts() {
 	wp_enqueue_script('jquery-script', get_stylesheet_directory_uri() . '/js/jquery-1.11.3.js', array(), '1.0.0' );
 	//wp_enqueue_script('menu-script', get_stylesheet_directory_uri() . '/js/navigation.js', array('jquery'), '1.0.0.0' );
 	//wp_enqueue_script('dongy-script', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0.0' );
-	wp_enqueue_script('jquery-cycle-script', get_stylesheet_directory_uri() . '/js/jquery.cycle.all.min.js', array(), '1.0.0' );	
+	wp_enqueue_script('jquery-cycle-script', get_stylesheet_directory_uri() . '/js/jquery.cycle.all.min.js', array(), '1.0.0' );
+	wp_enqueue_script('jquery-wow', get_stylesheet_directory_uri() . '/js/wow.min.js', array(), '1.0.0' );
 }
 add_action( 'wp_enqueue_scripts', 'dongy_scripts' );
 

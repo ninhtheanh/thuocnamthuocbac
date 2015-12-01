@@ -60,13 +60,13 @@
 								Đông Y Gia Truyền Đình Tuân
 							</a>
 						</div>
-					</hgroup><!-- #site-logo -->
+					</hgroup><!-- #site-logo -->					
 					<div class="top-welcome-col">
-						<div>Liên Hệ</div>
-						<div><img width="88" align="center" src="<?php echo get_template_directory_uri(); ?>/images/arrow-right88-55.png" border="0"></div>
-						<div>Dùng Thuốc</div>
-						<div><img width="88" align="center" src="<?php echo get_template_directory_uri(); ?>/images/arrow-right88-55.png" border="0"></div>
-						<div>Hết Bệnh!</div>				
+						<div class="wow fadeInDown">Liên Hệ</div>
+						<div class="wow fadeInLeft" data-wow-delay="1s"><img width="88" align="center" src="<?php echo get_template_directory_uri(); ?>/images/arrow-right88-55.png" border="0"></div>
+						<div class="wow fadeInUp" data-wow-delay="2s">Dùng Thuốc</div>
+						<div class="wow fadeInLeft" data-wow-delay="3s"><img width="88" align="center" src="<?php echo get_template_directory_uri(); ?>/images/arrow-right88-55.png" border="0"></div>
+						<div class="wow fadeInDown" data-wow-delay="4s">Hết Bệnh!</div>				
 					</div>
 				</div><!-- .hgroup-wrap -->
 			</div><!-- .container -->

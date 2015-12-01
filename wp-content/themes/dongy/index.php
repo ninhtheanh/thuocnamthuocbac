@@ -44,8 +44,14 @@ get_header(); ?>
 		            $i = 0;
 		            foreach ( $posts as $post ) : setup_postdata( $posts );
 		            $i++;
+
+		            $data_wow_delay = 0;
+		            if($i == 2)
+		            	$data_wow_delay = 0.2;
+		            if($i == 3)
+		            	$data_wow_delay = 0.4;
 				?>
-				<div class="col-3-full dongy-column <?php if($i==3) echo "last";?>">
+				<div class="col-3-full dongy-column <?php if($i==3) echo "last";?> wow bounceInDown" <?php echo 'data-wow-delay="' . $data_wow_delay . 's"';?> style="z-index: 100;">
 					<div class="featured_block-<?php echo $i;?>">							
 						<div class="featured_block_text">							
 							<h3>

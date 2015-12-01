@@ -22,4 +22,15 @@ $(document).ready(function () {
 
 	$("a[title='Facebook Auto Publish']").parent().html("");
 
+	//Animation
+	wow = new WOW(
+    {
+        animateClass: 'animated',
+        offset:       100,
+        callback:     function(box) {
+          //console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
 });
