@@ -22,7 +22,7 @@
 		</header><!-- .entry-header -->
 		
 		<div class="entry-content clearfix">
-			<p style="text-align: justify" text-align="justify">
+			<div class="article-text">
 			<?php
 				$thumb_url = '';
 		 		$title_attribute = esc_attr( get_the_title( $post->ID ) );
@@ -34,12 +34,17 @@
     			//echo "thumb_url:" . $thumb_url;
     			if($thumb_url != ""){			
 			?>
-					<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
-						<img src="<?php echo $thumb_url; ?>" width="150" height="150" class="entry-thumb" title="<?php echo $title_attribute; ?>" alt="<?php echo $title_attribute;?>">
-		            </a>
+					<div class="item-image intro img-intro-left">
+						<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
+							<img data-original="<?php echo $thumb_url; ?>" width="150" height="150" class=""style="display: inline;" title="<?php echo $title_attribute; ?>" alt="<?php echo $title_attribute;?>">
+			            </a>
+		            </div>
 			<?php		
 				}
 			?>
+				
+
+			<p style="text-align: justify" text-align="justify">			
 			<?php
 				echo get_the_excerpt();				
 			?>

@@ -33,4 +33,20 @@ $(document).ready(function () {
       }
     );
     wow.init();
+    
+	$("#content img").lazyload({ 
+		effect : "fadeIn",
+		effect_speed: 1500,
+		load: function(){			
+			$(this).removeAttr("data-original");
+		}
+	});
+    
+    $(".home-recent img").lazyload({ 
+		effect : "fadeIn",
+		effect_speed: 1500,
+		load: function(){			
+			$(this).removeAttr("data-original");
+		}
+	});
 });

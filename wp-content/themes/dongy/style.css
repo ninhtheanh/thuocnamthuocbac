@@ -2621,6 +2621,10 @@ div.wpcf7-response-output {
     border-radius:10px;
     -moz-border-radius:10px;
     -webkit-border-radius:10px;
+
+    /*Add for lazy loading*/
+    width: 138px;
+    height: 138px;
 }
 .image_rounded_shadow img {
     margin: 0px 0px 0px 0px;
@@ -2687,6 +2691,27 @@ div.wpcf7-response-output {
 }
 .rpwe-clearfix:after {
     clear: both;
+}
+
+#content .item-image {
+    width: 150px;    
+    min-height: 150px;    
+}
+#content .item-image {
+    border: 1px solid #57ad68;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+}
+#content .item-image, .home-recent .recent-thumb .image_rounded_shadow{
+    background: url(http://dongydinhtuan.com/wp-content/themes/dongy/images/loading.gif) no-repeat center center;
+    text-align: center;
+}
+
+#content .img-intro-left {
+    margin-bottom: 15px;
+	margin: 0 20px 20px 0;
+    float: left;
 }
 
 /* Adding css end*/
