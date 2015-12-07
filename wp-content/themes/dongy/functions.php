@@ -160,7 +160,7 @@ function dongy_javascript_detection() {
 function dongy_scripts() {
 	
 	//Css
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/animate.css', array(), '1.0.0' );
+	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css', array(), '1.0.0' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '1.0.0' );
 	//wp_enqueue_style( 'font-satisfy-regular', 'https://fonts.googleapis.com/css?family=Satisfy', array() );
 	// Load our main stylesheet.
