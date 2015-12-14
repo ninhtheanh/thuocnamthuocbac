@@ -519,3 +519,26 @@ add_filter( 'wpseo_locale', 'yst_wpseo_change_og_locale' );
     }
     return str_replace( ' src', ' async src', $tag );
 }, 10, 2 );*/
+
+//Customizing the Login Form
+function ta_login_logo() { ?>
+    <style type="text/css">
+        .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png);
+    		background-size: auto;			
+		    height: 100px;
+		    width: 324px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'ta_login_logo' );
+
+function ta_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'ta_login_logo_url' );
+
+function ta_login_logo_url_title() {
+    return 'Đông Y Gia Truyền Đình Tuân';
+}
+add_filter( 'login_headertitle', 'ta_login_logo_url_title' );
