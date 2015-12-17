@@ -396,30 +396,11 @@ function contact_information(){
 	$str = dongy_sharing_button_code(get_permalink(), "social-right");
 	if ( !is_sticky() && !is_page() )
 	{
-		$str .= '<blockquote><p>Thông tin chỉ mang tính chất tham khảo, không phải là các tư vấn y tế, vui lòng tham khảo ý kiến của bác sĩ trước khi sử dụng.</p></blockquote>';
+		$str .= do_shortcode('[contentblock id=2]');
 	}
 	else
 	{
-		$str .= '<div class="end-post-box-contact">
-				<p><strong>Quý khách có nhu cầu mua thuốc hoặc cần được tư vấn vui lòng liên hệ:</strong></p>
-				<p>
-				<strong>- Tại Phú Yên - Tuy Hòa</strong><br>
-				YS. Nguyễn Đình Tuân - YS. Phan Vũ Như Nguyện<br>
-				ĐT: 01236910957<br><br>
-				<strong>- Tại TP Hồ Chí Minh</strong><br>
-				Tư vấn: Ninh Thế Anh<br>
-				ĐC: 59/33 Mã Lò, P. Binh Trị Đông A, Q. Bình Tân<br>
-				ĐT: 098.368.7979
-				</p>
-				<div style="text-align: center;">
-					<div class="separator_wrapper wow bounceIn animated" data-wow-duration="0.7s" data-wow-delay="0.7s" style="visibility: visible; animation-duration: 0.7s; animation-delay: 0.7s; animation-name: bounceIn;">
-			            <div class="separator_first_circle">
-			            <img src="' . get_template_directory_uri() . '/images/green-flower.png" alt="green flower">
-			            </div>
-			        </div>
-		        </div>
-				<p><em>Người bệnh hoặc người nhà bệnh nhân có thể điện thoại nói về bệnh tình và được Đông Y Gia Truyền Đình Tuân tư vấn, sau đó Nhà thuốc gửi thuốc qua chuyển phát nhanh ( hoặc ô tô) đến cho khách hàng.</em></p>
-			</div>';
+		$str .= do_shortcode('[contentblock id=1]');
 	}
 	return $str;
 }
