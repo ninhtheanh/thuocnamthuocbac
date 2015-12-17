@@ -26,7 +26,7 @@ get_header(); ?>
 				// Start the loop.
 				while ( have_posts() ) : the_post();
 
-					get_template_part( 'content', get_post_format() );
+					get_template_part( 'templates/content', get_post_format() );
 
 				// End the loop.
 				endwhile;				
@@ -48,7 +48,7 @@ get_header(); ?>
 				<?php
 				// If no content, include the "No posts found" template.
 				else :
-					get_template_part( 'content', 'none' );
+					get_template_part( 'templates/content', 'none' );
 
 				endif;
 				?>

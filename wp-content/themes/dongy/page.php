@@ -35,13 +35,13 @@ get_header(); ?>
 					$page_load = "sitemap";
 				// Start the loop.				
 				while ( have_posts() ) : the_post();					
-					get_template_part( 'content', $page_load );					
+					get_template_part( 'templates/content', $page_load );					
 				// End the loop.
 				endwhile;
 
 			// If no content, include the "No posts found" template.
 			else :
-				get_template_part( 'content', 'none' );
+				get_template_part( 'templates/content', 'none' );
 
 			endif;
 			?>

@@ -28,41 +28,9 @@
 </div>
 <a href="#" class="back-to-top"></a>
 <?php echo dongy_facebook_sdk();?>
-<!-- Slider start -->
-<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/jquery.cycle.all.min.js?ver=1.0.0'></script>
+
 <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/navigation.js?ver=1.0.0.0'></script>
 <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/scripts.js?ver=1.0.0.0'></script>
-
-<script type='text/javascript'>
-	/* <![CDATA[ */
-	var dongy_slider_value = {"transition_effect":"fade","transition_delay":"4000","transition_duration":"1000"};
-	/* ]]> */
-	/**
-	
-	/* Slider Setting */
-	jQuery(window).load(function() {
-	    var transition_effect = dongy_slider_value.transition_effect;
-	    var transition_delay = dongy_slider_value.transition_delay;
-	    var transition_duration = dongy_slider_value.transition_duration;
-	    jQuery('.slider-cycle').cycle({
-	        fx: transition_effect,
-	        pager: '#controllers',
-	        activePagerClass: 'active',
-	        timeout: transition_delay,
-	        speed: transition_duration,	        
-	        pause: 1,
-	        pauseOnPagerHover: 1,
-	        width: '100%',
-	        containerResize: 0,
-	        fit: 1,
-	        after: function() {
-	            jQuery(this).parent().css("height", jQuery(this).height())
-	        },
-	        cleartypeNoBg: true
-	    })
-	});
-</script>
-<!-- Slider end -->
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -2,11 +2,11 @@
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /Wordpress/thuocnamthuocbac/
+RewriteBase /Wordpress/dongydinhtuan.com/www/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /Wordpress/thuocnamthuocbac/index.php [L]
+RewriteRule . /Wordpress/dongydinhtuan.com/www/index.php [L]
 </IfModule>
 
 # END WordPress

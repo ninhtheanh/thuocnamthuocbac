@@ -398,7 +398,9 @@ function contact_information(){
 	{
 		$str .= '<blockquote><p>Thông tin chỉ mang tính chất tham khảo, không phải là các tư vấn y tế, vui lòng tham khảo ý kiến của bác sĩ trước khi sử dụng.</p></blockquote>';
 	}
-	$str .= '<div class="end-post-box-contact">
+	else
+	{
+		$str .= '<div class="end-post-box-contact">
 				<p><strong>Quý khách có nhu cầu mua thuốc hoặc cần được tư vấn vui lòng liên hệ:</strong></p>
 				<p>
 				<strong>- Tại Phú Yên - Tuy Hòa</strong><br>
@@ -418,6 +420,7 @@ function contact_information(){
 		        </div>
 				<p><em>Người bệnh hoặc người nhà bệnh nhân có thể điện thoại nói về bệnh tình và được Đông Y Gia Truyền Đình Tuân tư vấn, sau đó Nhà thuốc gửi thuốc qua chuyển phát nhanh ( hoặc ô tô) đến cho khách hàng.</em></p>
 			</div>';
+	}
 	return $str;
 }
 function facebook_comments(){

@@ -106,87 +106,17 @@
 			</div>
 			<?php
 			if( is_home() || is_front_page() ) {
-			?>
-				<section class="featured-slider">
-				   	<div class="slider-cycle" style="width: 100%;">
-				   		<div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
-					        <figure>
-					         	<a href="<?php echo get_category_link(3); ?>" title="">
-						         	<img width="960" src="<?php echo get_template_directory_uri(); ?>/images/banner/home/banner-tri.jpg" 
-						         	class="pngfix wp-post-image" alt="" title="">				         	
-						        </a>
-					     	</figure>
-				      	</div>
-				      	<div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
-					        <figure>
-					         	<a href="http://dongydinhtuan.com/suy-nhuoc-than-kinh/benh-suy-nhuoc-than-kinh.html" title="">
-						         	<img width="960" src="<?php echo get_template_directory_uri(); ?>/images/banner/home/banner-suynhuocthankinh.jpg" 
-						         	class="pngfix wp-post-image" alt="" title="">				         	
-						        </a>
-					     	</figure>
-				      	</div>
-				      	<div class="slides displayblock" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 100%;">
-					        <figure>
-					         	<a href="http://dongydinhtuan.com/suy-nhuoc-co-the/benh-suy-nhuoc-co-the.html" title="">
-						         	<img width="960" src="<?php echo get_template_directory_uri(); ?>/images/banner/home/banner-suynhuoc.jpg" 
-						         	class="pngfix wp-post-image" alt="" title="">				         	
-						        </a>
-					     	</figure>
-					     	<article class="featured-text" style="display:none">
-					            <div class="featured-title">
-					            	<a href="#" title="Đông Y Đình Tuân">Thuốc Việt Nam</a>
-					            </div>
-					            <!-- .featured-title -->
-					            <div class="featured-content">Chung Tay Chăm Sóc Sức Khỏe Cộng Đồng </div>
-					            <!-- .featured-content -->
-					        </article>
-					         <!-- .featured-text -->
-				      	</div>				      	
-				   </div>
-				   <nav id="controllers" class="clearfix"></nav>			   
-				   <!-- #controllers -->
-				</section>
-			<?php
-	   		}
-	   		elseif( in_category(array('benh-tri', 'suy-nhuoc-co-the', 'suy-nhuoc-than-kinh')) ){
-	   			$current_page_url = get_current_page_url();
-
-	   			/*$category = get_the_category();	   			
-	   			$cat_link = get_category_link($category[0]->cat_ID);
-	   			$arrURLs = array('benh-tri'=>$cat_link, 'suy-nhuoc-co-the'=>get_page_link(1), 'suy-nhuoc-than-kinh'=>get_page_link(79));
-
-	   			$result = array();	   			
-	   			foreach ($arrURLs as $key => $value) {	   				
-	   				if(strpos($value, $current_page_url) !== FALSE)
-	   				{	   					
-	   					$arrURLs[$key] = "#";
-	   				}
-	   			}*/	   			
-	   			$banner_url = "";
-	   			$banner_result = array();
-	   			if ( in_category( 'benh-tri' ) ) {
-	   				$banner_result = array("benh-tri", "banner-benh-tri.jpg");
-	   			}
-	   			elseif ( in_category( 'suy-nhuoc-co-the' ) ) {	   				
-	   				$banner_result = array("benh-suy-nhuoc-co-the", "banner-suy-nhuoc-co-the.jpg");
-	   			}
-	   			elseif ( in_category( 'suy-nhuoc-than-kinh' ) ) {	   				
-	   				$banner_result = array("benh-suy-nhuoc-than-kinh", "banner-suy-nhuoc-than-kinh.jpg");
-	   			}
-
-	   			$banner_url = get_bloginfo('url') . "/" . $banner_result[0];	   			
-	   			if(strpos($banner_url, $current_page_url) !== FALSE)
-	   				$banner_url = "#";	   			
-	   		?>
-	   			<section class="featured-banner">
-	   				<div>
-						<a href="<?php echo $banner_url; ?>">
-							<img width="960" src="<?php echo get_template_directory_uri() . "/images/banner/" . $banner_result[1]; ?>" title="Banner Thuoc Nam" alt="Banner Thuoc Nam">
-						</a>
-	   				</div>
-	   			</section>
-	   		<?php
-	   		}
+				echo do_shortcode ('[metaslider id=219]');
+			}
+			elseif( in_category(array('benh-tri')) ){
+				echo do_shortcode ('[metaslider id=226]');	
+			}
+			elseif( in_category(array('suy-nhuoc-co-the')) ){
+				echo do_shortcode ('[metaslider id=226]');	
+			}
+			elseif( in_category(array('suy-nhuoc-than-kinh')) ){
+				echo do_shortcode ('[metaslider id=226]');	
+			}
 			else {
 				if( ( '' != dongy_header_title() ) || function_exists( 'bcn_display_list' ) ) {
 			?>

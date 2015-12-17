@@ -32,18 +32,18 @@ get_header(); ?>
 				// Start the loop.
 				while ( have_posts() ) : the_post();
 					if ( in_category( 'blog' )) {
-						get_template_part( 'content', 'blog' ); 
+						get_template_part( 'templates/content', 'blog' ); 
 					}elseif ( in_category( 'benh-tri' )) {
-						get_template_part( 'content', 'benh-tri' ); 
+						get_template_part( 'templates/content', 'benh-tri' ); 
 					}else{
-						get_template_part( 'content', 'single' ); 
+						get_template_part( 'templates/content', 'single' ); 
 					}
 				// End the loop.
 				endwhile;
 
 			// If no content, include the "No posts found" template.
 			else :
-				get_template_part( 'content', 'none' );
+				get_template_part( 'templates/content', 'none' );
 
 			endif;
 			?>
