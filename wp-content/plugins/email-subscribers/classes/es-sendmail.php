@@ -622,11 +622,11 @@ class es_cls_sendmail
 				$reportmail = str_replace("###ENDTIME###", $enddate, $reportmail);
 				if($wpmail) 
 				{
-					wp_mail($adminmail, $subject, $reportmail, $headers);
+					//wp_mail($adminmail, $subject, $reportmail, $headers);
 				}
 				else
 				{
-					mail($adminmail ,$subject, $reportmail, $headers);
+					//mail($adminmail ,$subject, $reportmail, $headers);
 				}
 			}
 		}
