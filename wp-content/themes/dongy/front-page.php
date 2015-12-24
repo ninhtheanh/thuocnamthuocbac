@@ -161,7 +161,7 @@ get_header(); ?>
 			        <div class="recent-thumb">
 			        	<span class="image_rounded_shadow">
 				        	<a href="<?php echo get_permalink($recent["ID"]);?>" title="<?php echo $title_attribute ;?>">
-				        		<img width="150" height="150" data-original="<?php echo $thumb_url;?>" class="frame wp-post-image" alt="<?php echo $title_attribute;?>" title="<?php echo $title_attribute ;?>">
+				        		<img width="150" height="150" data-original="<?php echo $thumb_url;?>" class="frame wp-post-image" alt="<?php echo $title_attribute;?>" title="<?php echo $title_attribute ;?>" style="height: 138px">
 				        	</a>
 				        </span>
 			        </div>			        

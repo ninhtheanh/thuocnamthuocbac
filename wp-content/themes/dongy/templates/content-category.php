@@ -36,7 +36,7 @@
 			?>
 					<div class="item-image intro img-intro-left">
 						<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title( '', '', false ); ?>">
-							<img data-original="<?php echo $thumb_url; ?>" width="150" height="150" class=""style="display: inline;" title="<?php echo $title_attribute; ?>" alt="<?php echo $title_attribute;?>">
+							<img data-original="<?php echo $thumb_url; ?>" width="150px" height="150px" class=""style="display: inline; height: 150px" title="<?php echo $title_attribute; ?>" alt="<?php echo $title_attribute;?>">
 			            </a>
 		            </div>
 			<?php		
