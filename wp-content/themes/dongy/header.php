@@ -28,6 +28,8 @@
 		$current_url = home_url(add_query_arg(array(),$wp->request)); 
 	?>
 	<link rel="alternate" href="<?php echo $current_url;?>" hreflang="vi-vn" />
+	<meta property="article:author" content="https://www.facebook.com/dongydinhtuan" />
+  	<meta property="article:publisher" content="https://www.facebook.com/dongydinhtuan" />
 	<?php wp_head(); ?>
 </head>
 
